@@ -9,7 +9,7 @@
                 "name": "Run server",
                 "color": "red",
                 "singleInstance": true,
-                "command": "run_server.bat \n set FLASK_ENV=development \n flask run" // This is executed in the terminal.
+                "command": "env\\Scripts\\activate.bat \n set FLASK_ENV=development \n flask run" // This is executed in the terminal.
             },
             {
                 "name": "New terminal",
@@ -21,6 +21,12 @@
             "color": "orange",
             "useVsCodeApi": true,
             "command": "workbench.action.splitEditor"
+            },
+            {
+                "name": "Simular Plugin",
+                "color": "lightblue",
+                "singleInstance": true,
+                "command": "curl -XGET http://127.0.0.1:5000/${fileBasenameNoExtension}" // relativeFile
             }
         ]
     },
