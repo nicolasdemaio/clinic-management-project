@@ -1,15 +1,36 @@
+# Classes
+from re import A
+from source.model.document import Document
+from source.model.patient import Patient
+# External Libraries
 import unittest
+from datetime import date
+    
 
 class TestPatient(unittest.TestCase):
 
-    def test_suma_de_dos_numeros(self):
+    def test_a_patient_is_created_correctly(self):
         # Setup
-        numero1 = 1
-        numero2 = 2
-
-        # Excercise
-        resultado = numero1 + numero2
-
+        a_birthdate = date(2020, 5, 17)
+        a_document = Document('DNI','42575871')
+        
+        a_patient = Patient(
+            firstname = 'Rodrigo',
+            lastname = 'Iglesias',
+            document = a_document,
+            address = 'Madame Curie 363',
+            phonenumber = '12345',
+            email = 'riglesias@test.com',
+            birthdate = a_birthdate
+            )
+        
         # Assert
-        assert resultado == 3
+        assert a_patient.firstname == 'Rodrigo'
+        assert a_patient.lastname == 'Iglesias'
+        assert a_patient.document == a_document
+        assert a_patient.address == 'Madame Curie 363'
+        assert a_patient.phonenumber == '12345'
+        assert a_patient.email == 'riglesias@test.com'
+        assert a_patient.birthdate == a_birthdate
 
+        

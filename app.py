@@ -1,6 +1,10 @@
+from datetime import date, datetime
 from typing import Collection
-from flask import Flask
+from wsgiref import headers
+from flask import Flask, jsonify, Response
 import pymongo
+
+from source.model.patient import Patient
 
 app = Flask(__name__)
 
@@ -10,8 +14,19 @@ collection = db['test-collection']
 
 @app.route('/')
 def index():
-    x = collection.insert_one({"hola":"recibido"}).inserted_id
-    return str(x)
+    #x = collection.insert_one({"hola":"recibido"}).inserted_id
+    #return str(x)
+    return 'Hesllo!'
+
+@app.route('/patient')
+def get_patients():
+    patients = [
+        {"asd":"asd"},
+        {"asd":"assd"}
+    ]
     
-if (__name__ == "__main__"):
-    app.run(debug=True)
+    ajson = jsonify(
+        patients
+    )
+
+    return ajson, 200, {'Authorization':'testasd'}
