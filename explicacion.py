@@ -75,3 +75,33 @@ class SolicitudDeTurno:
 # para un paciente, con un medico asignado, en una fecha dada.
 # Por qué tantos parametros? Porque un turno es válido, si solo sí,
 # tiene un paciente que solicita, un medico que va a atender y una fecha que se va a realizar.
+
+
+ # Explicación: Request y Responses HTTP
+ 
+ # Request = peticiones que se hacen a la API con un body ({json}) o por path (/api/{algún parametro})
+    # y también puede mandar un header (ej: {token : "token"})
+ # Responses = respuestas que se dan al consumidor de la API
+    # contiene: Un body (json), un status code (200, 201, 404, ...) y puede un token (ej: autorización de usuario)
+
+# Ejemplo de Autenticación de Usuario
+
+# Request para logearse:
+# Json({"username" : "rodri", "password" : "rodricapo1"}) 
+# Manda la petición GET con el body de arriba al endpoint (por ejemplo): /api/users
+
+# El controller que tenga el metodo /api/users va a verificar si existe el usuario que le llega
+# por request, parseando el json a usuario (crea un usuario a partir del json = User(username, password))
+
+# Si no existe > Retorna un response con codigo 400 (error) y un body indicando el error
+# Ejemplo: {"error", "no existe un usuario con nombre dado"}
+
+# Si existe, va a retornar:
+# Codigo 200 OK
+# Body > {"username" : "rodri", y más datos (sin la contraseña por seguridad)}
+# Y un header Authorization con un token.
+
+# El token que recibe, en React (por ejemplo), se lo guarda y eso es como su sesion.
+# Y como ya lo tiene ,y es un token valido, las peticiones siguientes que haga
+# Ya se sabe que es el por el token que tiene React, lo manda dentro de las request siguiente que se hagan.
+
