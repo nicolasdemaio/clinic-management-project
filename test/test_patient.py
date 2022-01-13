@@ -1,11 +1,15 @@
 # Classes
-from re import A
-from source.model.document import Document
-from source.model.patient import Patient
+# from re import A
+# from source.model.document import Document
+# from source.model.patient import Patient
 # External Libraries
 import unittest
 from datetime import date
-    
+
+
+# IMPORTA CARPETA ENTERA, EXPLICA EN ANSWER #19
+from source.model import *
+# https://www.py4u.net/discuss/10731
 
 class TestPatient(unittest.TestCase):
 
