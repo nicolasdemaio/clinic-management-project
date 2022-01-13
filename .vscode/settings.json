@@ -9,7 +9,7 @@
                 "name": "Run server",
                 "color": "red",
                 "singleInstance": true,
-                "command": "env\\Scripts\\activate.bat \n set FLASK_ENV=development \n flask run" // This is executed in the terminal.
+                "command": "env\\Scripts\\activate.bat \n python app.py" // "env\\Scripts\\activate.bat \n set FLASK_ENV=development \n flask run"
             },
             {
                 "name": "New terminal",
