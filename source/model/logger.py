@@ -1,20 +1,38 @@
 from datetime import datetime
+from tokenize import String
+
+# Logger tags:
+# ERROR - for throwed errors/exceptions.
+# INFO - for a log that gives some information.
+# DB - for log actions that are executed during the context of a Database (like persist, update, etc.).
+
 
 class Logger:
 
-    @staticmethod
-    def warning(a_message):
-        Logger.__log('WARNING', a_message)
+    default_filename = 'logger.log'
 
     @staticmethod
-    def info(a_message):
-        Logger.__log('INFO', a_message)
+    def warning(an_object, a_filename=default_filename):
+        Logger.__write_on_file_with('WARNING', an_object, a_filename)
 
     @staticmethod
-    def __log(a_prefix, a_message):
+    def error(an_object, a_filename=default_filename):
+        Logger.__write_on_file_with('ERROR', an_object, a_filename)
 
+    @staticmethod
+    def info(an_object, a_filename=default_filename):
+        Logger.__write_on_file_with('INFO', an_object, a_filename)
+
+    @staticmethod
+    def database(an_object, a_filename=default_filename):
+        Logger.__write_on_file_with('DB', an_object, a_filename)
+
+    # Private methods
+
+    @staticmethod
+    def __write_on_file_with(a_tag, an_object, a_filename):
         a_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         
-        f = open("logger.log", "a")
-        f.write(a_datetime + ' ' + a_prefix + ' ' + str(a_message) + '\n')
+        f = open(a_filename, "a")
+        f.write(a_datetime + ' - ' + a_tag + ' - ' + str(an_object) + '\n')
         f.close()

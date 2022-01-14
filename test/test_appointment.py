@@ -1,12 +1,10 @@
+from operator import methodcaller
 import unittest
 from datetime import datetime, timedelta
 from source.model.appointment import Appointment
 #from source.model import *
-from source.model.logger import Logger
+from source.model.logger import *
 from source.model.utilities import TimeInterval
-
-
-
 
 class TestAppointment(unittest.TestCase):
 
@@ -17,6 +15,7 @@ class TestAppointment(unittest.TestCase):
         a_patient = 'Rodrigo Iglesias'
         a_doctor =  'Nicolas De maio'
         an_appointment = Appointment(a_patient, a_doctor, starting_date)
+
 
         Logger.warning(an_appointment)
 
