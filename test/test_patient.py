@@ -19,8 +19,7 @@ class TestPatient(unittest.TestCase):
         a_document = Document('DNI','42575871')
         
         a_patient = Patient(
-            firstname = 'Rodrigo',
-            lastname = 'Iglesias',
+            fullname = 'Rodrigo Iglesias',
             document = a_document,
             address = 'Madame Curie 363',
             phonenumber = '12345',
@@ -29,9 +28,8 @@ class TestPatient(unittest.TestCase):
             )
         
         # Assert
-        assert a_patient.firstname == 'Rodrigo'
-        assert a_patient.lastname == 'Iglesias'
         assert a_patient.document == a_document
+        assert a_patient.fullname == 'Rodrigo Iglesias'
         assert a_patient.address == 'Madame Curie 363'
         assert a_patient.phonenumber == '12345'
         assert a_patient.email == 'riglesias@test.com'
