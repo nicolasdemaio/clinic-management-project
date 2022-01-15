@@ -1,8 +1,8 @@
 import unittest
 from datetime import date
-from source.dao.patient_dao import PatientDAO
-from source.model.document import Document
-from source.model.patient import Patient
+from source.main.repository.patient_dao import PatientDAO
+from source.main.model.document import Document
+from source.main.model.patient import Patient
 
 class TestPatientDAO(unittest.TestCase):
 

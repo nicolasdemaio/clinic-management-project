@@ -1,7 +1,7 @@
 import unittest
 from datetime import datetime
 
-from source.model.time_interval import *
+from source.main.model.time_interval import *
 
 class TestTimeInterval(unittest.TestCase):
 

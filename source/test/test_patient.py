@@ -8,12 +8,12 @@ from datetime import date
 
 
 # IMPORTA CARPETA ENTERA, EXPLICA EN ANSWER #19
-from source.model.document import Document
-from source.model.patient import Patient
+from source.main.model.document import Document
+from source.main.model.patient import Patient
 # https://www.py4u.net/discuss/10731
 
 
-# from source.logger import *
+from source.logger import *
 
 class TestPatient(unittest.TestCase):
 

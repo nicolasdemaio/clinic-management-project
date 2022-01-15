@@ -1,4 +1,4 @@
-from source.model.patient import Patient
+from source.main.model.patient import Patient
 import pymongo
 
 class PatientDAO:

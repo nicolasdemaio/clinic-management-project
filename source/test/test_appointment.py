@@ -1,7 +1,7 @@
 import unittest
 from datetime import datetime, timedelta
-from source.model.appointment import Appointment
-from source.model.time_interval import TimeInterval
+from source.main.model.appointment import Appointment
+from source.main.model.time_interval import TimeInterval
 from source.tool import Logger
 
 class TestAppointment(unittest.TestCase):

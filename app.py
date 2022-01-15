@@ -4,21 +4,15 @@ from wsgiref import headers
 from flask import Flask, jsonify, Response
 import pymongo
 
-from source.model.patient import Patient
+from source.main.model.patient import Patient
 
 app = Flask(__name__)
 
 if __name__ == "__main__":
     app.run(debug=True)
 
-client = pymongo.MongoClient("mongodb+srv://root:lastoninas@clinic-management-datab.2df7e.mongodb.net/testDB?retryWrites=true&w=majority")
-db = client.testDB
-collection = db['test-collection']
-
 @app.route('/')
 def index():
-    #x = collection.insert_one({"hola":"recibido"}).inserted_id
-    #return str(x)
     return 'Hesllo!'
 
 @app.route('/patient')
