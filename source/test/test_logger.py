@@ -1,12 +1,12 @@
 import unittest
-# from source.logger import *
-from source.logger.custom_logger import custLogger
+
+from source.tool.custom_logger import CustomLogger
 
 
 class TestLogger(unittest.TestCase):
 
     def test_a_logger(self):
-        logger = custLogger("demolog", logpath = "logs").log()
+        logger = CustomLogger("demolog", "logs").get_configured_instance()
         
         logger.info("info test")
         logger.debug("debyugaso")

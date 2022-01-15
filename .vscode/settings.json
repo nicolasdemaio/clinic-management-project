@@ -45,5 +45,5 @@
         "**/.gitignore": true,
         "**/README.md": true,
         "**/env": true
-}
+    }
 }
