@@ -14,7 +14,7 @@
             {
                 "name": "New terminal",
                 "color": "green",
-                "command": "workbench.action.terminal.new",
+                "command": "cls", // workbench.action.terminal.new
             },
             {
             "name": "🪟 Split editor",
@@ -34,7 +34,7 @@
     "python.testing.unittestArgs": [
         "-v",
         "-s",
-        "./test",
+        "./source/test",
         "-p",
         "test_*.py"
     ],
@@ -42,5 +42,5 @@
     "python.testing.unittestEnabled": true,
     "files.exclude": {
         "**/__pycache__": true
-   }
+}
 }

@@ -1,5 +1,11 @@
+# Basicos
 pip install flask
-python -m pip install pytest
+
+# Base de datos Mongo
 python -m pip install pymongo
+python -m pip install mongoengine
+
+# Testeo y check code
+python -m pip install pytest
 pip install dnspython
 pip install pyflakes
