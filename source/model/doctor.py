@@ -1,6 +1,3 @@
-# Objeto de dominio del problema.
-# Representa un paciente, con todos sus datos
-# Y el documento es un objeto de tipo Document (ver document.py)
 from datetime import datetime
 
 class Doctor:

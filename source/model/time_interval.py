@@ -8,7 +8,7 @@ class TimeInterval:
     def includes(self, a_date):
         return (self.from_date <= a_date) and (self.to_date >= a_date)
 
-    # Private methods of TimeInterval
+    # Private methods
 
     def __eq__(self, an_object):
         return (

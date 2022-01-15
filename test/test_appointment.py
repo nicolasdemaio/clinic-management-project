@@ -14,9 +14,6 @@ class TestAppointment(unittest.TestCase):
         a_doctor =  'Nicolas De maio'
         an_appointment = Appointment(a_patient, a_doctor, starting_date)
 
-
-        Logger.warning(an_appointment)
-
         # Assert
         assert a_patient == 'Rodrigo Iglesias'
         assert a_doctor == 'Nicolas De maio'
