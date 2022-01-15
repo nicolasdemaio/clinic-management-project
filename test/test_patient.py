@@ -8,7 +8,8 @@ from datetime import date
 
 
 # IMPORTA CARPETA ENTERA, EXPLICA EN ANSWER #19
-from source.model import *
+from source.model.document import Document
+from source.model.patient import Patient
 # https://www.py4u.net/discuss/10731
 
 

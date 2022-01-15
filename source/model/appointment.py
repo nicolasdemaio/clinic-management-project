@@ -1,6 +1,6 @@
 from datetime import timedelta
 
-from source.model.utilities import *
+from source.model.time_interval import TimeInterval
 
 class Appointment:
 

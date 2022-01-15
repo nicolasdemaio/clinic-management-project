@@ -1,11 +1,4 @@
 from datetime import datetime
-from tokenize import String
-
-# Logger tags:
-# ERROR - for throwed errors/exceptions.
-# INFO - for a log that gives some information.
-# DB - for log actions that are executed during the context of a Database (like persist, update, etc.).
-
 
 class Logger:
 

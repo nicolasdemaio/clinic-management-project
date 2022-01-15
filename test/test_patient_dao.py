@@ -1,7 +1,6 @@
 import unittest
-from datetime import date, datetime, timedelta
+from datetime import date
 from source.dao.patient_dao import PatientDAO
-from source.model.appointment import Appointment
 from source.model.document import Document
 from source.model.patient import Patient
 
