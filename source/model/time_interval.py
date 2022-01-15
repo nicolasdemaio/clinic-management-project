@@ -27,13 +27,3 @@ class TimeIntervalException(RuntimeError):
     def __init__(self, *args: object):
         super().__init__(*args)
 
-class DaysOffRequest:
-
-    def __init__(self, doctor, time_interval, reason):
-        self.doctor = doctor
-        self.time_interval = time_interval
-        self.reason = reason
-
-
-
-

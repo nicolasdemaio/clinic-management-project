@@ -1,10 +1,8 @@
-from operator import methodcaller
 import unittest
 from datetime import datetime, timedelta
 from source.model.appointment import Appointment
-#from source.model import *
-from source.model.logger import *
-from source.model.utilities import TimeInterval
+from source.model.time_interval import TimeInterval
+from source.tool import Logger
 
 class TestAppointment(unittest.TestCase):
 

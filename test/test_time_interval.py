@@ -1,9 +1,7 @@
-from time import time
 import unittest
-from datetime import date, datetime
+from datetime import datetime
 
-from source.model import *
-from source.model.utilities import *
+from source.model.time_interval import *
 
 class TestTimeInterval(unittest.TestCase):
 
