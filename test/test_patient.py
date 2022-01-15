@@ -11,6 +11,9 @@ from datetime import date
 from source.model import *
 # https://www.py4u.net/discuss/10731
 
+
+# from source.logger import *
+
 class TestPatient(unittest.TestCase):
 
     def test_a_patient_is_created_correctly(self):
@@ -36,3 +39,20 @@ class TestPatient(unittest.TestCase):
         assert a_patient.birthdate == a_birthdate
 
         
+        import logging
+
+        # Gets or creates a logger
+        logger = logging.getLogger(__name__)  
+
+        # set log level
+        logger.setLevel(logging.WARNING)
+
+        # define file handler and set formatter
+        file_handler = logging.FileHandler('logfile.log')
+        formatter    = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
+        file_handler.setFormatter(formatter)
+
+        # add file handler to logger
+        logger.addHandler(file_handler)
+
+        logger.warning('A debug message')

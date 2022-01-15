@@ -8,6 +8,9 @@ from source.model.patient import Patient
 
 app = Flask(__name__)
 
+if __name__ == "__main__":
+    app.run(debug=True)
+
 client = pymongo.MongoClient("mongodb+srv://root:lastoninas@clinic-management-datab.2df7e.mongodb.net/testDB?retryWrites=true&w=majority")
 db = client.testDB
 collection = db['test-collection']
