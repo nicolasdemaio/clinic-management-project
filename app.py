@@ -1,15 +1,7 @@
-from datetime import date, datetime
-from typing import Collection
-from wsgiref import headers
 from flask import Flask, jsonify, Response
-import pymongo
-
 from source.main.model.patient import Patient
 
 app = Flask(__name__)
-
-if __name__ == "__main__":
-    app.run(debug=True)
 
 @app.route('/')
 def index():
@@ -54,3 +46,7 @@ class Response():
         self.OK = (body,200,auth)
         self.BAD = (body,400,auth)
         self.METOD = (body,405,auth)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
