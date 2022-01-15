@@ -41,6 +41,9 @@
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
     "files.exclude": {
-        "**/__pycache__": true
+        "**/__pycache__": true,
+        "**/.gitignore": true,
+        "**/README.md": true,
+        "**/env": true
 }
 }
