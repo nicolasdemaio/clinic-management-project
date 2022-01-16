@@ -1,52 +1,78 @@
-from flask import Flask, jsonify, Response
+from flask import Flask
+from source.main.controller.basic_structures import appointment_as_json
+from source.main.model.appointment import Appointment
+from source.main.model.doctor import Doctor
+from source.main.model.time_interval import TimeInterval
+from source.tool.custom_logger import CustomLogger
+from mongoengine import *
+from source.main.model.document import IdentityDocument
 from source.main.model.patient import Patient
+from datetime import date, datetime
 
+user = "root"
+password = "lastoninas"
+database = "testDB"
+db = connect(host=f"mongodb+srv://{user}:{password}@clinic-management-datab.2df7e.mongodb.net/{database}?retryWrites=true&w=majority")
+logger = CustomLogger("demolog", "logs")
 app = Flask(__name__)
+
+a_birthdate = date(2020, 5, 17)
+a_document = IdentityDocument(document_type='DNI', number='42575871')
 
 @app.route('/')
 def index():
-    return 'Hesllo!'
+    return 'Hello!'
 
-@app.route('/patient')
-def get_patients():
-    patients = [
-        {"asd":"asd"},
-        {"asd":"assd"}
-    ]
+@app.route('/paciente', methods=['GET'])
+def traer():
+
+    time_interval = TimeInterval.create_with_time_adding_minutes(datetime.now(), 30)
+
+    a_patient = Patient(
+        fullname='Rodrigo Iglesias',
+        document=a_document,
+        address='Madame Curie 363',
+        phonenumber=12345,
+        email='riglesias@test.com',
+        birthdate=a_birthdate
+    ).save()
     
-    ajson = jsonify(
-        patients
-    )
+    a_doctor = Doctor(
+        fullname = 'Rodrigo Iglesias',
+        document = a_document,
+        address = 'Madame Curie 363',
+        phonenumber = 12345,
+        email = 'riglesias@test.com',
+        birthdate = a_birthdate,
+        registration_date = datetime.now(),
+        time_interval_off = time_interval
+    ).save()
+    
+    starting_date = datetime.today()
 
-    #return ajson, 200, {'Authorization':'testasd'}
+    appointment = Appointment.create_for(a_patient=a_patient, a_doctor=a_doctor, a_datetime=starting_date)
+    appointment.save()
+    
+    return appointment_as_json(appointment)
 
-    return Response(ajson).OK
-# Ta bien asi? o es al pedo hacer asi los responses de las peticiones?
-# Me parecio mas lindo que envies solo el body y el .OK o .BAD de tu respuesta, pero nuse 🙃
 
 
-#-------------------------
-import base64 # Codificador y Deco para Keys
 
-token = "Esto es mi token?" # Mensaje en base64
-token_encoded = token.encode('utf-8') 
-base64_token = base64.b64encode(token_encoded) # Mensaje codeado en 64bytes
-base64_message = base64_token.decode('utf-8') # Vuelve a ser mi token string
 
-#  o todo en un chori
-# token = "Esto es mi token?"
-# token_encoded = base64.b64encode(token).encode('utf-8')
-# token_decoded = base64.b64encode(token).decode('utf-8')
-#-------------------------
 
-# Clase encargada de los respones basicos
-class Response():
-    def __init__(self,body="",token=base64_token):
-        auth = {'Authorization':token}
-        self.OK = (body,200,auth)
-        self.BAD = (body,400,auth)
-        self.METOD = (body,405,auth)
-
+def ObjectToJson(objects):
+    dictionary = {}
+    for atributo in objects:
+        if atributo == 'document':
+            dictionary.update({'document':{
+                "document_type" : objects.document.document_type,
+                "number" : objects.document.number
+            }})
+        elif atributo == 'id':
+            dictionary.update({atributo:str(objects.id)})
+        else:
+            dictionary.update({atributo:objects[atributo]})
+    return dictionary
 
 if __name__ == "__main__":
     app.run(debug=True)

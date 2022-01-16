@@ -1,19 +1,22 @@
+from mongoengine import *
 from datetime import datetime
+from source.main.model.document import IdentityDocument
+from source.main.model.time_interval import TimeInterval
 
-class Doctor:
 
-    def __init__(self, fullname, document, address, phonenumber, email, birthdate, time_interval_off="None", registration_date= datetime.today()):
-        self.fullname = fullname
-        self.document = document
-        self.address = address
-        self.phonenumber = phonenumber
-        self.email = email
-        self.birthdate = birthdate
-        self.registration_date = registration_date
-        self.time_interval_off = time_interval_off # TimeInterval(unaFecha, otraFecha)
+class Doctor(Document):
+
+    fullname = StringField(required=True)
+    document = EmbeddedDocumentField(IdentityDocument)
+    address = StringField(required=True)
+    phonenumber = IntField(required=True)
+    email = EmailField(required=True)
+    birthdate = DateField(required=True)
+    registration_date = DateTimeField(default=datetime.now(), required=True)
+    time_interval_off = EmbeddedDocumentField(default=None, document_type=TimeInterval)
 
     def is_working(self, ask_date=datetime.today()):
-        if self.time_interval_off == "None":
+        if self.time_interval_off is None:
             return True
         elif (ask_date.weekday() > 4) or self.time_interval_off.includes(ask_date):
             return False

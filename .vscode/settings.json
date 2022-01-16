@@ -14,7 +14,7 @@
             {
                 "name": "New terminal",
                 "color": "green",
-                "command": "cls", // workbench.action.terminal.new
+                "command": "workbench.action.terminal.openNativeConsole", // workbench.action.terminal.new
             },
             {
             "name": "🪟 Split editor",

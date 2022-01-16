@@ -1,8 +1,8 @@
-class Document:
+from mongoengine import *
 
-    def __init__(self,a_document_type,a_document_number):
-        self.type = a_document_type
-        self.number = a_document_number
+class IdentityDocument(EmbeddedDocument):
 
+    document_type = StringField(required=True)
+    number = IntField(required=True)
         
 

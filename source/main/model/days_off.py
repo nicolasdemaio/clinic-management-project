@@ -1,11 +1,14 @@
+from mongoengine import *
+
+from source.main.model.doctor import Doctor
+from source.main.model.time_interval import TimeInterval
+
 class DaysOffRequest:
 
-    def __init__(self, doctor, time_interval, reason, request_datetime):
-        self.doctor = doctor
-        self.time_interval = time_interval
-        self.reason = reason
-        self.request_datetime = request_datetime
-
+    doctor = ReferenceField(Doctor)
+    time_range = EmbeddedDocumentField(TimeInterval)
+    reason = StringField(required=True)
+    datetime_of_request = DateTimeField(required=True)
 
 
 

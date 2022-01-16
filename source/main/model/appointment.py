@@ -1,17 +1,20 @@
-from datetime import timedelta
-
+from mongoengine import *
+from source.main.model.doctor import Doctor
+from source.main.model.patient import Patient
 from source.main.model.time_interval import TimeInterval
 
-class Appointment:
+class Appointment(Document):
 
-    def __init__(self, patient, doctor, datetime):
-        self.patient = patient
-        self.doctor = doctor
-        self.time_interval = self.__get_time_interval_from(datetime)
+    patient = ReferenceField(Patient)
+    doctor = ReferenceField(Doctor)
+    time_interval = EmbeddedDocumentField(TimeInterval)
 
-    # Private methods
+    @staticmethod
+    def create_for(a_patient, a_doctor, a_datetime):
+        time_interval = TimeInterval.create_with_time_adding_minutes(a_datetime, 30)
+        return Appointment(patient=a_patient, doctor=a_doctor, time_interval=time_interval)
 
-    def __get_time_interval_from(self, datetime, minutes=30):
-        appointment_duration = minutes * 60 * 60
-        added_time = timedelta(seconds= appointment_duration)
-        return TimeInterval(datetime,(datetime + added_time))
+class ConfirmedAppointment(Document):
+
+    appointment = ReferenceField(Appointment)
+    confirmation_datetime = DateTimeField(required= True)
