@@ -1,4 +1,9 @@
-# Service:
-# Se encarga de la lógica de negocio (ver si existe usuario,
-# si puede hacer lo que quiere hacer),
-# lanzar excepción si es necesario.
+from source.main.repository.patient_dao import PatientDAO
+
+class PatientService:
+
+    def __init__(self, patient_dao=PatientDAO()):
+        self.patient_dao = patient_dao
+
+    def get_patients(self):
+        return self.patient_dao.get_patients()
