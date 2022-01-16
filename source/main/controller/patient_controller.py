@@ -1,10 +1,7 @@
 from flask_restful import Resource
 from flask import Response, jsonify, request
 from source.main.controller.basic_structures import patient_as_json
-from source.main.model.patient import Patient
-from source.main.service.patient_service import PatientService
-
-patient_service = PatientService()
+from source.main.controller.components import patient_service
 
 class PatientsApi(Resource):
 

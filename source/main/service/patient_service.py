@@ -1,4 +1,4 @@
-from source.main.repository.patient_dao import PatientDAO
+from source.main.repository.dao import PatientDAO
 
 class PatientService:
 
@@ -6,4 +6,4 @@ class PatientService:
         self.patient_dao = patient_dao
 
     def get_patients(self):
-        return self.patient_dao.get_patients()
+        return self.patient_dao.get_all()

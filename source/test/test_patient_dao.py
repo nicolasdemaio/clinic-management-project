@@ -1,16 +1,19 @@
 import unittest
 from datetime import date
+from configuration import perform_database_connection
 
 from source.main.model.document import IdentityDocument
 from source.main.model.patient import Patient
-from source.main.repository.patient_dao import PatientDAO
+from source.main.repository.dao import PatientDAO
 
 class TestPatientDAO(unittest.TestCase):
+
+    perform_database_connection()
 
     def test_a_patient_can_be_persisted(self):
         #Setup
         a_birthdate = date(2020, 5, 17)
-        a_document = IdentityDocument('DNI','42575871')
+        a_document = IdentityDocument(document_type='DNI',number='42575871')
         
         a_patient = Patient(
             fullname = 'Rodrigo Iglesias',
@@ -24,8 +27,9 @@ class TestPatientDAO(unittest.TestCase):
         patient_dao = PatientDAO()
 
         #Excercise
-        persisted_patient_id = patient_dao.persist(a_patient).inserted_id
-        obtained_patient = patient_dao.get_by_id(persisted_patient_id)
+        patient_dao.persist(a_patient)
+        #obtained_patient = patient_dao.get_by_id(persisted_patient_id)
 
         #Assert
-        assert obtained_patient['fullname'] == a_patient.fullname
+        #assert obtained_patient['fullname'] == a_patient.fullname
+        assert a_patient in patient_dao.get_all()
