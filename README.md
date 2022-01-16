@@ -20,6 +20,7 @@ Admin puede:
     - cargar pedidos de turnos para un paciente, con un doctor asignado, en una fecha dada
     - confirmar asistencia a los turnos
     - confirmar/rechazar pedidos de inasistencias de doctores
+    - hacer CRUD de usuarios
 
 Doctor puede:
     - hacer pedidos de inasistencias (en un rango de fechas, con una razon)
@@ -71,6 +72,29 @@ doctor registrar_turno(turno)
 
 y se haria afuera un turno.save() -> esto chequear si persiste el turno tanto en paciente como doctor
         
+--
+Para tema de logeo:
+podria ser
+
+class User con username, password, domain_object(default=None), roles(Admin, Doctor)
+
+y el domain_object en caso de admin no tiene
+y en caso de Doctor, tiene referencia (object_id) al objecto doctor.
+
+esto seria para que cuando, por ej, alguien manda una peticion con token
+por ejemplo para cargar estudios (siendo doctor),
+al recuperar el token tenemos el usuario y el doctor que representa.
+y lo podemos usar para lo que quisieramos.
+
+- Lo de arriba: probar, nunca lo hice xdn't.
+
+Al registrar un doctor (siendo admin), a parte de crear el doctor,
+se crea un User con
+username = doctor.fullname pero sin espacios y lowercase (ej: rodrigoiglesias)
+password = una que quisieramos
+domain_object = el doctor creado
+
+y se guardan las dos, el user y el doctor.
 
 ## Authors
 * Rodrigo Iglesias
