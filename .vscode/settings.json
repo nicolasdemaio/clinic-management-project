@@ -43,7 +43,6 @@
     "files.exclude": {
         "**/__pycache__": true,
         "**/.gitignore": true,
-        "**/README.md": true,
         "**/env": true
     }
 }
