@@ -28,8 +28,7 @@ class TestPatientDAO(unittest.TestCase):
 
         #Excercise
         patient_dao.persist(a_patient)
-        #obtained_patient = patient_dao.get_by_id(persisted_patient_id)
+
 
         #Assert
-        #assert obtained_patient['fullname'] == a_patient.fullname
         assert a_patient in patient_dao.get_all()

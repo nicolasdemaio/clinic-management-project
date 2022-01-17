@@ -3,7 +3,7 @@ def patient_as_json(a_patient):
         "id" : str(a_patient.id),
         "fullname" : a_patient.fullname,
         "document" : document_as_json(a_patient.document),
-        "birthdate" : a_patient.birthdate,
+        "birthdate" : str(a_patient.birthdate),
         "address" : a_patient.address,
         "phonenumber" :a_patient.phonenumber,
         "email" : a_patient.email
@@ -14,11 +14,11 @@ def doctor_as_json(a_doctor):
         "id" : str(a_doctor.id),
         "fullname" : a_doctor.fullname,
         "document" : document_as_json(a_doctor.document),
-        "birthdate" : a_doctor.birthdate,
+        "birthdate" : str(a_doctor.birthdate),
         "address" : a_doctor.address,
         "phonenumber" :a_doctor.phonenumber,
         "email" : a_doctor.email,
-        "registration_date" : a_doctor.registration_date,
+        "registration_date" : str(a_doctor.registration_date),
         "time_interval_off" : time_interval_as_json(a_doctor.time_interval_off)
     }
 
@@ -34,7 +34,7 @@ def confirmed_appointment_as_json(an_confirmed_appointment):
     return {
         "id" : str(an_confirmed_appointment.id),
         "appointment" : an_confirmed_appointment.appointment,
-        "confirmation_datetime" : an_confirmed_appointment.confirmation_datetime
+        "confirmation_datetime" : str(an_confirmed_appointment.confirmation_datetime)
     }
 
 def document_as_json(a_document):
@@ -45,6 +45,6 @@ def document_as_json(a_document):
 
 def time_interval_as_json(a_time_interval):
     return {
-        "from_date" : a_time_interval.from_date,
-        "to_date" : a_time_interval.to_date
+        "from_date" : str(a_time_interval.from_date),
+        "to_date" : str(a_time_interval.to_date)
     }

@@ -51,7 +51,18 @@ Posibles acciones:
     - al hacer un turno para cliente, que se le envie mail al cliente con la info del turno.
     - al cargar estudios para cliente, mandarle mail avisando que se le registro un nuevo estudio.
 
----
+
+Idea de simplificar correo de la empresa:
+    def obtener_mail_doctor(self, fullname)
+        domain="gmail.com"
+        name_splited = fullname.split()
+        own_mail = name_splited[0][0] + name_splited[1]
+        tes= "{own_mail}@{domain}"
+Con solo tener el nombre completo del doctor, se guarda en la base de datos del propio doctor sin tener que preocuparse por tipearlo a mano o se ingrese de forma erronea. Example= niglesias@mercap.io
+Puede aplicarse la idea nuevamente en la creacion del username
+Si es un nombre verga como Rodrigo Transexuaal De Maio. Siempre se obtiene el 1er Nombre del mismo, y el ultimo apellido, sin excepcion.
+
+---------
 
 Podría ser que paciente y médico tenga registro de turnos solicitados.
 
