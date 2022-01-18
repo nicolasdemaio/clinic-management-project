@@ -37,13 +37,3 @@ def list_json_response(a_list_of_objects, a_mapper_method, an_status_code):
     response.status_code = an_status_code
     response.mimetype = 'application/json'
     return response
-
-# class PatientDraft:
-
-#     def __init__(a_json):
-#         self.fullname : a_json.fullname,
-#         self.document : document_as_json(a_json.document),
-#         self.birthdate : a_json.birthdate,
-#         self.address : a_json.address,
-#         self.phonenumber :a_json.phonenumber,
-#         self.email : a_json.email

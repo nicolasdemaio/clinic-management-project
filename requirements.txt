@@ -1,6 +1,6 @@
 # Basicos
 pip install flask
-pipenv install flask-restful #da herramientas rapidas para construir la api
+pip install flask-restful #da herramientas rapidas para construir la api
 
 # Base de datos Mongo
 python -m pip install pymongo

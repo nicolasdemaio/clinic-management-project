@@ -48,3 +48,12 @@ def time_interval_as_json(a_time_interval):
         "from_date" : str(a_time_interval.from_date),
         "to_date" : str(a_time_interval.to_date)
     }
+
+def days_off_as_json(a_days_off):
+    return {
+        "id" : str(a_days_off.id),
+        "doctor" : doctor_as_json(a_days_off.doctor),
+        "time_range" : time_interval_as_json(a_days_off.time_range),
+        "reason" : str(a_days_off.reason),
+        "datetime_of_request" : str(a_days_off.datetime_of_request)
+    }

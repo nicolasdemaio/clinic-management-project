@@ -2,6 +2,7 @@ import bson
 from abc import ABC, abstractmethod
 from source.main.model.patient import Patient
 from source.main.model.doctor import Doctor
+from source.main.model.days_off import DaysOffRequest
 
 class AbstractDAO(ABC):
 
@@ -35,4 +36,9 @@ class DoctorDAO(AbstractDAO):
 
     def persistent_class(self):
         return Doctor
+        
+class DaysOffDAO(AbstractDAO):
+
+    def persistent_class(self):
+        return DaysOffRequest
         
