@@ -79,6 +79,8 @@ def console_to_json():
         payload = patient_template()
     elif payload.lower() == "daysoff":
         payload = daysoff_template()
+    elif payload.lower() == "appointment":
+        payload = appointment_template()
 
     jsonifyed = json.loads(payload)
     headers = {'content-type': 'application/json'}
@@ -148,5 +150,45 @@ def daysoff_template():
     }
     )
 
+def appointment_template():
+    return json.dumps(
+        {
+        "doctor": {
+            "fullname" : "Appointment Template",
+            "document" : {
+                    "document_type" : "DNI",
+                    "number" : 42575871
+            },
+            "address" : "Madame Curie 1070",
+            "phonenumber" : 12345,
+            "email" : "appointment@template.com",
+            "birthdate" : "2020-05-17 00:00:00",
+            "registration_date" : "2022-01-16 02:43:00",
+            "time_interval_off" : {
+                    "from_date" : "2022-01-16 02:43:00",
+                    "to_date" : "2022-01-16 03:13:00"
+            }
+        },
+        "patient": {
+            "fullname" : "Appointment Template",
+            "document" : {
+                    "document_type" : "DNI",
+                    "number" : 42575871
+            },
+            "address" : "Madame Curie 1070",
+            "phonenumber" : 12345,
+            "email" : "appointment@template.com",
+            "birthdate" : "2020-05-17 00:00:00"
+        },
+        "time_range" : {
+            "from_date" : "2022-01-16 02:43:00",
+            "to_date" : "2022-01-16 03:13:00"
+        },
+        "time_interval" : {
+                    "from_date" : "2022-01-16 02:43:00",
+                    "to_date" : "2022-01-16 03:13:00"
+            }
+    }
+    )
 
 execute()
