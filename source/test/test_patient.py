@@ -1,9 +1,9 @@
-import unittest
 from datetime import date
-from source.main.model.document import IdentityDocument
+from source.main.model.identity_document import IdentityDocument
 from source.main.model.patient import Patient
+from source.test.test_supporter import TestSupporter
 
-class TestPatient(unittest.TestCase):
+class TestPatient(TestSupporter):
 
     def test_a_patient_is_created_correctly(self):
         # Setup

@@ -1,40 +1,17 @@
-import unittest
-from datetime import datetime, date
+from datetime import datetime
 from source.main.model.appointment import Appointment
-from source.main.model.doctor import Doctor
-from source.main.model.document import IdentityDocument
-from source.main.model.patient import Patient
 from source.main.model.time_interval import TimeInterval
+from source.test.test_supporter import TestSupporter
 
-class TestAppointment(unittest.TestCase):
+class TestAppointment(TestSupporter):
 
     def test_an_appointment_is_created_correctly(self):
         # Setup
         starting_date = datetime.today()
 
-        a_birthdate = date(2020, 5, 17)
-        patient_document = IdentityDocument(document_type='DNI',number='42575871')
-        doctor_document = IdentityDocument(document_type='DNI',number='43575871')
-        
-        a_patient = Patient(
-            fullname = 'Rodrigo Iglesias',
-            document = patient_document,
-            address = 'Madame Curie 363',
-            phonenumber = 12345,
-            email = 'riglesias@test.com',
-            birthdate = a_birthdate
-            )
- 
-        a_doctor = Doctor(
-            fullname = 'Rodrigo Iglesias',
-            document = doctor_document,
-            address = 'Madame Curie 363',
-            phonenumber = 12345,
-            email = 'riglesias@test.com',
-            birthdate = a_birthdate,
-            registration_date = datetime.now(),
-            time_interval_off = None
-        )
+        a_patient = self.new_patient()
+        a_doctor = self.new_doctor()
+
         an_appointment = Appointment.create_for(a_patient, a_doctor, starting_date)
 
         # Assert

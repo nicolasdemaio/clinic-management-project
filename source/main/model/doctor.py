@@ -1,6 +1,6 @@
 from mongoengine import *
 from datetime import datetime
-from source.main.model.document import IdentityDocument
+from source.main.model.identity_document import IdentityDocument
 from source.main.model.time_interval import TimeInterval
 
 

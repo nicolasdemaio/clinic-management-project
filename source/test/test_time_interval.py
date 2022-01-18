@@ -1,9 +1,9 @@
-import unittest
 from datetime import datetime
 
 from source.main.model.time_interval import *
+from source.test.test_supporter import TestSupporter
 
-class TestTimeInterval(unittest.TestCase):
+class TestTimeInterval(TestSupporter):
 
     def test_a_time_interval_is_created_correctly(self):
         from_date = datetime(2021, 3, 4)
