@@ -3,7 +3,7 @@ from flask import jsonify, request
 from source.main.controller.basic_structures import days_off_as_json
 from source.main.controller.components import daysoff_service
 from source.main.model.days_off import DaysOffRequest
-from source.tool.custom_logger import CustomLogger
+from source.tool.custom_logger import Logger
 
 
 class DaysOffApi (Resource):
@@ -13,12 +13,12 @@ class DaysOffApi (Resource):
         return list_json_response(days_off, days_off_as_json, 200)
     
     def post(self): 
-        CustomLogger().get_configured_instance().info("Llegue al inicio")
+        Logger().info("Llegue al inicio")
         body = request.get_json()
         days_off = DaysOffRequest(**body) #! ACA NO RETORNA NADA LA VERGA || object() takes no parameters || ABAJO DE TODO DE DEJO LA BASE
-        CustomLogger().get_configured_instance().info(days_off)
+        Logger().info(days_off)
         daysoff_service.create_a_days_off(days_off)
-        CustomLogger().get_configured_instance().info("Llegue al final")
+        Logger().info("Llegue al final")
         return days_off_as_json(days_off), 201
 
 class ADayOffApi(Resource):

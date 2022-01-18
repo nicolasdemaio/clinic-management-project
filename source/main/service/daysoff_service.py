@@ -1,5 +1,5 @@
 from source.main.repository.dao import DaysOffDAO
-from source.tool.custom_logger import CustomLogger
+from source.tool.custom_logger import Logger
 
 class DaysOffService:
 
@@ -10,10 +10,10 @@ class DaysOffService:
         return self.days_off_dao.get_all()
     
     def create_a_days_off(self, a_days_off):
-        CustomLogger().get_configured_instance().info("llegue a services")
-        CustomLogger().get_configured_instance().info(a_days_off)
+        Logger().info("llegue a services")
+        Logger().info(a_days_off)
         self.days_off_dao.persist(a_days_off)
-        CustomLogger().get_configured_instance().info(a_days_off)
+        Logger().info(a_days_off)
         return a_days_off
 
     def get_days_off_by_id(self, id):
