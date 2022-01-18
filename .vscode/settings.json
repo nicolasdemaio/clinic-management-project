@@ -23,10 +23,11 @@
             "command": "workbench.action.splitEditor"
             },
             {
+                "cwd": "${workspaceFolder}",
                 "name": "Simular Plugin",
                 "color": "lightblue",
                 "singleInstance": true,
-                "command": "curl -XGET http://127.0.0.1:5000/${fileBasenameNoExtension}" // relativeFile
+                "command": "env\\Scripts\\activate.bat \n source\\tool\\simulate.py" // curl -XGET http://127.0.0.1:5000/${fileBasenameNoExtension}
             }
         ]
     },
