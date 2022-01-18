@@ -1,7 +1,5 @@
 import unittest
-
 from source.tool.custom_logger import Logger
-
 
 class TestLogger(unittest.TestCase):
 

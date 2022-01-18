@@ -1,5 +1,4 @@
 import unittest
-
 from datetime import date
 from source.main.model.document import IdentityDocument
 from source.main.model.patient import Patient

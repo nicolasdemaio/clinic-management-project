@@ -1,8 +1,5 @@
 import unittest
-from datetime import date, datetime
-from venv import create
-from source.main.model.doctor import Doctor
-from source.main.model.document import IdentityDocument
+from datetime import datetime
 
 from source.main.model.time_interval import *
 

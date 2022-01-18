@@ -1,7 +1,6 @@
 import unittest
 from datetime import date
 from configuration import perform_database_connection
-
 from source.main.model.document import IdentityDocument
 from source.main.model.patient import Patient
 from source.main.repository.dao import PatientDAO

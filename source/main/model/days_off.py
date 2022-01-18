@@ -1,5 +1,4 @@
 from mongoengine import *
-
 from source.main.model.doctor import Doctor
 from source.main.model.time_interval import TimeInterval
 

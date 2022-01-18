@@ -1,5 +1,3 @@
-from logging import getLogger
-from re import A
 import keyboard
 import requests
 import json

@@ -1,6 +1,5 @@
 from source.main.repository.dao import AppointmentDAO
 
-
 class AppointmentService:
 
     def __init__(self, appointment_dao=AppointmentDAO()):

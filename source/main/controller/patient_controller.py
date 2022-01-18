@@ -1,5 +1,5 @@
 from flask_restful import Resource
-from flask import Response, jsonify, request
+from flask import jsonify, request
 from source.main.controller.basic_structures import patient_as_json
 from source.main.controller.components import patient_service
 from source.main.model.patient import Patient

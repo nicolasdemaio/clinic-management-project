@@ -1,13 +1,10 @@
 import unittest
-
 from datetime import datetime, date
-
 from source.main.model.appointment import Appointment
 from source.main.model.doctor import Doctor
 from source.main.model.document import IdentityDocument
 from source.main.model.patient import Patient
 from source.main.model.time_interval import TimeInterval
-
 
 class TestAppointment(unittest.TestCase):
 

@@ -1,17 +1,20 @@
+# Unica vez
+pip install virtualenv
+virtualenv env
+
 # Basicos
 pip install flask
 pip install flask-restful #da herramientas rapidas para construir la api
 
 # Base de datos Mongo
-python -m pip install pymongo
 python -m pip install mongoengine
+pip install dnspython
 
-# Botonera abajo
+# Tools
 python -m pip install requests
 pip3 install keyboard
 
 # Testeo y check code
 python -m pip install pytest
-pip install dnspython
 pip install pyflakes
 

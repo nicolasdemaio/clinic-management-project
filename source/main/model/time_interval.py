@@ -1,5 +1,4 @@
 from mongoengine import *
-
 from datetime import timedelta
 
 class TimeInterval(EmbeddedDocument):
