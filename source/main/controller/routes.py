@@ -12,3 +12,4 @@ def initialize_routes(api):
  api.add_resource(ADayOffApi, '/api/doctors/daysoff/<id>')
  api.add_resource(AppointmentsApi, '/api/appointment')
  api.add_resource(AppointmentApi, '/api/appointment/<id>')
+ api.add_resource(ConfirmedAppointmentsApi, '/api/appointment/confirmed')

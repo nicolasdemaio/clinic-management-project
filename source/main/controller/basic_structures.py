@@ -33,7 +33,7 @@ def appointment_as_json(an_appointment):
 def confirmed_appointment_as_json(an_confirmed_appointment):
     return {
         "id" : str(an_confirmed_appointment.id),
-        "appointment" : an_confirmed_appointment.appointment,
+        "appointment" : appointment_as_json(an_confirmed_appointment.appointment),
         "confirmation_datetime" : str(an_confirmed_appointment.confirmation_datetime)
     }
 

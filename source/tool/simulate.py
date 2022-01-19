@@ -16,9 +16,10 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 base_url = "http://127.0.0.1:5000/"
-logger = Logger("simulates", "logs")
+logger = Logger.get("simulates", "logs")
 
 def execute():
+    input()
     endpoint = str(input("Ingrese el endpoint del client: (ej: api/patients) - ")).lower()
     method = str(input("Ahora el metodo a utilizar: (ej: GET) - ")).upper() # , auth=('user', 'pass')
 
