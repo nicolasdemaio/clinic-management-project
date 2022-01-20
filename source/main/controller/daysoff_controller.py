@@ -50,29 +50,3 @@ class DaysOffRequestDraft:
         self.doctor_id = a_json['doctor_id']
         self.reason = a_json['reason']
         self.time_range = TimeInterval.create_starting(from_date, to_date)
-
-# TODO: PARA PODER PROBAR
-# {
-# 	"doctor": {
-# 		"fullname" : "Rodrigo Iglesias",
-# 		"document" : {
-# 				"document_type" : "DNI",
-# 				"number" : 42575871
-# 		},
-# 		"address" : "Madame Curie 1070",
-# 		"phonenumber" : 12345,
-# 		"email" : "riglesias@test.com",
-# 		"birthdate" : "2020-05-17 00:00:00",
-# 		"registration_date" : "2022-01-16 02:43:00",
-# 		"time_interval_off" : {
-# 				"from_date" : "2022-01-16 02:43:00",
-# 				"to_date" : "2022-01-16 03:13:00"
-# 		}
-# 	},
-# 	"time_range" : {
-# 		"from_date" : "2022-01-16 02:43:00",
-# 		"to_date" : "2022-01-16 03:13:00"
-# 	},
-# 	"reason": "A logical and explained reason",
-# 	"datetime_of_request" : "2020-05-17 00:00:00"
-# }

@@ -5,6 +5,7 @@ from source.main.model.doctor import Doctor
 from source.main.model.days_off import DaysOffRequest
 from source.main.model.appointment import Appointment
 from source.main.model.appointment import ConfirmedAppointment
+from source.main.model.user import User
 
 class AbstractDAO(ABC):
 
@@ -53,3 +54,8 @@ class ConfirmedAppointmentsDAO(AbstractDAO):
 
     def persistent_class(self):
         return ConfirmedAppointment
+
+class UserDAO(AbstractDAO):
+
+    def persistent_class(self):
+        return User

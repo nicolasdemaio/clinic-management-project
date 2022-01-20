@@ -10,6 +10,9 @@ pip install flask-restful #da herramientas rapidas para construir la api
 python -m pip install mongoengine
 pip install dnspython
 
+# Auth y Token
+pip install Flask-JWT
+
 # Tools
 python -m pip install requests
 pip3 install keyboard
