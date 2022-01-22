@@ -15,7 +15,7 @@ perform_database_connection()
 #? https://pythonhosted.org/Flask-JWT/
 #? https://youtu.be/ZDJ5hjxcDAk
 
-jwt = JWT(app, authenticate, identity)
+jwt = JWT(app)
 
 @app.route('/protected')
 @jwt_required()

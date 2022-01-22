@@ -59,3 +59,6 @@ class UserDAO(AbstractDAO):
 
     def persistent_class(self):
         return User
+
+    def get_by_username(self, an_username):
+        return self.persistent_class().objects().get(username=an_username)

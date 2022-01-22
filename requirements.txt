@@ -11,7 +11,7 @@ python -m pip install mongoengine
 pip install dnspython
 
 # Auth y Token
-pip install Flask-JWT
+pip install flask-jwt-extended
 
 # Tools
 python -m pip install requests

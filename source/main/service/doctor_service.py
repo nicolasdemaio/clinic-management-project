@@ -1,15 +1,17 @@
 from source.main.repository.dao import DoctorDAO
+from source.main.service.user_service import UserService
 
 
 class DoctorService:
 
-    def __init__(self, doctor_dao=DoctorDAO()):
+    def __init__(self, doctor_dao=DoctorDAO(), user_service=UserService()):
         self.doctor_dao = doctor_dao
 
     def get_doctors(self):
         return self.doctor_dao.get_all()
     
     def create_a_doctor(self, a_doctor):
+        self.user_service.create_account_with(a_doctor.fullname, a_doctor.document.number, ['DOCTOR'])
         self.doctor_dao.persist(a_doctor)
         return a_doctor
 

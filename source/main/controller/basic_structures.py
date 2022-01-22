@@ -1,3 +1,11 @@
+def user_as_json(a_user):
+    return {
+        "id" : str(a_user.id),
+        "username" : a_user.username,
+        "document" : document_as_json(a_user.document),
+        "roles" : a_user.roles,
+    }
+
 def patient_as_json(a_patient):
     return {
         "id" : str(a_patient.id),
