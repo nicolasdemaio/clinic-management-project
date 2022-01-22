@@ -7,7 +7,7 @@ from source.main.controller.user_controller import *
 def initialize_routes(api):
  api.add_resource(UsersApi, '/api/users')
  api.add_resource(UserApi, '/api/users/<id>')
- api.add_resource(AuthenticationApi, '/api/login')
+ api.add_resource(UserLoginApi, '/api/login')
 
  api.add_resource(PatientsApi, '/api/patients')
  api.add_resource(PatientApi, '/api/patients/<id>')

@@ -28,7 +28,7 @@ class UserService:
 
     def create_account_with(self, a_fullname, a_dni_number, roles):
         username = self.__generate_username_from(a_fullname)
-        created_user = User(username= username, password= a_dni_number, dni= a_dni_number, roles= roles)
+        created_user = User(username= username, password= str(a_dni_number), dni= a_dni_number, roles= roles)
         self.user_dao.persist(created_user)
 
     def __generate_username_from(self, a_fullname):

@@ -1,11 +1,15 @@
+from click import decorators
 from flask_restful import Resource
 from flask import jsonify, request
 from source.main.controller.basic_structures import user_as_json
 from source.main.controller.components import user_service
 from source.main.service.user_service import UserAuthenticationException
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 
 
 class UsersApi(Resource):
+
+    decorators = [jwt_required()]
 
     def get(self): 
         users = user_service.get_users()
@@ -13,6 +17,7 @@ class UsersApi(Resource):
     
 
 class UserApi(Resource):
+
 
     def get(self, id):
         user = user_service.get_user_by_id(id)
@@ -27,7 +32,7 @@ class UserApi(Resource):
         updated_user = user_service.update_user_by_id(id, updated_user_data)
         return user_as_json(updated_user), 200
 
-class AuthenticationApi(Resource):
+class UserLoginApi(Resource):
 
     def post(self):
         body = request.get_json()
@@ -36,9 +41,9 @@ class AuthenticationApi(Resource):
 
         try:
             logged_user = user_service.login(username, password)
-            token = token()
+            token = create_access_token(identity = username)
 
-            return logged_user, token, 200
+            return user_as_json(logged_user), 200, {"Authorization": token}
         except UserAuthenticationException as error:
             response = jsonify({'error' : str(error)})
             response.status_code = 401

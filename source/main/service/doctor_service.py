@@ -6,6 +6,7 @@ class DoctorService:
 
     def __init__(self, doctor_dao=DoctorDAO(), user_service=UserService()):
         self.doctor_dao = doctor_dao
+        self.user_service = user_service
 
     def get_doctors(self):
         return self.doctor_dao.get_all()
