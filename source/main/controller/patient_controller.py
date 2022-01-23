@@ -2,9 +2,13 @@ from flask_restful import Resource
 from flask import jsonify, request
 from source.main.controller.basic_structures import patient_as_json
 from source.main.controller.components import patient_service
+from flask_jwt_extended import jwt_required
+from source.main.controller.utilities import rol_required
 from source.main.model.patient import Patient
 
 class PatientsApi(Resource):
+
+    decorators = [jwt_required(), rol_required(['RECEPTIONIST','DOCTOR'])]
 
     def get(self):
         patients = patient_service.get_patients()

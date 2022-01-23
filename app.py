@@ -13,9 +13,5 @@ jwt = JWTManager(app)
 initialize_routes(api)
 perform_database_connection()
 
-#? Referencias: (FALTA TOCAR)
-#? https://pythonhosted.org/Flask-JWT/
-#? https://youtu.be/ZDJ5hjxcDAk
-
 if __name__ == "__main__":
     app.run(debug=True)
