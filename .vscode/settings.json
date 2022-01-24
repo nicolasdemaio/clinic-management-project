@@ -50,7 +50,7 @@
     "python.testing.unittestEnabled": true,
     "files.exclude": {
         "**/__pycache__": true,
-        "**/.gitignore": false,
+        "**/.gitignore": true,
         "**/env": true,
         "**/node_modules": true
     }
