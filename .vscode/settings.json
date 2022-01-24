@@ -5,11 +5,18 @@
         "reloadButton":"♻️", // Custom reload button text or icon (default ↻). null value enables automatic reload on configuration change
         "commands": [
             {
-                "cwd": "${workspaceFolder}\\Backend",     // Terminal initial folder ${workspaceFolder} and os user home as defaults
-                "name": "Run server",
+                "cwd": "${workspaceFolder}\\backend",     // Terminal initial folder ${workspaceFolder} and os user home as defaults
+                "name": "Run server flask",
                 "color": "red",
                 "singleInstance": true,
                 "command": "env\\Scripts\\activate.bat \n python app.py" // "env\\Scripts\\activate.bat \n set FLASK_ENV=development \n flask run"
+            },
+            {
+                "cwd": "${workspaceFolder}\\frontend",
+                "name": "Run server React",
+                "color": "cyan",
+                "singleInstance": true,
+                "command": "npm start"
             },
             {
                 "name": "New terminal",
@@ -23,7 +30,7 @@
             "command": "workbench.action.splitEditor"
             },
             {
-                "cwd": "${workspaceFolder}\\Backend",
+                "cwd": "${workspaceFolder}\\backend",
                 "name": "Simular Plugin",
                 "color": "lightblue",
                 "singleInstance": true,
@@ -44,6 +51,7 @@
     "files.exclude": {
         "**/__pycache__": true,
         "**/.gitignore": false,
-        "**/env": true
+        "**/env": true,
+        "**/node_modules": true
     }
 }
