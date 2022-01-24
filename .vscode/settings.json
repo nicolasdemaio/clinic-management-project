@@ -5,7 +5,7 @@
         "reloadButton":"♻️", // Custom reload button text or icon (default ↻). null value enables automatic reload on configuration change
         "commands": [
             {
-                "cwd": "${workspaceFolder}",     // Terminal initial folder ${workspaceFolder} and os user home as defaults
+                "cwd": "${workspaceFolder}\\Backend",     // Terminal initial folder ${workspaceFolder} and os user home as defaults
                 "name": "Run server",
                 "color": "red",
                 "singleInstance": true,
@@ -23,7 +23,7 @@
             "command": "workbench.action.splitEditor"
             },
             {
-                "cwd": "${workspaceFolder}",
+                "cwd": "${workspaceFolder}\\Backend",
                 "name": "Simular Plugin",
                 "color": "lightblue",
                 "singleInstance": true,
@@ -43,7 +43,7 @@
     "python.testing.unittestEnabled": true,
     "files.exclude": {
         "**/__pycache__": true,
-        "**/.gitignore": true,
+        "**/.gitignore": false,
         "**/env": true
     }
 }

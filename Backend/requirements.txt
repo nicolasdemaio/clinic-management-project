@@ -1,0 +1,24 @@
+# Unica vez
+# pip install virtualenv
+# virtualenv env
+
+# Basicos
+flask
+flask-restful #da herramientas rapidas para construir la api
+
+# Base de datos Mongo
+mongoengine
+dnspython
+
+# Auth y Token
+flask-jwt-extended
+
+# Tools
+requests
+keyboard
+
+# Testeo y check code
+pytest
+pyflakes
+
+## pip install -r requirements.txt
