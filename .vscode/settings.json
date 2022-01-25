@@ -9,7 +9,7 @@
                 "name": "Run server flask",
                 "color": "red",
                 "singleInstance": true,
-                "command": "env\\Scripts\\activate.bat \n python app.py" // "env\\Scripts\\activate.bat \n set FLASK_ENV=development \n flask run"
+                "command": "env\\Scripts\\activate.bat & python app.py" // "env\\Scripts\\activate.bat \n set FLASK_ENV=development \n flask run"
             },
             {
                 "cwd": "${workspaceFolder}\\frontend",
@@ -21,20 +21,28 @@
             {
                 "name": "New terminal",
                 "color": "green",
-                "command": "workbench.action.terminal.openNativeConsole", // workbench.action.terminal.new
+                "useVsCodeApi": true,
+                "command": "workbench.action.terminal.new", // workbench.action.terminal.new
             },
             {
-            "name": "🪟 Split editor",
+            "name": "Split editor",
             "color": "orange",
             "useVsCodeApi": true,
             "command": "workbench.action.splitEditor"
+            },
+            {
+                "cwd": "${workspaceFolder}\\frontend",
+                "name": "Front desde 0",
+                "color": "blue",
+                "singleInstance": true,
+                "command": "rmdir /s node_modules & npm install & npm start" // curl -XGET http://127.0.0.1:5000/${fileBasenameNoExtension}
             },
             {
                 "cwd": "${workspaceFolder}\\backend",
                 "name": "Simular Plugin",
                 "color": "lightblue",
                 "singleInstance": true,
-                "command": "env\\Scripts\\activate.bat \n source\\tool\\simulate.py" // curl -XGET http://127.0.0.1:5000/${fileBasenameNoExtension}
+                "command": "env\\Scripts\\activate.bat & source\\tool\\simulate.py" // curl -XGET http://127.0.0.1:5000/${fileBasenameNoExtension}
             }
         ]
     },
@@ -52,6 +60,6 @@
         "**/__pycache__": true,
         "**/.gitignore": true,
         "**/env": true,
-        "**/node_modules": true
+        "**/node_modules": false
     }
 }
