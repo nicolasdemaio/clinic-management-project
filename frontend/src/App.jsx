@@ -2,7 +2,9 @@ import LoginView from './views/LoginView'
 
 function App() {
   return (
-    <LoginView/>
+    <>
+    <LoginView />
+    </>
   );
 }
 

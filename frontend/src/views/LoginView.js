@@ -1,12 +1,24 @@
 import './LoginView.css'
 import React, {useState} from 'react'
+import { useLocalStorage } from '../services/useLocalStorage'
 
 const LoginView = () => {
 
-  const [username, setUsername] = useState('')
+  const [username, setUsername] = useLocalStorage('username', '')
   const [password, setPassword] = useState('')
+  const [user, setUser] = useState(null)
 
-  const handleLogin = () => {
+  const handleLogin = async (event) => {
+    // event.preventDefault()
+
+    // try {
+    //   const user = await loginService.login({username, password})
+    //   setUser(user)
+    //   setUsername('')
+    //   setPassword('')
+    // } catch (error) {
+    //   console.error(error)
+    // }
     
   }
 

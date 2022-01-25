@@ -1,0 +1,8 @@
+# Unica vez
+# npx create-react-app frontend
+# npm start
+
+# Login example for import
+"@emotion/react": "latest"
+
+npm install package.json --save-dev
