@@ -4,16 +4,7 @@ from flask import jsonify
 from flask_jwt_extended import get_jwt_identity, verify_jwt_in_request
 from functools import wraps
 
-def admin_required():
-    return rol_required(['ADMIN'])
-
-def recepcionist_required():
-    return rol_required(['RECEPTIONIST'])
-
-def doctor_or_receptionist_required():
-    return rol_required(['DOCTOR', 'RECEPTIONIST'])
-
-def get_current_user():
+def get_authenticated_user():
     verify_jwt_in_request()
 
     username = get_jwt_identity()
@@ -26,10 +17,7 @@ def rol_required(a_list_of_roles):
         def decorator(*args, **kwargs):
             verify_jwt_in_request()
 
-            username = get_jwt_identity()
-            obtained_user = User.objects().get(username=username)
-
-            if obtained_user.belongs_to(a_list_of_roles):
+            if get_authenticated_user().belongs_to(a_list_of_roles):
                 return fn(*args, **kwargs)
             else:
                 response = jsonify({'error' : 'A role is required.'})
@@ -40,7 +28,7 @@ def rol_required(a_list_of_roles):
         return decorator
     return wrapper
 
-def get_current_user():
+def get_authenticated_user():
     verify_jwt_in_request()
 
     username = get_jwt_identity()

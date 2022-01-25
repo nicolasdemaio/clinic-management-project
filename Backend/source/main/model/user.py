@@ -12,12 +12,3 @@ class User(Document):
                         if (a_rol in self.roles):
                                 return True
                 return False
-
-        def is_receptionist(self):
-                return 'RECEPCIONIST' in self.roles
-
-        def is_doctor(self):
-                return 'DOCTOR' in self.roles
-
-        def is_admin(self):
-                return 'ADMIN' in self.roles

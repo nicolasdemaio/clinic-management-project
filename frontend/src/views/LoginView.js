@@ -9,7 +9,7 @@ const LoginView = () => {
   const [user, setUser] = useState(null)
 
   const handleLogin = async (event) => {
-    // event.preventDefault()
+    event.preventDefault()
 
     // try {
     //   const user = await loginService.login({username, password})
@@ -29,11 +29,15 @@ const LoginView = () => {
 
   return (
     <>
-      <input type='text' name='username' required onChange={handleChange(setUsername)}/>
-
-      <input type='password' name='password' required onChange={handleChange(setPassword)}/>
-
-      <button onClick={handleLogin}>Log In</button>
+      <form onSubmit={handleLogin}>
+        <label for="lusername">Usuario
+        <input type='text' name='lusername' required onChange={handleChange(setUsername)}/>
+        </label>
+        <label for="lpassword">Contraseña
+        <input type='password' name='lpassword' required onChange={handleChange(setPassword)}/>
+        </label>
+        <input type="submit" value="Ingresar"></input>
+      </form>
 
       <p>Username : {username}</p>
       <p>Password : {password}</p>

@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from source.main.model.identity_document import IdentityDocument
 from source.main.model.patient import Patient
 from source.test.test_supporter import TestSupporter
@@ -26,3 +26,12 @@ class TestPatient(TestSupporter):
         assert a_patient.phonenumber == 12345
         assert a_patient.email == 'riglesias@test.com'
         assert a_patient.birthdate == a_birthdate
+
+    def test_a_patient_can_request_an_appointment(self):
+        patient = self.new_patient
+        a_datetime = datetime.now()
+
+        requested_appointment = patient.request_appointment_at(a_datetime, self.new_doctor)
+
+        self.assertTrue(requested_appointment in patient.requested_appointments)
+
