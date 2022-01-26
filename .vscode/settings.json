@@ -60,6 +60,6 @@
         "**/__pycache__": true,
         "**/.gitignore": true,
         "**/env": true,
-        "**/node_modules": false
+        "**/node_modules": true
     }
 }

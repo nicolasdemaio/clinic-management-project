@@ -4,6 +4,9 @@
 
 # Basicos
 flask
+
+# APIS
+flask_cors
 flask-restful #da herramientas rapidas para construir la api
 
 # Base de datos Mongo
