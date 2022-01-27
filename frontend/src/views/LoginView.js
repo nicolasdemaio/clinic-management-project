@@ -38,22 +38,24 @@ const LoginView = () => {
   }
 
   return (
-    <>
-      <form onSubmit={handleLogin}>
-        <label for="lusername">Usuario
-        <input type='text' name='lusername' required onChange={handleChange(setUsername)}/>
-        </label>
-        <label for="lpassword">Contraseña
-        <input type='password' name='lpassword' required onChange={handleChange(setPassword)}/>
-        </label>
-        <input type="submit" value="Ingresar"></input>
+    <div className='login-container'>
+      <h1 className='login-title'>Clinic Management System</h1>
+
+      <form onSubmit={handleLogin} className='login-form'>
+        <div className='login-input-container'>
+        <label for="lusername" className='login-label'>Usuario</label>
+        <input type='text' name='lusername' required onChange={handleChange(setUsername)} className='login-field'/>
+        </div>
+        
+        <div className='login-input-container'>
+        <label for="lpassword" className='login-label'>Contraseña</label>
+        <input type='password' name='lpassword' required onChange={handleChange(setPassword)} className='login-field'/>
+        </div>
+        <input type="submit" value="Ingresar" className='login-button'></input>
       </form>
 
       <button onClick={handleGetAppointments}>Traer Turnos</button>
-
-      <p>Username : {username}</p>
-      <p>Password : {password}</p>
-    </>
+    </div>
   )
 }
 
