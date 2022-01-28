@@ -1,0 +1,17 @@
+.accept-button {
+    margin: 1rem;
+    border: none;
+    background-color: #006AF5;
+    height: 2.5rem;
+    width: 6rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition-duration: 0.3s;
+}
+
+.accept-button:hover {
+    background-color: #0239f0;
+    transition-duration: 0.3s;
+}

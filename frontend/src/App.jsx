@@ -1,9 +1,9 @@
-import LoginView from './views/LoginView'
+import HomeView from './views/HomeView';
 
 function App() {
   return (
     <>
-    <LoginView />
+    <HomeView />
     </>
   );
 }
