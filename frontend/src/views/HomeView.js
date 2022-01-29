@@ -10,6 +10,12 @@ const HomeView = () => {
     <div className='home-container'>
       <div className='left-pane'>
         <p className='view-subtitle'>Clinic Management</p>
+        <div className='view-tabs-container'>
+          <p className='view-tab'>Appointments</p>
+          <p className='view-tab'>Doctors</p>
+          <p className='view-tab'>Patients</p>
+        </div>
+      
       </div>
       <div className='right-pane'>
         <div className='view-header'>

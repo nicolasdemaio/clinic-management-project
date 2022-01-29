@@ -10,6 +10,17 @@
     border-right: 1px solid #E8EBEF;
 }
 
+.view-tab {
+    padding: 0.7rem;
+    margin: 0;
+}
+
+.view-tab:hover {
+    color: #0765E0;
+    background-color: #DBE7F8;
+    border-radius: 8px;
+}
+
 .right-pane {
     width: 85%;
 }
