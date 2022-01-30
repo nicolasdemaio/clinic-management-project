@@ -1,0 +1,48 @@
+.home-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-pane {
+    background-color: #F3F5F7;
+    width: 15%;
+    padding: 1rem;
+    border-right: 1px solid #E8EBEF;
+}
+
+.view-tab {
+    padding: 0.7rem;
+    margin: 0;
+}
+
+.view-tab:hover {
+    color: #0765E0;
+    background-color: #DBE7F8;
+    border-radius: 8px;
+}
+
+.right-pane {
+    width: 85%;
+}
+
+.view-header {
+    border-bottom: 1px solid #E8EBEF;
+    padding-left: 2rem;
+}
+
+.view-subtitle {
+    color: #283241;
+    font-size: 1.2rem;
+}
+
+.view-title {
+    color: #283241;
+    font-size: 1.5rem;
+}
+
+.view-content {
+    margin: 1rem 10rem 1rem 10rem;
+}
+
+
+

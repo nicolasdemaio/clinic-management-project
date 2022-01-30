@@ -1,0 +1,33 @@
+.form-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.form-field {
+    background-color: #E8EBEF;
+    border: none;
+    border-radius: 8px;
+    height: 2.5rem;
+    width: 12rem;
+    font-size: 1.1rem;
+    padding: 0 1rem 0 1rem;
+    color: #777c8b;
+    font-weight: bold;
+    margin-right: 2rem;
+}
+
+.form-field:focus {
+    outline: none;
+}
+
+.ldocument {
+    display: flex;
+    flex-direction: row;
+}
+
+.fullname-field {
+    display: flex;
+    flex-direction: row;
+}
+
