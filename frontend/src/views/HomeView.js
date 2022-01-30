@@ -1,21 +1,21 @@
 import './HomeView.css'
-import React, {useEffect} from 'react'
+// import React, {useEffect} from 'react'
 import {DateField,DocumentField, ShortTextField, LongTextField, FullnameTextField, EmailTextField} from '../components/fields'
 import AcceptButton from '../components/buttons/AcceptButton'
 import DenyButton from '../components/buttons/DenyButton'
 import LogOutButton from '../components/buttons/LogOutButton'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 const HomeView = () => {
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  useEffect(() => {
-    const loggedUserJSON = localStorage.getItem('authToken')
-    if (!loggedUserJSON){
-      navigate('/login')
-    }
-  }, [navigate])
+  // useEffect(() => {
+  //   const loggedUserJSON = localStorage.getItem('authToken')
+  //   if (!loggedUserJSON){
+  //     navigate('/login')
+  //   }
+  // }, [navigate])
 
   return (
     <div className='home-container'>

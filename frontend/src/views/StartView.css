@@ -1,0 +1,4 @@
+.start-container {
+    display: flex;
+    flex-direction: row;
+}

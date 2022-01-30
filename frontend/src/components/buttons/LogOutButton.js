@@ -8,7 +8,7 @@ const LogOutButton = (props) => {
     const handleLogout = async (event) => {
         event.preventDefault()
         localStorage.clear()    
-        navigate('/login')
+        navigate('/')
         // localStorage.removeItem('item') de a uno
     }
 
