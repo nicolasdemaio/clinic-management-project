@@ -52,7 +52,7 @@ class UserLoginApi(Resource):
             response.mimetype = 'application/json'
             return response
         except:
-            return {'error' : 'Does not exist user with gaven name.'}
+            return {'error' : 'Does not exist user with gaven name.'}, 401
     
 def list_json_response(a_list_of_objects, a_mapper_method, an_status_code):
     mapped_objects = list(map(a_mapper_method, a_list_of_objects))

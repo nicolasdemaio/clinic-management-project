@@ -1,12 +1,22 @@
 import './LoginView.css'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LoginView = () => {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [user, setUser] = useState(null)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const loggedUserJSON = localStorage.getItem('authToken')
+    if (!loggedUserJSON){
+      navigate('/login')
+    } else{
+      navigate('/home')
+    }
+  }, [navigate])
 
   const handleLogin = async (event) => {
     event.preventDefault()
@@ -16,7 +26,9 @@ const LoginView = () => {
       password
     })
     .then(response => {
-      localStorage.setItem('token', response.headers['authorization'])
+      localStorage.setItem('authToken', response.headers['authorization'])
+      localStorage.setItem('userData', JSON.stringify(response.data))
+      navigate('/home')
     })
     .catch(e => {
         console.log(e)
