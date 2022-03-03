@@ -16,7 +16,7 @@ function App() {
           <Route path="login" element={<LoginView />} />
 
           {/* Private routes */}
-          <Route element={<RequireAuth allowedRoles={["RECEPTIONIST","ADMIN"]}/>}>
+          <Route element={<RequireAuth allowedRoles={["RECEPTIONIST","ADMIN","DOCTOR"]}/>}>
             <Route path="home" element={<HomeView />} />
           </Route>
         </Route>

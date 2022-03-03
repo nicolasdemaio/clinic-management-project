@@ -1,19 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
 .login-container {
-    margin-top: 5rem;
+    position: absolute; top:0; left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
-   justify-content: center;
-   flex-direction: column;
-   align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+    font-family: 'Poppins', sans-serif;
+ }
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
 
 .login-title {
-    color: #0D192A;
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: #fff;
+    font-weight: 500;
 }
 
 .login-input-container {
@@ -23,20 +65,21 @@
 }
 
 .login-label {
-    color: #78828F;
+    color: #ececec;
+    font-weight: 500;
     margin-bottom: 0.3rem;
 }
 
 .login-field {
-    background-color: #E8EBEF;
+    background-color: rgba(255, 255, 255, 0.3);
     border: none;
-    border-radius: 8px;
+    border-radius: 25px;
     height: 2.5rem;
-    width: 12rem;
+    width: 16rem;
     font-size: 1.1rem;
     padding: 0 1rem 0 1rem;
-    color: #777c8b;
-    font-weight: bold;
+    color: #ffffff;
+    font-weight: 550;
 }
 
 .login-field:focus {
@@ -46,17 +89,18 @@
 .login-button {
     margin: 1rem;
     border: none;
-    background-color: #006AF5;
+    background-color: #006AF5 !important;
     height: 2.5rem;
     width: 8rem;
     border-radius: 8px;
-    color: white;
+    color: white !important;
     font-weight: bold;
     font-size: 1.1rem;
     transition-duration: 0.3s;
 }
 
 .login-button:hover {
-    background-color: #0239f0;
+    cursor: pointer;
+    background-color: #0239f0 !important;
     transition-duration: 0.3s;
 }

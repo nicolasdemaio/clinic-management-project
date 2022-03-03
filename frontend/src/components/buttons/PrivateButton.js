@@ -11,7 +11,9 @@ const PrivateButton = (props) => {
     }
 
     return (
-        <button className='private-button' onClick={handlePrivate}>Cosas admin</button>
+        <>
+        <button className='private-button' onClick={handlePrivate}>Agregar Cita</button>
+        </>
     )
 }
 

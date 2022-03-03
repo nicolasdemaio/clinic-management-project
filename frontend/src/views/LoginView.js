@@ -1,10 +1,10 @@
 import './LoginView.css'
 import React, {useRef, useState, useEffect} from 'react'
 import useAuth from "../hooks/useAuth"
-import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import axios from '../api/axios'
 
-const LOGIN_URL = '/api/login'
+const LOGIN_URL = 'api/login'
 
 const LoginView = () => {
 
@@ -41,6 +41,7 @@ const LoginView = () => {
       localStorage.setItem('userData', JSON.stringify(response.data))
       localStorage.setItem('authToken', accessToken)
       localStorage.setItem('roles', roles)
+      localStorage.setItem('username', username)
 
       setAuth({username, password, roles, accessToken})
       navigate(from, { replace: true })
@@ -64,17 +65,8 @@ const LoginView = () => {
     return (event) => setValue(event.target.value)
   }
 
-  const handleGetAppointments = () => {
-    axios.get('http://localhost:5000/api/appointments')
-    .then(response => {
-      console.log(response.data.data[0])
-    })
-    .catch(e => {
-        console.log(e)
-    })
-  }
-
   return (
+    // className={this.state.animationClass}
     <div className='login-container'>
       <p ref={errRef} className={errMsg ? "errmsg" :
       "offscreen"} aria-live="assertive">{errMsg}</p>
@@ -92,8 +84,6 @@ const LoginView = () => {
         </div>
         <input type="submit" value="Ingresar" className='login-button'></input>
       </form>
-
-      <button onClick={handleGetAppointments}>Traer Turnos en consola</button>
     </div>
   )
 }

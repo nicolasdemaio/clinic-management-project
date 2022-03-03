@@ -10,6 +10,6 @@ ReactDOM.render(
     <Routes>
         <Route path="/*" element={<AuthProvider> <App /> </AuthProvider>} />
     </Routes>
-  </Router>,
-  document.getElementById('root')
+  </Router>
+  ,document.getElementById('root')
 );

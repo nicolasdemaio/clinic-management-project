@@ -2,7 +2,7 @@ import './DenyButton.css'
 
 const DenyButton = (props) => {
     return (
-        <button className='deny-button'>Cancelar</button>
+        <button className='deny-button'>Modificar</button>
     )
 }
 

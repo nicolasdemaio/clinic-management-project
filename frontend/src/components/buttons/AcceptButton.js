@@ -2,7 +2,7 @@ import './AcceptButton.css'
 
 const AcceptButton = (props) => {
     return (
-        <button className='accept-button'>Aceptar</button>
+        <button className='accept-button'>Eliminar</button>
     )
 }
 

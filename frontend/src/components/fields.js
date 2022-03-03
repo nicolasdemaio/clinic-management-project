@@ -13,7 +13,7 @@ const DateField = (props) => {
 
 const DocumentTypeField = (props) => {
     return (
-        <label for='ldocumenttype' className='form-field'>
+        <label htmlFor='ldocumenttype' className='form-field'>
             {props.text}
               <select>
                 <option value="dni">D.N.I.</option>
@@ -37,7 +37,7 @@ const FullnameTextField = (props) => {
 
 const EmailTextField = (props) => {
     return (
-        <label for="lpassword" className='form-label'>{props.text}
+        <label htmlFor="lpassword" className='form-label'>{props.text}
             <input type='text' name='lpassword' required className='form-field'/>
           </label>
     )
@@ -55,7 +55,7 @@ const DocumentField = (props) => {
 
 const LongTextField = (props) => {
     return (
-        <label for="lpassword" className='form-label'>{props.text}
+        <label htmlFor="lpassword" className='form-label'>{props.text}
             <input type='text' name='lpassword' required className='form-field'/>
           </label>
     )
@@ -63,7 +63,7 @@ const LongTextField = (props) => {
 
 const ShortTextField = (props) => {
     return (
-        <label for="lpassword" className='form-label'>{props.text}
+        <label htmlFor="lpassword" className='form-label'>{props.text}
             <input type='text' name='lpassword' required className='form-field'/>
           </label>
     )
