@@ -1,17 +1,17 @@
-.private-button {
-    margin: 1rem 0rem;
+.modify-button {
+    margin: 1rem;
     border: none;
-    background-color: #006AF5;
+    background-color: #F3F5F7;
     height: 2.5rem;
-    width: 8rem;
+    width: 7rem;
     border-radius: 8px;
-    color: white;
+    color: #0965DC;
     font-weight: bold;
     font-size: 1.1rem;
     transition-duration: 0.3s;
 }
 
-.private-button:hover {
-    background-color: #0239f0;
+.modify-button:hover {
+    background-color: #ececec;
     transition-duration: 0.3s;
 }

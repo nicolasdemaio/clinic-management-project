@@ -1,17 +1,17 @@
-.login-button {
-    margin: 1rem;
+.add-button {
+    margin: 1rem 0rem;
     border: none;
-    background-color: #F3F5F7;
+    background-color: #006AF5;
     height: 2.5rem;
-    width: 7rem;
+    width: 8rem;
     border-radius: 8px;
-    color: #0965DC;
+    color: white;
     font-weight: bold;
     font-size: 1.1rem;
     transition-duration: 0.3s;
 }
 
-.login-button:hover {
-    background-color: #ececec;
+.add-button:hover {
+    background-color: #0239f0;
     transition-duration: 0.3s;
 }

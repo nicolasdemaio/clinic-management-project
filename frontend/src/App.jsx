@@ -1,4 +1,4 @@
-import HomeView from './views/HomeView';
+import DashboardView from './views/DashboardView';
 import LoginView from './views/LoginView';
 import StartView from './views/StartView'
 import UnauthorizedView from './views/UnauthorizedView'
@@ -17,7 +17,7 @@ function App() {
 
           {/* Private routes */}
           <Route element={<RequireAuth allowedRoles={["RECEPTIONIST","ADMIN","DOCTOR"]}/>}>
-            <Route path="home" element={<HomeView />} />
+            <Route path="dashboard" element={<DashboardView />} />
           </Route>
         </Route>
       </Routes>

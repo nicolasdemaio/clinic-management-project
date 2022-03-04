@@ -1,9 +1,9 @@
-import './HomeView.css'
-import './HomeThead.css'
+import './DashboardView.css'
+import './DashboardThead.css'
 import {DateField,DocumentField, ShortTextField, LongTextField, FullnameTextField, EmailTextField} from '../components/fields'
-import AcceptButton from '../components/buttons/AcceptButton'
-import DenyButton from '../components/buttons/DenyButton'
-import PrivateButton from '../components/buttons/PrivateButton'
+import DeleteButton from '../components/buttons/DeleteButton'
+import ModifyButton from '../components/buttons/ModifyButton'
+import AddButton from '../components/buttons/AddButton'
 import Logo from '../images/logo.png'
 import { Fragment, useState, useMemo } from 'react'
 import { FaAngleRight, FaUserAlt, FaRegCalendarAlt, FaHospitalUser, FaBriefcaseMedical, FaSearch } from "react-icons/fa";
@@ -12,7 +12,7 @@ import axios from '../api/axios'
 
 const APPOINTMENT_URL = 'api/appointments'
 
-const HomeView = () => {
+const DashboardView = () => {
   
   const navigate = useNavigate()
   let userLogged = localStorage.getItem("roles");
@@ -179,8 +179,8 @@ const HomeView = () => {
               <td>{item.doctor}</td>
               <td>{item.date_interval}<br/>From: {item.from_interval}<br/>To: {item.to_interval}</td>
               <td>
-                <AcceptButton id={item.uid} />
-                <DenyButton id={item.uid}/>
+                <DeleteButton id={item.uid} />
+                <ModifyButton id={item.uid}/>
               </td>
             </tr>
           ))}
@@ -191,7 +191,7 @@ const HomeView = () => {
 
   return (
     <Fragment>
-      <div className='home-container'>
+      <div className='dashboard-container'>
       <div className="vertical-menu">
         <div className="vertical-menu-logo">
           <img id="logo-admin" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} alt='logo' src={Logo}/>
@@ -208,7 +208,7 @@ const HomeView = () => {
         <h1>Se vienen cositas</h1>
         <p>dea</p>
         {
-        (selectedOption === 'appointments')? <><PrivateButton /> <div className='div-search'> <input type="text" onChange={(e) => searchTable(e, 'appointlist')} placeholder="Nombre del paciente..."/><i class="icon"><FaSearch /></i> </div> <ProductTable appoint={temporalData}/> </>
+        (selectedOption === 'appointments')? <><AddButton /> <div className='div-search'> <input type="text" onChange={(e) => searchTable(e, 'appointlist')} placeholder="Nombre del paciente..."/><i class="icon"><FaSearch /></i> </div> <ProductTable appoint={temporalData}/> </>
         : (selectedOption === 'doctors')? 'doctors'
         : (selectedOption === 'patients')? 'patients'
         : (selectedOption === 'accounts')? 'accounts'
@@ -252,12 +252,12 @@ const HomeView = () => {
             <DocumentField text='Documento'/>
           </form>
 
-          <AcceptButton />
-          <DenyButton />
+          <DeleteButton />
+          <ModifyButton />
         </div>
       </div>
     </Fragment>
   )
 }
 
-export default HomeView
+export default DashboardView

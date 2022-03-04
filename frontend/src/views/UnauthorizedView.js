@@ -13,10 +13,10 @@ const UnauthorizedView = () => {
       <h1 className='unauthorized-title'>Clinic Management System</h1>
 
       <div className='unauthorized-input-container'>
-        <label className='unauthorized-label'>No tiene acceso a este coso</label>
+        <label className='unauthorized-label'>No tiene acceso a este sitio.</label>
       </div>
       
-      <button className='unauthorized-button' onClick={handleGoBack}>Go back</button>
+      <button className='unauthorized-button' onClick={handleGoBack}>Volver</button>
     </div>
   )
 }
