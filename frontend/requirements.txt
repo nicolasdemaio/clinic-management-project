@@ -7,10 +7,5 @@
 
 # API conections
 npm install axios --save
-
-
-
-
-
-
 npm install package.json --save-dev
+npm install react-icons --save
