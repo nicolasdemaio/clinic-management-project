@@ -179,7 +179,7 @@ const AppointmentsScreen = () => {
 
     return (
         <>
-        <AddButton />
+        <Button variant="contained" style={{margin: '10px'}}>Registrar paciente</Button>
                 <div className='div-search'>
                   <input type="text" onChange={(e) => searchTable(e, 'appointlist')} placeholder="Nombre del paciente..."/>
                   <i class="icon"><FaSearch /></i>
