@@ -56,6 +56,7 @@ const DashboardView = () => {
     })
   }
 
+// ------------- BUSCADOR DE LA TABLA --------------------------------
   const searchTable = (event, table) => {
     var detecta= document.getElementsByName(table)
     let state
@@ -74,6 +75,7 @@ const DashboardView = () => {
     }
   }
 
+// ------------- FILTRO DE LA TABLA --------------------------------
   const useSortableData = (items, config = null) => {
     const [sortConfig, setSortConfig] = useState(config);
   
@@ -108,6 +110,7 @@ const DashboardView = () => {
     return { items: sortedItems, requestSort, sortConfig };
   };
 
+// ------------- GENERA LA TABLA CON EL ARRAY DADO --------------------------------
   const ProductTable = (props) => {
     const list_of_appoints = props.appoint
 
@@ -130,11 +133,11 @@ const DashboardView = () => {
     }
     
     const { items, requestSort, sortConfig } = useSortableData(list_of_appoints);
-    const getClassNamesFor = (time_interval) => {
+    const getClassNamesFor = (name) => {
       if (!sortConfig) {
         return;
       }
-      return sortConfig.key === time_interval ? sortConfig.direction : undefined;
+      return sortConfig.key === name ? sortConfig.direction : undefined;
     };
     return (
       <table id="table">
@@ -207,27 +210,46 @@ const DashboardView = () => {
       <div className="content-container">
         <h1>Se vienen cositas</h1>
         <p>dea</p>
+
+        {/* -------------HAY Q MEJORAR COMO SE MUESTRA SEGUN LO ELEGIDO DEL NAVBAR------------------- */}
         {
-        (selectedOption === 'appointments')? <><AddButton /> <div className='div-search'> <input type="text" onChange={(e) => searchTable(e, 'appointlist')} placeholder="Nombre del paciente..."/><i class="icon"><FaSearch /></i> </div> <ProductTable appoint={temporalData}/> </>
-        : (selectedOption === 'doctors')? 'doctors'
-        : (selectedOption === 'patients')? 'patients'
-        : (selectedOption === 'accounts')? 'accounts'
-        : ("Elegi una opcion del costado careta",
-            userLogged.includes('ADMIN')
-            ? "EL USER ES ADMIN"
-            : "EL USER NO ES ADMIN" )
+        (selectedOption === 'appointments')? 
+              <>
+                <AddButton />
+                <div className='div-search'>
+                  <input type="text" onChange={(e) => searchTable(e, 'appointlist')} placeholder="Nombre del paciente..."/>
+                  <i class="icon"><FaSearch /></i>
+                </div>
+                <ProductTable appoint={temporalData}/>
+              </>
+        : (selectedOption === 'doctors')?
+              <>
+                {'doctors'}
+              </>
+        : (selectedOption === 'patients')?
+              <>
+                {'patients'}
+              </>
+        : (selectedOption === 'accounts')?
+              <>
+                {'accounts'}
+              </>
+        : (
+            "Elegi una opcion del costado careta",
+            userLogged.includes('ADMIN')? "EL USER ES ADMIN" : "EL USER NO ES ADMIN"
+          )
         }
-        {/* ----------------------------------------------- */}
+        {/* ----------------------Patio de juegos------------------------- */}
 
 
-        {/* ----------------------------------------------- */}
+        {/* -------------------Patio de juegos---------------------------- */}
 
       </div>
       <a onClick={backToStart} href="/" className="float">
         <FaAngleRight className="my-float" />
       </a>
     </div>
-      <div className='left-pane'>
+      {/* <div className='left-pane'>
         <p className='view-subtitle'>Clinic Management</p>
         <div className='view-tabs-container'>
           <p className='view-tab'>Appointments</p>
@@ -255,7 +277,7 @@ const DashboardView = () => {
           <DeleteButton />
           <ModifyButton />
         </div>
-      </div>
+      </div> */}
     </Fragment>
   )
 }
