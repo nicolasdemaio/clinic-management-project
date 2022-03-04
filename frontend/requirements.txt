@@ -8,7 +8,10 @@
 # API conections
 npm install axios --save
 
-
+# Styles
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+npm install @mui/x-data-grid
 
 
 
