@@ -3,21 +3,19 @@
 table {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  width: 1000px;
+  width: 100%;
   border-collapse: collapse;
 }
 
 thead th {
   text-align: center;
-  border-bottom: 2px solid black;
-}
-
-thead th {
-  background-color: #ffacac;
+  background-color: #E1E4F3;
+  color: #485295;
 }
 
 thead button {
-  background-color: #ffacac;
+  background-color: #E1E4F3;
+  color: #3E43AB;
   transform: translateX(-25px);
   width: auto;
   border: 0;
@@ -32,7 +30,7 @@ thead button {
 thead button.ascending::after {
   content: '➔';
   transform: rotate(90deg);
-  color: brown;
+  color: gray;
   display: inline-block;
   margin-left: 1em;
 }
@@ -40,7 +38,7 @@ thead button.ascending::after {
 thead button.descending::after {
   content: '➔';
   transform: rotate(-90deg);
-  color: brown;
+  color: grey;
   display: inline-block;
   margin-left: 1em;
 }
@@ -51,5 +49,5 @@ tbody td {
 }
 
 tbody tr:hover {
-  background-color: #eee;
+  background-color: rgb(243, 243, 243);
 }

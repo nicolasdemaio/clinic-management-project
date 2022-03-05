@@ -1,0 +1,44 @@
+.screen-header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 8rem;
+}
+
+.screen-header-icon-container {
+    border-radius: 8px;
+    width: 4rem;
+    height: 4rem;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen-header-title {
+    font-weight: bold;
+}
+
+.screen-header-descriptions {
+    margin-left: 1.5rem;
+}
+
+.screen-content-container {
+    background-color: #F6F5FF;
+    padding: 3rem;
+}
+
+.screen-content {
+    background-color: #FFFFFF;
+    width: 99%;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    padding: 1.5rem;
+}
+
+.appointments-out-table {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

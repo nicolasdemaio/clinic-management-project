@@ -50,7 +50,7 @@
     margin: 0;
     padding:0;
     color: #323a45;
-    background-color: #ffffff;
+    background-color: #FEFCFF;
 }
 
 #logo-admin {
@@ -107,6 +107,7 @@
   display: inline-block;
   margin-left: 80px;
   height: 1000px;
+  width: 100%;
   padding: 50px;
 }
 

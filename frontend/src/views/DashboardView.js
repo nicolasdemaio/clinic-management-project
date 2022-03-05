@@ -8,7 +8,6 @@ import Logo from '../images/logo.png'
 import { Fragment, useState, useMemo } from 'react'
 import { FaAngleRight, FaUserAlt, FaRegCalendarAlt, FaHospitalUser, FaBriefcaseMedical, FaSearch } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom'
-import axios from '../api/axios'
 import AppointmentsScreen from '../screens/AppointmentsScreen'
 
 const DashboardView = () => {

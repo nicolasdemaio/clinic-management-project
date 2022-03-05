@@ -1,28 +1,38 @@
-import DeleteButton from '../components/buttons/DeleteButton'
-import ModifyButton from '../components/buttons/ModifyButton'
-import AddButton from '../components/buttons/AddButton'
 import React, { useState, useMemo, useEffect } from 'react'
 import { FaSearch } from "react-icons/fa";
-import axios from '../api/axios'
 import Button from '@mui/material/Button';
 import EditIcon from '@mui/icons-material/Edit';
 import ClearIcon from '@mui/icons-material/Clear';
-import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
+import appointmentsApi from '../api/appointmentsApi';
+import EventNoteIcon from '@mui/icons-material/EventNote';
+import './AppointmentsScreen.css'
+import AddIcon from '@mui/icons-material/Add';
+import BackdropLoading from '../components/BackdropLoading'
 
-
-const APPOINTMENT_URL = 'api/appointments'
 
 const AppointmentsScreen = () => {
 
+    const [showBackdrop, setShowBackDrop] = useState(false)
+    useEffect(() => {
+      setShowBackDrop(true)
+      setTimeout(() => setShowBackDrop(false), 1200)
+    }, [])
+
     const [temporalData, setTemporalData] = useState([]);
 
+    const formattedTimeWithoutSeconds = (aTime) => {
+      return aTime.substring(0, 5 );
+    }
+
+    const formattedDate = (aDate) => {
+      return new Date(aDate).toLocaleDateString('es-es', { year:"numeric", month:"long", day:"numeric"}) 
+    }
 
     useEffect(() => {
-        axios.get(APPOINTMENT_URL)
+        appointmentsApi.getAppointments()
         .then(response => {
-          console.log('-- Data Response --');
-          console.log(response.data);
-          setTemporalData(response.data.data);
+          console.log(response)
+          setTemporalData(response);
         })
         .catch(e => {
             console.log(e)
@@ -122,7 +132,7 @@ const AppointmentsScreen = () => {
                 onClick={() => requestSort('patient')}
                 className={getClassNamesFor('patient')}
               >
-                Patient
+                Paciente
               </button>
             </th>            
             <th>
@@ -140,11 +150,11 @@ const AppointmentsScreen = () => {
                 onClick={() => requestSort('time_interval')}
                 className={getClassNamesFor('time_interval')}
               >
-                Time Interval
+                Horario
               </button>
             </th>
             <th>
-              <button> Actions </button>
+              <button>Acciones</button>
             </th>
           </tr>
         </thead>
@@ -153,10 +163,10 @@ const AppointmentsScreen = () => {
             <tr key={item.id} id={item.patient ? item.patient.toLowerCase() : null } name='appointlist'>
               <td>{item.patient}</td>
               <td>{item.doctor}</td>
-              <td>{item.date_interval}<br/>From: {item.from_interval}<br/>To: {item.to_interval}</td>
+              <td>{formattedDate(item.date_interval)}<br/>{formattedTimeWithoutSeconds(item.from_interval)} - {formattedTimeWithoutSeconds(item.to_interval)}</td>
               <td>
-                <Button id={item.uid} variant="outlined"><EditIcon fontSize="small"/></Button>
-                <Button id={item.uid} variant="outlined" color='warning'><ClearIcon fontSize="small" /></Button>
+                <Button id={item.uid} variant="outlined" style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px', margin: '1px', backgroundColor: '#E2E3F1'}}><EditIcon fontSize='small' style={{color:'#3E43AB'}} /></Button>
+                <Button id={item.uid} variant="outlined" color='warning' style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px', margin: '1px', backgroundColor: '#FFE4E6'}}> <ClearIcon fontSize='small' /> </Button>
               </td>
             </tr>
           ))}
@@ -165,30 +175,33 @@ const AppointmentsScreen = () => {
     );
   };
 
-  
-  const rows = [
-    { id: 1, col1: 'Hello', col2: 'World' },
-    { id: 2, col1: 'DataGridPro', col2: 'is Awesome' },
-    { id: 3, col1: 'MUI', col2: 'is Amazing' },
-  ];
-
-  const columns = [
-    { field: 'col1', headerName: 'Column 1', width: 150 },
-    { field: 'col2', headerName: 'Column 2', width: 150 },
-  ];
-
     return (
         <>
-        <Button variant="contained" style={{margin: '10px'}}>Registrar paciente</Button>
-                <div className='div-search'>
-                  <input type="text" onChange={(e) => searchTable(e, 'appointlist')} placeholder="Nombre del paciente..."/>
-                  <i class="icon"><FaSearch /></i>
-                </div>
-                <ProductTable appoint={temporalData}/>
 
+        {showBackdrop ? <BackdropLoading /> : null}
 
-                <div style={{ height: 300, width: '100%' }}>
-          <DataGrid rows={rows} columns={columns} />
+        <div className='screen-header'>
+          <div className='screen-header-icon-container'>
+            <EventNoteIcon fontSize='large' style={{color:'#3E43AB'}}/>
+          </div>
+          <div className='screen-header-descriptions'>
+            <p className='screen-header-title'>Turnos</p>
+            <p className='screen-header-subtitle'>Citas médicas agendadas</p>
+          </div>
+        </div>
+        
+        <div className='screen-content-container'>
+          <div className='screen-content'>
+            <div className='appointments-out-table'>
+              <div className='div-search'>
+                <input type="text" onChange={(e) => searchTable(e, 'appointlist')} placeholder="Nombre del paciente..."/>
+                <i class="icon"><FaSearch /></i>
+              </div>
+              <Button variant="outlined" style={{color: '#3E43AB', borderColor: '#3E43AB'}}> <AddIcon />  Agendar una cita</Button>
+            </div>
+            <ProductTable appoint={temporalData}/>
+          </div>
+          
         </div>
         </>
     )
