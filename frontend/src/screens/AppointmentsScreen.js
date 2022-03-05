@@ -1,8 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import Button from "@mui/material/Button";
-import EditIcon from "@mui/icons-material/Edit";
-import ClearIcon from "@mui/icons-material/Clear";
 import appointmentsApi from "../api/appointmentsApi";
 import EventNoteIcon from "@mui/icons-material/EventNote";
 import "./AppointmentsScreen.css";
@@ -198,8 +196,6 @@ const AppointmentsScreen = () => {
                 {formattedTimeWithoutSeconds(item.to_interval)}
               </td>
               <td>
-                {/* <Button id={item.uid} variant="outlined" style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px', margin: '1px', backgroundColor: '#E2E3F1'}}><EditIcon fontSize='small' style={{color:'#3E43AB'}} /></Button>
-                <Button id={item.uid} variant="outlined" color='warning' style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px', margin: '1px', backgroundColor: '#FFE4E6'}}> <ClearIcon fontSize='small' /> </Button> */}
                 <TableActionButton />
               </td>
             </tr>
@@ -240,7 +236,6 @@ const AppointmentsScreen = () => {
               variant="outlined"
               style={{ color: "#3E43AB", borderColor: "#3E43AB" }}
             >
-              {" "}
               <AddIcon /> Agendar una cita
             </Button>
           </div>

@@ -50,7 +50,7 @@ const StartView = () => {
 
   const PrivateAction = (event) => {
     event.preventDefault();
-    navigate('/dashboard');
+    navigate('/dashboard/home');
   }
 
   return (
