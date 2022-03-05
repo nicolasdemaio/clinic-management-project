@@ -9,52 +9,27 @@
     background-color: #FEFCFF;
 }
 
-#logo-admin {
+.dashboard-vertical-logo {
   width: 60px;
   height: 60px;
   cursor: pointer;
 }
 
-.vertical-menu {
+.dashboard-vertical-bar {
   height: 100vh;
   min-width: 5%;
   border-right: 1px solid #d6d7d9;
   background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.vertical-menu-logo {
-  font-size: 35px;
-  text-align: center;
-  padding: 15px 22px;
-  padding-bottom: 70px;
-  height: 40px;
-}
-
-.vertical-menu-links {
-  list-style-type: none;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-.vertical-menu-links li a label {
-  font-weight: 400;
-  font-size: 14px;
-  margin-left: -15px;
-}
-
-.vertical-menu-links li a {
-  font-size: 25px;
-  display: block;
-  margin-left: -20px;
-  color: #5b616b;
-  padding: 15px;
-  text-decoration: none;
-}
-
-.vertical-menu-links li a:hover {
-  background-color: #f1f1f1;
-  color: #323a45; /* SEARCH HOW TO SET ACTIVE A MENU */
+.dashboard-vertical-button {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content-container {

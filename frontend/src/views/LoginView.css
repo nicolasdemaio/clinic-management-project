@@ -53,41 +53,13 @@
     }
 }
 
-.login-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 .login-title {
     color: #fff;
     font-weight: 500;
+    margin: 1rem;
 }
 
-.login-input-container {
-    display: flex;
-    flex-direction: column;
-    margin: 1.3rem 0 1.3rem 0;
+.login-buttons {
+    margin: 1rem;
 }
 
-.login-label {
-    color: #ececec;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-}
-
-.login-field {
-    background-color: rgba(255, 255, 255, 0.3);
-    border: none;
-    border-radius: 25px;
-    height: 2.5rem;
-    width: 16rem;
-    font-size: 1.1rem;
-    padding: 0 1rem 0 1rem;
-    color: #ffffff;
-    font-weight: 550;
-}
-
-.login-field:focus {
-    outline: none;
-}
