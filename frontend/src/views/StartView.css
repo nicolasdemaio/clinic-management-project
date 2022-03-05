@@ -110,6 +110,10 @@ li a {
     line-height: 2;
 }
 
+.logger:hover {
+    cursor: pointer;
+}
+
 .logger ul {
     cursor: pointer;
     border: 10px solid #46b2f0;
