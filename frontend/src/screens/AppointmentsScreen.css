@@ -1,8 +1,13 @@
+.screen-container {
+    height: 100vh;
+}
+
 .screen-header {
     display: flex;
     align-items: center;
     flex-direction: row;
     height: 8rem;
+    padding: 3rem;
 }
 
 .screen-header-icon-container {
@@ -27,11 +32,13 @@
 .screen-content-container {
     background-color: #F6F5FF;
     padding: 3rem;
+    width: 100%;
+
 }
 
 .screen-content {
     background-color: #FFFFFF;
-    width: 99%;
+    width: 100%;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
     padding: 1.5rem;
