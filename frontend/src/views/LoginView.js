@@ -6,7 +6,7 @@ import axios from "../api/axios";
 import { Button } from "@mui/material";
 import BackDropLoading from "../components/BackdropLoading";
 import TextField from "@mui/material/TextField";
-import Stack from '@mui/material/Stack';
+import Stack from "@mui/material/Stack";
 
 const LOGIN_URL = "api/login";
 
@@ -90,7 +90,7 @@ const LoginView = () => {
       <h1 className="login-title">Clinic Management System</h1>
 
       <Stack spacing={2}>
-      <TextField
+        <TextField
           label="Usuario"
           variant="filled"
           onChange={handleChange(setUsername)}
@@ -101,10 +101,8 @@ const LoginView = () => {
           type="password"
           onChange={handleChange(setPassword)}
         />
-</Stack>
+      </Stack>
 
-
-    
       <div className="login-buttons">
         <Button
           style={{ margin: "2px" }}

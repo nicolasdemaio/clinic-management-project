@@ -1,9 +1,9 @@
-import Axios from 'axios'
+import axios from './axios'
 
-const baseUrl = 'http://localhost:5000/api'
+const APPOINTMENTS_URL = 'api/appointments'
 
 const getAppointments = () => {
-  return Axios.get(`${baseUrl}/appointments`)
+  return axios.get(APPOINTMENTS_URL)
     .then((response) => {
     return response.data.data
   }).catch(e => {

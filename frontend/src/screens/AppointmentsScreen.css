@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    height: 8rem;
+    height: 10vh;
     padding: 3rem;
 }
 
@@ -32,7 +32,8 @@
 .screen-content-container {
     background-color: #F6F5FF;
     padding: 3rem;
-    width: 100%;
+    width: auto;
+    height: 90vh;
 
 }
 

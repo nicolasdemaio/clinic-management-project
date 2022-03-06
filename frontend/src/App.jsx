@@ -8,6 +8,8 @@ import AppointmentsScreen from './screens/AppointmentsScreen';
 import DoctorsScreen from './screens/DoctorsScreen';
 import PatientsScreen from './screens/PatientsScreen';
 import DashboardScreen from './screens/DashboardScreen';
+import SinglePatientView from './views/SinglePatientView';
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
               <Route path="home" element={<DashboardScreen />}/>
               <Route path='appointments' element={<AppointmentsScreen />}/>
               <Route path='patients' element={<PatientsScreen />}/>
+              <Route path='patients/:patientId' element={<SinglePatientView />}/>
               <Route path='doctors' element={<DoctorsScreen />}/>
             </Route>
           </Route>
