@@ -1,20 +1,20 @@
 # Unica vez
 # npx create-react-app frontend
-# npm start
+# yarn start
 
 # Login example for import
 "@emotion/react": "latest"
 
 # API conections
-npm install axios --save
+yarn install axios --save
 
 # Styles
-npm install @mui/material @emotion/react @emotion/styled
-npm install @mui/icons-material
-npm install @mui/x-data-grid
-npm install @mui/styles
+yarn install @mui/material @emotion/react @emotion/styled
+yarn install @mui/icons-material
+yarn install @mui/x-data-grid
+yarn install @mui/styles
 
 
 
 
-npm install package.json --save-dev
+yarn install package.json --save-dev
