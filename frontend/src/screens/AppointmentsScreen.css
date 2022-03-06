@@ -8,6 +8,7 @@
     flex-direction: row;
     height: 10vh;
     padding: 3rem;
+    background-color: #FFFFFF;
 }
 
 .screen-header-icon-container {
@@ -30,7 +31,6 @@
 }
 
 .screen-content-container {
-    background-color: #F6F5FF;
     padding: 3rem;
     width: auto;
     height: 90vh;

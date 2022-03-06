@@ -1,15 +1,15 @@
-import React, { useState, useMemo, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
-import Button from "@mui/material/Button";
-import appointmentsApi from "../api/appointmentsApi";
-import EventNoteIcon from "@mui/icons-material/EventNote";
-import "./AppointmentsScreen.css";
-import AddIcon from "@mui/icons-material/Add";
-import BackdropLoading from "../components/BackdropLoading";
-import TableActionButton from "../components/buttons/TableActionButton";
-import PersonIcon from "@mui/icons-material/Person";
-import patientsApi from "../api/patientsApi";
+import React, { useState, useMemo, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FaSearch } from 'react-icons/fa';
+import Button from '@mui/material/Button';
+import appointmentsApi from '../api/appointmentsApi';
+import EventNoteIcon from '@mui/icons-material/EventNote';
+import './AppointmentsScreen.css';
+import AddIcon from '@mui/icons-material/Add';
+import BackdropLoading from '../components/BackdropLoading';
+import TableActionButton from '../components/buttons/TableActionButton';
+import PersonIcon from '@mui/icons-material/Person';
+import patientsApi from '../api/patientsApi';
 
 const PatientsScreen = () => {
   const [showBackdrop, setShowBackDrop] = useState(false);
@@ -18,7 +18,7 @@ const PatientsScreen = () => {
     setTimeout(() => setShowBackDrop(false), 1200);
   }, []);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [temporalData, setTemporalData] = useState([]);
 
@@ -27,10 +27,10 @@ const PatientsScreen = () => {
   };
 
   const formattedDate = (aDate) => {
-    return new Date(aDate).toLocaleDateString("es-es", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
+    return new Date(aDate).toLocaleDateString('es-es', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
     });
   };
 
@@ -50,21 +50,21 @@ const PatientsScreen = () => {
     <>
       {showBackdrop ? <BackdropLoading /> : null}
 
-      <div className="screen-header">
-        <div className="screen-header-icon-container">
-          <PersonIcon fontSize="large" style={{ color: "#3E43AB" }} />
+      <div className='screen-header'>
+        <div className='screen-header-icon-container'>
+          <PersonIcon fontSize='large' style={{ color: '#3E43AB' }} />
         </div>
-        <div className="screen-header-descriptions">
-          <p className="screen-header-title">Pacientes</p>
-          <p className="screen-header-subtitle">
+        <div className='screen-header-descriptions'>
+          <p className='screen-header-title'>Pacientes</p>
+          <p className='screen-header-subtitle'>
             Personas registrados en la clínica
           </p>
         </div>
       </div>
 
-      <div className="screen-content-container">
-        <div className="screen-content">
-          <div className="temporalData">
+      <div className='screen-content-container'>
+        <div className='screen-content'>
+          <div className='temporalData'>
             <table>
               <tr>
                 <th>Index</th>
@@ -79,7 +79,9 @@ const PatientsScreen = () => {
                       <td>Patient ID: {book.patient.id}</td>
                       <td>{book.doctor.fullname}</td>
                       <td>{book.patient.fullname}</td>
-                      <button onClick={() => navigate(`${book.patient.id}`)}>Get patient on console</button>
+                      <button onClick={() => navigate(`${book.patient.id}`)}>
+                        Get patient on console
+                      </button>
                     </tr>
                   );
                 })}

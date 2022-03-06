@@ -31,10 +31,10 @@
   align-items: center;
 }
 
-.content-container {
+.dashboard-content-container {
   height: 100vh;
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: #F6F5FF;
 }
 
 .div-search{

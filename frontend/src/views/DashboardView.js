@@ -9,16 +9,16 @@ import {
   FaBriefcaseMedical,
 } from "react-icons/fa";
 import { Outlet, useNavigate } from "react-router-dom";
-import LogoutIcon from '@mui/icons-material/Logout';
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const DashboardView = () => {
   const navigate = useNavigate();
 
   const handleCloseSession = (event) => {
-    event.preventDefault()
-    localStorage.clear()
-    navigate('/')
-  }
+    event.preventDefault();
+    localStorage.clear();
+    navigate("/");
+  };
 
   let userLogged = localStorage.getItem("roles");
 
@@ -84,7 +84,7 @@ const DashboardView = () => {
           </button>
         </div>
 
-        <div className="content-container">
+        <div className="dashboard-content-container">
           <Outlet />
         </div>
       </div>
