@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+    react:
+        container_name: react
+        build: .
+        volumes:
+            - './:/app'
+            - '/app/node_modules'
+        ports:
+            - 3000:3000
+        stdin_open: true
+        environment:
+            - CHOKIDAR_USEPOLLING=true
+        command: sh -c "cd /app && yarn install --network-timeout 1000000 && yarn start"
+        restart: unless-stopped
