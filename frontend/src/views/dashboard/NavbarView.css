@@ -1,9 +1,9 @@
 .dashboard-container {
-    font-weight: 400;
-    display: flex;
-    flex-direction: row;
-    color: #323a45;
-    background-color: #FEFCFF;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  color: #323a45;
+  background-color: #fefcff;
 }
 
 .dashboard-vertical-logo {
@@ -23,34 +23,43 @@
 }
 
 .dashboard-vertical-button {
-  margin: 1rem;
+  height: 100px;
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #243153;
+  justify-content: center;
+  background: none;
   color: white;
   border: none;
   font-weight: 400;
   font-size: 15px;
 }
 
+.dashboard-vertical-button:hover {
+  background-color: #353f64;
+  width: 100%;
+  cursor: pointer;
+  border-left: 1px solid rgb(221, 221, 221);
+}
+
 .dashboard-content-container {
   height: 100vh;
   width: 100%;
-  background-color: #F6F5FF;
+  background-color: #f6f5ff;
 }
 
-.div-search{
+.div-search {
   width: 300px;
   vertical-align: middle;
   white-space: nowrap;
   position: relative;
 }
 
-.div-search input{
+.div-search input {
   width: 50px;
   height: 50px;
-  background: #F3F5F7;
+  background: #f3f5f7;
   border: none;
   font-size: 11pt;
   float: left;
@@ -59,34 +68,36 @@
   -moz-border-radius: 5px;
   border-radius: 5px;
   color: #000;
-  font-family: 'Poppins', sans-serif  ;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   padding-left: 50px;
 
-  -webkit-transition: width .55s ease;
-  -moz-transition: width .55s ease;
-  -ms-transition: width .55s ease;
-  -o-transition: width .55s ease;
-  transition: width .55s ease;
+  -webkit-transition: width 0.55s ease;
+  -moz-transition: width 0.55s ease;
+  -ms-transition: width 0.55s ease;
+  -o-transition: width 0.55s ease;
+  transition: width 0.55s ease;
 }
 
 .div-search input::-webkit-input-placeholder {
-   color: #65737e;
-}
- 
-.div-search input:-moz-placeholder { /* Firefox 18- */
-   color: #65737e;  
-}
- 
-.div-search input::-moz-placeholder {  /* Firefox 19+ */
-   color: #65737e;  
-}
- 
-.div-search input:-ms-input-placeholder {  
-   color: #65737e;  
+  color: #65737e;
 }
 
-.div-search i{
+.div-search input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #65737e;
+}
+
+.div-search input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #65737e;
+}
+
+.div-search input:-ms-input-placeholder {
+  color: #65737e;
+}
+
+.div-search i {
   position: absolute;
   font-size: 20px;
   top: 30%;
@@ -95,48 +106,36 @@
   color: #4f5b66;
 }
 
-.div-search input:focus, .div-search input:active, .div-search input:not(:placeholder-shown){
-  outline:none;
+.div-search input:focus,
+.div-search input:active,
+.div-search input:not(:placeholder-shown) {
+  outline: none;
   width: 300px;
 }
- 
-.div-search:hover input{
-width: 300px;
+
+.div-search:hover input {
+  width: 300px;
 }
- 
-.div-search:hover i{
+
+.div-search:hover i {
   color: #93a2ad;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#46b2f0;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-	box-shadow: 2px 2px 3px #999;
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #46b2f0;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
 }
 
-.my-float{
-	margin-top:13px;
-  margin-left:5px;
-	font-size:35px;
+.my-float {
+  margin-top: 13px;
+  margin-left: 5px;
+  font-size: 35px;
 }
