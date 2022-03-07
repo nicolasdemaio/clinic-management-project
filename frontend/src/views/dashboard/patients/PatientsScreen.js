@@ -48,7 +48,7 @@ const PatientsScreen = () => {
 
   return (
     <>
-      {showBackdrop ? <BackdropLoading /> : null}
+      {showBackdrop ? <BackdropLoading /> : undefined}
 
       <div className='screen-header'>
         <div className='screen-header-icon-container'>

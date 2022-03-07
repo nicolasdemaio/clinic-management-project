@@ -7,7 +7,7 @@ import { TextField } from "@mui/material";
 const SinglePatientView = () => {
   const { patientId } = useParams();
 
-  const [patient, setPatient] = useState(null);
+  const [patient, setPatient] = useState(undefined);
 
   useEffect(() => {
     patientsApi

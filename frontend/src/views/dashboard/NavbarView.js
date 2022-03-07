@@ -74,7 +74,7 @@ const NavbarView = () => {
               <FaUserAlt />
               Cuentas
             </button>
-          ) : null}
+          ) : undefined}
           <button
             className="dashboard-vertical-button"
             onClick={handleCloseSession}

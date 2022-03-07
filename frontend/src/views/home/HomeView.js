@@ -6,7 +6,7 @@ import Logo from '../../images/logo.png';
 const HomeView = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [ultop, setUltop] = useState('160px');
-  const [navState, setNavState] = useState(null);
+  const [navState, setNavState] = useState(undefined);
   const [isLogged, setIsLogged] = useState(localStorage.getItem('authToken'));
 
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const HomeView = () => {
   }, []);
 
   const handleScroll = () => {
-    window.pageYOffset > 100 ? setNavState('navShadow') : setNavState(null);
+    window.pageYOffset > 100 ? setNavState('navShadow') : setNavState(undefined);
     window.pageYOffset > 100 ? setUltop('100px') : setUltop('160px');
   };
 

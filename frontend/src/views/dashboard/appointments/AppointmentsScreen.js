@@ -64,12 +64,12 @@ const AppointmentsScreen = () => {
   };
 
   // ------------- FILTRO DE LA TABLA --------------------------------
-  const useSortableData = (items, config = null) => {
+  const useSortableData = (items, config = undefined) => {
     const [sortConfig, setSortConfig] = useState(config);
 
     const sortedItems = useMemo(() => {
       let sortableItems = items;
-      if (sortConfig !== null) {
+      if (sortConfig !== undefined) {
         sortableItems.sort((a, b) => {
           if (a[sortConfig.key] < b[sortConfig.key]) {
             return sortConfig.direction === "ascending" ? -1 : 1;
@@ -184,7 +184,7 @@ const AppointmentsScreen = () => {
           {items.map((item) => (
             <tr
               key={item.id}
-              id={item.patient ? item.patient.toLowerCase() : null}
+              id={item.patient ? item.patient.toLowerCase() : undefined}
               name="appointlist"
             >
               <td>{item.patient}</td>
@@ -207,7 +207,7 @@ const AppointmentsScreen = () => {
 
   return (
     <div className="screen-container">
-      {showBackdrop ? <BackdropLoading /> : null}
+      {showBackdrop ? <BackdropLoading /> : undefined}
 
       <div className="screen-header">
         <div className="screen-header-icon-container">

@@ -11,13 +11,13 @@ import Button from '@mui/material/Button';
 import MoreVert from '@mui/icons-material/MoreVert';
 
 export default function TableActionButton() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(undefined);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
-    setAnchorEl(null);
+    setAnchorEl(undefined);
   };
 
   return (
