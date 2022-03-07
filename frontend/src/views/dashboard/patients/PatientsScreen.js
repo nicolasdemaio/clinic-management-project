@@ -64,6 +64,8 @@ const PatientsScreen = () => {
 
       <div className='screen-content-container'>
         <div className='screen-content'>
+          <button onClick={() => navigate('create')}>Registrar paciente</button>
+
           <div className='temporalData'>
             <table>
               <tr>
