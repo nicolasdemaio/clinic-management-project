@@ -1,10 +1,10 @@
 import './LoginView.css';
 import React, { useRef, useState, useEffect } from 'react';
-import useAuth from '../hooks/useAuth';
+import useAuth from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
-import axios from '../api/axios';
+import axios from '../../api/axios';
 import { Button } from '@mui/material';
-import BackDropLoading from '../components/BackdropLoading';
+import BackDropLoading from '../../components/BackdropLoading';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 
