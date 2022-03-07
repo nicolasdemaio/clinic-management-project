@@ -1,94 +1,60 @@
-import "./DashboardView.css";
-import "./appointments/DashboardThead.css";
-import Logo from "../../images/logo.png";
-import HomeIcon from "@mui/icons-material/Home";
-import {
-  FaUserAlt,
-  FaRegCalendarAlt,
-  FaHospitalUser,
-  FaBriefcaseMedical,
-} from "react-icons/fa";
-import { Outlet, useNavigate } from "react-router-dom";
-import LogoutIcon from "@mui/icons-material/Logout";
+import StorageIcon from '@mui/icons-material/Storage';
+import { TextField } from '@mui/material';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import { useState } from 'react';
+import Select from '@mui/material/Select';
 
 const DashboardView = () => {
-  const navigate = useNavigate();
+  const [age, setAge] = useState('');
 
-  const handleCloseSession = (event) => {
-    event.preventDefault();
-    localStorage.clear();
-    navigate("/");
+  const handleChange = (event) => {
+    setAge(event.target.value);
   };
 
-  let userLogged = localStorage.getItem("roles");
-
-  if (typeof userLogged != "object") {
-    userLogged = [userLogged];
-  }
-
   return (
-    <>
-      <div className="dashboard-container">
-        <div className="dashboard-vertical-bar">
-          <img
-            className="dashboard-vertical-logo"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            alt="logo"
-            src={Logo}
-          />
-
-          <button
-            className="dashboard-vertical-button"
-            onClick={(event) => navigate("/dashboard/home")}
-          >
-            <HomeIcon />
-            Inicio
-          </button>
-          <button
-            className="dashboard-vertical-button"
-            onClick={(event) => navigate("/dashboard/appointments")}
-          >
-            {" "}
-            <FaRegCalendarAlt /> Turnos
-          </button>
-          <button
-            className="dashboard-vertical-button"
-            onClick={(event) => navigate("/dashboard/patients")}
-          >
-            {" "}
-            <FaHospitalUser /> Pacientes
-          </button>
-          <button
-            className="dashboard-vertical-button"
-            onClick={(event) => navigate("/dashboard/doctors")}
-          >
-            {" "}
-            <FaBriefcaseMedical /> Doctores
-          </button>
-
-          {userLogged.includes("ADMIN") ? (
-            <button
-              className="dashboard-vertical-button"
-              onClick={(event) => navigate("/dashboard/accounts")}
-            >
-              <FaUserAlt />
-              Cuentas
-            </button>
-          ) : null}
-          <button
-            className="dashboard-vertical-button"
-            onClick={handleCloseSession}
-          >
-            {" "}
-            <LogoutIcon /> Cerrar sesión
-          </button>
+    <div className='screen-container'>
+      <div className='screen-header'>
+        <div className='screen-header-icon-container'>
+          <StorageIcon fontSize='large' style={{ color: '#3E43AB' }} />
         </div>
-
-        <div className="dashboard-content-container">
-          <Outlet />
+        <div className='screen-header-descriptions'>
+          <p className='screen-header-title'>Dashboard</p>
+          <p className='screen-header-subtitle'>
+            Gestión de turnos, pacientes y más
+          </p>
         </div>
       </div>
-    </>
+
+      <div className='screen-content-container'>
+        <div className='screen-content'>
+          <h1>Dashboard</h1>
+          <h2>Buscar paciente</h2>
+          <FormControl fullWidth>
+            <InputLabel id='demo-simple-select-label'>
+              Tipo documento
+            </InputLabel>
+            <Select
+              labelId='demo-simple-select-label'
+              id='demo-simple-select'
+              value={age}
+              label='Tipo'
+              onChange={handleChange}
+            >
+              <MenuItem value={10}>D.N.I.</MenuItem>
+              <MenuItem value={20}>L.I.</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+          <TextField
+            id='outlined-basic'
+            label='Identificación'
+            variant='outlined'
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 
