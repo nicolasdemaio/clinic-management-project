@@ -1,17 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 .mainstart {
-    font-family: 'Poppins', sans-serif;
     font-size: 24px;
-}
-body {
-    overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 header {

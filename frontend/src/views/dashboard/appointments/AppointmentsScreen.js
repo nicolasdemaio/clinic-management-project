@@ -228,7 +228,7 @@ const AppointmentsScreen = () => {
                 onChange={(e) => searchTable(e, "appointlist")}
                 placeholder="Nombre del paciente..."
               />
-              <i class="icon">
+              <i className="icon">
                 <FaSearch />
               </i>
             </div>

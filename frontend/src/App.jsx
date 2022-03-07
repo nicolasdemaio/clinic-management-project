@@ -10,16 +10,15 @@ import PatientsScreen from './views/dashboard/patients/PatientsScreen';
 import DashboardView from './views/dashboard/DashboardView';
 import SinglePatientView from './views/dashboard/patients/SinglePatientView';
 
-
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" >
+        <Route path='/'>
           {/* Public routes */}
-          <Route path="/" element={<HomeView />} />
-          <Route path="unauthorized" element={<UnauthorizedView />} />
-          <Route path="login" element={<LoginView />} />
+          <Route path='/' element={<HomeView />} />
+          <Route path='unauthorized' element={<UnauthorizedView />} />
+          <Route path='login' element={<LoginView />} />
 
           {/* Private routes */}
           <Route element={<RequireAuth allowedRoles={["RECEPTIONIST","ADMIN","DOCTOR"]}/>}>
@@ -37,4 +36,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
