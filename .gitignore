@@ -13,6 +13,7 @@
 
 # testing
 /frontend/coverage
+/frontend/src/api/axios.js
 
 # production
 /frontend/build

@@ -36,7 +36,8 @@
   font-size: 15px;
 }
 
-.dashboard-vertical-button:hover {
+.dashboard-vertical-button:hover,
+.active-dashbutton {
   background-color: #353f64;
   width: 100%;
   cursor: pointer;

@@ -14,6 +14,12 @@ import LogoutIcon from '@mui/icons-material/Logout';
 const NavbarView = () => {
   const navigate = useNavigate();
 
+  const changeActiveButton = (event, a_direction) => {
+    document.getElementsByClassName("active-dashbutton")[0].classList.remove("active-dashbutton");
+    event.target.classList.add("active-dashbutton");
+    navigate(a_direction)
+  }
+
   const handleCloseSession = (event) => {
     event.preventDefault();
     localStorage.clear();
@@ -36,43 +42,36 @@ const NavbarView = () => {
             alt='logo'
             src={Logo}
           />
-
           <button
-            className='dashboard-vertical-button'
-            onClick={() => navigate('/dashboard/home')}
+            className='dashboard-vertical-button active-dashbutton'
+            onClick={(e) => changeActiveButton(e, '/dashboard/home')}
           >
-            <HomeIcon />
-            Inicio
+            <HomeIcon style={{'pointer-events': 'none'}} /> Inicio
           </button>
           <button
             className='dashboard-vertical-button'
-            onClick={() => navigate('/dashboard/appointments')}
+            onClick={(e) => changeActiveButton(e, '/dashboard/appointments')}
           >
-            {' '}
-            <FaRegCalendarAlt /> Turnos
+            <FaRegCalendarAlt style={{'pointer-events': 'none'}} /> Turnos
           </button>
           <button
             className='dashboard-vertical-button'
-            onClick={() => navigate('/dashboard/patients')}
+            onClick={(e) => changeActiveButton(e, '/dashboard/patients')}
           >
-            {' '}
-            <FaHospitalUser /> Pacientes
+            <FaHospitalUser style={{'pointer-events': 'none'}} /> Pacientes
           </button>
           <button
             className='dashboard-vertical-button'
-            onClick={() => navigate('/dashboard/doctors')}
+            onClick={(e) => changeActiveButton(e, '/dashboard/doctors')}
           >
-            {' '}
-            <FaBriefcaseMedical /> Doctores
+            <FaBriefcaseMedical style={{'pointer-events': 'none'}} /> Doctores
           </button>
-
           {userLogged.includes('ADMIN') ? (
             <button
               className='dashboard-vertical-button'
-              onClick={() => navigate('/dashboard/accounts')}
+              onClick={(e) => changeActiveButton(e, '/dashboard/accounts')}
             >
-              <FaUserAlt />
-              Cuentas
+              <FaUserAlt style={{'pointer-events': 'none'}} /> Cuentas
             </button>
           ) : undefined}
           <button

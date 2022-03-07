@@ -43,7 +43,7 @@ const AppointmentsScreen = () => {
 
   //------------- BUSCADOR DE LA TABLA --------------------------------
   const searchTable = (event, table) => {
-    var detecta = document.getElementsByName(table);
+    let detecta = document.getElementsByName(table);
     let state;
 
     if (event.target.value) {
@@ -108,7 +108,7 @@ const AppointmentsScreen = () => {
       Object.keys(list_of_appoints[0]).length !== 0
     ) {
       if (list_of_appoints[0].patient.fullname) {
-        for (var i = 0; list_of_appoints.length > i; i++) {
+        for (let i = 0; list_of_appoints.length > i; i++) {
           const id = i;
           const uid = list_of_appoints[i].id;
           const doctor = list_of_appoints[i].doctor.fullname;
