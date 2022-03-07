@@ -1,6 +1,6 @@
 import "./DashboardView.css";
-import "./DashboardThead.css";
-import Logo from "../images/logo.png";
+import "./appointments/DashboardThead.css";
+import Logo from "../../images/logo.png";
 import HomeIcon from "@mui/icons-material/Home";
 import {
   FaUserAlt,

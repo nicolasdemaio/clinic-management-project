@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import patientsApi from "../api/patientsApi";
+import patientsApi from "../../../api/patientsApi";
 import PersonIcon from "@mui/icons-material/Person";
 import { TextField } from "@mui/material";
 

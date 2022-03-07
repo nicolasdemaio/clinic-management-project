@@ -2,14 +2,14 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import Button from '@mui/material/Button';
-import appointmentsApi from '../api/appointmentsApi';
+import appointmentsApi from '../../../api/appointmentsApi';
 import EventNoteIcon from '@mui/icons-material/EventNote';
-import './AppointmentsScreen.css';
+import '../appointments/AppointmentsScreen.css';
 import AddIcon from '@mui/icons-material/Add';
-import BackdropLoading from '../components/BackdropLoading';
-import TableActionButton from '../components/buttons/TableActionButton';
+import BackdropLoading from '../../../components/BackdropLoading';
+import TableActionButton from '../../../components/buttons/TableActionButton';
 import PersonIcon from '@mui/icons-material/Person';
-import patientsApi from '../api/patientsApi';
+import patientsApi from '../../../api/patientsApi';
 
 const PatientsScreen = () => {
   const [showBackdrop, setShowBackDrop] = useState(false);

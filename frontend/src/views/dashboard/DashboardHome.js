@@ -6,7 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import { useState } from 'react';
 import Select from '@mui/material/Select';
 
-const DashboardScreen = () => {
+const DashboardHome = () => {
   const [age, setAge] = useState('');
 
   const handleChange = (event) => {
@@ -58,4 +58,4 @@ const DashboardScreen = () => {
   );
 };
 
-export default DashboardScreen;
+export default DashboardHome;

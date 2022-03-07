@@ -1,9 +1,9 @@
-import './StartView.css';
+import './HomeView.css';
 import { Fragment, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Logo from '../images/logo.png';
+import Logo from '../../images/logo.png';
 
-const StartView = () => {
+const HomeView = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [ultop, setUltop] = useState('160px');
   const [navState, setNavState] = useState(null);
@@ -132,4 +132,4 @@ const StartView = () => {
   );
 };
 
-export default StartView;
+export default HomeView;
