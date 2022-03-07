@@ -7,7 +7,7 @@ import RequireAuth from './components/RequireAuth'
 import AppointmentsScreen from './views/dashboard/appointments/AppointmentsScreen';
 import DoctorsScreen from './views/dashboard/doctors/DoctorsScreen';
 import PatientsScreen from './views/dashboard/patients/PatientsScreen';
-import DashboardView from './views/dashboard/DashboardView';
+import DashboardScreen from './views/dashboard/home/DashboardScreen';
 import SinglePatientView from './views/dashboard/patients/SinglePatientView';
 
 function App() {
@@ -23,11 +23,12 @@ function App() {
           {/* Private routes */}
           <Route element={<RequireAuth allowedRoles={["RECEPTIONIST","ADMIN","DOCTOR"]}/>}>
             <Route path="dashboard" element={<NavbarView />}>
-              <Route path="home" element={<DashboardView />}/>
+              <Route path="home" element={<DashboardScreen />}/>
               <Route path='appointments' element={<AppointmentsScreen />}/>
               <Route path='patients' element={<PatientsScreen />}/>
               <Route path='patients/:patientId' element={<SinglePatientView />}/>
               <Route path='doctors' element={<DoctorsScreen />}/>
+              <Route path='accounts' element={<DoctorsScreen />}/>
             </Route>
           </Route>
         </Route>
