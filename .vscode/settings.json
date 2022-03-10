@@ -16,7 +16,7 @@
                 "name": "Run server React",
                 "color": "cyan",
                 "singleInstance": true,
-                "command": "npm start"
+                "command": "yarn start"
             },
             {
                 "name": "New terminal",
@@ -35,7 +35,7 @@
                 "name": "Front desde 0",
                 "color": "blue",
                 "singleInstance": true,
-                "command": "rmdir /s node_modules & npm install & npm start" // curl -XGET http://127.0.0.1:5000/${fileBasenameNoExtension}
+                "command": "rmdir /s node_modules & yarn install & yarn start" // curl -XGET http://127.0.0.1:5000/${fileBasenameNoExtension}
             },
             {
                 "cwd": "${workspaceFolder}\\backend",

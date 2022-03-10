@@ -17,4 +17,5 @@ yarn install @mui/styles
 
 
 
-yarn install package.json --save-dev
+npm install package.json --save-dev (viejo)
+yarn install (npm install --global yarn | si no lo tenes instalado)
