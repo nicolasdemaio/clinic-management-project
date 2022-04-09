@@ -6,13 +6,13 @@ table {
 
 thead th {
   text-align: center;
-  background-color: #E1E4F3;
-  color: #485295;
+  background-color: var(--primary-background);
+  color: var(--primary-color);
 }
 
 thead button {
-  background-color: #E1E4F3;
-  color: #3E43AB;
+  background-color: var(--primary-background);
+  color: var(--primary-color);
   transform: translateX(-25px);
   width: auto;
   border: 0;
@@ -42,9 +42,9 @@ thead button.descending::after {
 
 tbody td {
   padding: 0.5em;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--secondary-white);
 }
 
 tbody tr:hover {
-  background-color: rgb(243, 243, 243);
+  background-color: var(--secondary-white);
 }

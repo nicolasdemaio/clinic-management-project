@@ -5,14 +5,14 @@
 }
 
 .form-field {
-    background-color: #E8EBEF;
+    background-color: var(--secondary-white);
     border: none;
     border-radius: 8px;
     height: 2.5rem;
     width: 12rem;
     font-size: 1.1rem;
     padding: 0 1rem 0 1rem;
-    color: #777c8b;
+    color: var(--secondary-letter);
     font-weight: bold;
     margin-right: 2rem;
 }

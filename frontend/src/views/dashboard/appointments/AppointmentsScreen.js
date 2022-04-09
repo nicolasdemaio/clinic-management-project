@@ -1,12 +1,12 @@
-import React, { useState, useMemo, useEffect } from "react";
-import { FaSearch } from "react-icons/fa";
-import Button from "@mui/material/Button";
-import appointmentsApi from "../../../api/appointmentsApi";
-import EventNoteIcon from "@mui/icons-material/EventNote";
-import "./AppointmentsScreen.css";
-import AddIcon from "@mui/icons-material/Add";
-import BackdropLoading from "../../../components/BackdropLoading";
-import TableActionButton from "../../../components/buttons/TableActionButton";
+import React, { useState, useMemo, useEffect } from 'react';
+import { FaSearch } from 'react-icons/fa';
+import Button from '@mui/material/Button';
+import appointmentsApi from '../../../api/appointmentsApi';
+import EventNoteIcon from '@mui/icons-material/EventNote';
+import './AppointmentsScreen.css';
+import AddIcon from '@mui/icons-material/Add';
+import BackdropLoading from '../../../components/BackdropLoading';
+import TableActionButton from '../../../components/buttons/TableActionButton';
 
 const AppointmentsScreen = () => {
   const [showBackdrop, setShowBackDrop] = useState(false);
@@ -22,10 +22,10 @@ const AppointmentsScreen = () => {
   };
 
   const formattedDate = (aDate) => {
-    return new Date(aDate).toLocaleDateString("es-es", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
+    return new Date(aDate).toLocaleDateString('es-es', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
     });
   };
 
@@ -47,18 +47,18 @@ const AppointmentsScreen = () => {
     let state;
 
     if (event.target.value) {
-      state = "none";
+      state = 'none';
     } else {
-      state = "";
+      state = '';
     }
     for (let entry of detecta) {
       entry.style.display = state;
 
       if (
-        state === "none" &&
+        state === 'none' &&
         entry.outerHTML.indexOf(event.target.value.toLowerCase()) > -1
       ) {
-        entry.style.display = "";
+        entry.style.display = '';
       }
     }
   };
@@ -72,10 +72,10 @@ const AppointmentsScreen = () => {
       if (sortConfig !== undefined) {
         sortableItems.sort((a, b) => {
           if (a[sortConfig.key] < b[sortConfig.key]) {
-            return sortConfig.direction === "ascending" ? -1 : 1;
+            return sortConfig.direction === 'ascending' ? -1 : 1;
           }
           if (a[sortConfig.key] > b[sortConfig.key]) {
-            return sortConfig.direction === "ascending" ? 1 : -1;
+            return sortConfig.direction === 'ascending' ? 1 : -1;
           }
           return 0;
         });
@@ -84,13 +84,13 @@ const AppointmentsScreen = () => {
     }, [items, sortConfig]);
 
     const requestSort = (key) => {
-      let direction = "ascending";
+      let direction = 'ascending';
       if (
         sortConfig &&
         sortConfig.key === key &&
-        sortConfig.direction === "ascending"
+        sortConfig.direction === 'ascending'
       ) {
-        direction = "descending";
+        direction = 'descending';
       }
       setSortConfig({ key, direction });
     };
@@ -114,13 +114,13 @@ const AppointmentsScreen = () => {
           const doctor = list_of_appoints[i].doctor.fullname;
           const patient = list_of_appoints[i].patient.fullname;
           const time_interval =
-            list_of_appoints[i].time_interval.from_date.split(" ")[0];
+            list_of_appoints[i].time_interval.from_date.split(' ')[0];
           const date_interval =
-            list_of_appoints[i].time_interval.from_date.split(" ")[0];
+            list_of_appoints[i].time_interval.from_date.split(' ')[0];
           const from_interval =
-            list_of_appoints[i].time_interval.from_date.split(" ")[1];
+            list_of_appoints[i].time_interval.from_date.split(' ')[1];
           const to_interval =
-            list_of_appoints[i].time_interval.to_date.split(" ")[1];
+            list_of_appoints[i].time_interval.to_date.split(' ')[1];
 
           props.appoint[i] = {
             id: id,
@@ -151,8 +151,8 @@ const AppointmentsScreen = () => {
             <th>
               <button
                 type="button"
-                onClick={() => requestSort("patient")}
-                className={getClassNamesFor("patient")}
+                onClick={() => requestSort('patient')}
+                className={getClassNamesFor('patient')}
               >
                 Paciente
               </button>
@@ -160,8 +160,8 @@ const AppointmentsScreen = () => {
             <th>
               <button
                 type="button"
-                onClick={() => requestSort("doctor")}
-                className={getClassNamesFor("doctor")}
+                onClick={() => requestSort('doctor')}
+                className={getClassNamesFor('doctor')}
               >
                 Doctor
               </button>
@@ -169,8 +169,8 @@ const AppointmentsScreen = () => {
             <th>
               <button
                 type="button"
-                onClick={() => requestSort("time_interval")}
-                className={getClassNamesFor("time_interval")}
+                onClick={() => requestSort('time_interval')}
+                className={getClassNamesFor('time_interval')}
               >
                 Horario
               </button>
@@ -192,7 +192,7 @@ const AppointmentsScreen = () => {
               <td>
                 {formattedDate(item.date_interval)}
                 <br />
-                {formattedTimeWithoutSeconds(item.from_interval)} -{" "}
+                {formattedTimeWithoutSeconds(item.from_interval)} -{' '}
                 {formattedTimeWithoutSeconds(item.to_interval)}
               </td>
               <td>
@@ -211,7 +211,10 @@ const AppointmentsScreen = () => {
 
       <div className="screen-header">
         <div className="screen-header-icon-container">
-          <EventNoteIcon fontSize="large" style={{ color: "#3E43AB" }} />
+          <EventNoteIcon
+            fontSize="large"
+            style={{ color: 'var(--primary-color)' }}
+          />
         </div>
         <div className="screen-header-descriptions">
           <p className="screen-header-title">Turnos</p>
@@ -225,7 +228,7 @@ const AppointmentsScreen = () => {
             <div className="div-search">
               <input
                 type="text"
-                onChange={(e) => searchTable(e, "appointlist")}
+                onChange={(e) => searchTable(e, 'appointlist')}
                 placeholder="Nombre del paciente..."
               />
               <i className="icon">
@@ -234,7 +237,10 @@ const AppointmentsScreen = () => {
             </div>
             <Button
               variant="outlined"
-              style={{ color: "#3E43AB", borderColor: "#3E43AB" }}
+              style={{
+                color: 'var(--primary-color)',
+                borderColor: 'var(--primary-color)',
+              }}
             >
               <AddIcon /> Agendar una cita
             </Button>

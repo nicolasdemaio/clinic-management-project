@@ -23,42 +23,45 @@ const PatientCreationView = () => {
   };
   return (
     <>
-      <div className='screen-header'>
-        <div className='screen-header-icon-container'>
-          <PersonIcon fontSize='large' style={{ color: '#3E43AB' }} />
+      <div className="screen-header">
+        <div className="screen-header-icon-container">
+          <PersonIcon
+            fontSize="large"
+            style={{ color: 'var(--primary-color)' }}
+          />
         </div>
-        <div className='screen-header-descriptions'>
-          <p className='screen-header-title'>Registrar paciente</p>
-          <p className='screen-header-subtitle'>
+        <div className="screen-header-descriptions">
+          <p className="screen-header-title">Registrar paciente</p>
+          <p className="screen-header-subtitle">
             Registro de nuevos pacientes en la clínica
           </p>
         </div>
       </div>
 
-      <div className='screen-content-container'>
-        <div className='screen-content' id='patient-creation-content'>
-          <div className='left-pane'>
-            <TextField label='Nombre y apellido' variant='outlined' />
+      <div className="screen-content-container">
+        <div className="screen-content" id="patient-creation-content">
+          <div className="left-pane">
+            <TextField label="Nombre y apellido" variant="outlined" />
             <TextField
-              label='Correo electrónico'
-              variant='outlined'
-              type='email'
+              label="Correo electrónico"
+              variant="outlined"
+              type="email"
             />
-            <TextField label='Domicilio' variant='outlined' />
-            <TextField label='Número telefónico' variant='outlined' />
+            <TextField label="Domicilio" variant="outlined" />
+            <TextField label="Número telefónico" variant="outlined" />
             <Autocomplete
               disablePortal
-              id='combo-box-demo'
+              id="combo-box-demo"
               options={possibleIdentificationTypes}
               sx={{ width: 300 }}
-              renderInput={(params) => <TextField {...params} label='Tipo' />}
+              renderInput={(params) => <TextField {...params} label="Tipo" />}
             />
-            <TextField label='Número de documento' variant='outlined' />
-            <TextField variant='outlined' type='date' />
+            <TextField label="Número de documento" variant="outlined" />
+            <TextField variant="outlined" type="date" />
           </div>
-          <div className='right-pane'>
-            <Button variant='contained'>Registrar</Button>
-            <Button variant='contained' color='grey'>
+          <div className="right-pane">
+            <Button variant="contained">Registrar</Button>
+            <Button variant="contained" color="grey">
               Cancelar
             </Button>
           </div>
@@ -69,4 +72,3 @@ const PatientCreationView = () => {
 };
 
 export default PatientCreationView;
-

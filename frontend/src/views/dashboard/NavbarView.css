@@ -2,8 +2,7 @@
   font-weight: 400;
   display: flex;
   flex-direction: row;
-  color: #323a45;
-  background-color: #fefcff;
+  color: var(--primary-letter);
 }
 
 .dashboard-vertical-logo {
@@ -16,7 +15,7 @@
   min-width: 9vh;
   width: 12vh;
   height: auto;
-  background-color: #243153;
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +29,7 @@
   align-items: center;
   justify-content: center;
   background: none;
-  color: white;
+  color: var(--primary-white);
   border: none;
   font-weight: 400;
   font-size: 15px;
@@ -38,16 +37,16 @@
 
 .dashboard-vertical-button:hover,
 .active-dashbutton {
-  background-color: #353f64;
+  background-color: var(--secondary-color);
   width: 100%;
   cursor: pointer;
-  border-left: 1px solid rgb(221, 221, 221);
+  border-left: 1px solid var(--secondary-white);
 }
 
 .dashboard-content-container {
   height: 100vh;
   width: 100%;
-  background-color: #f6f5ff;
+  background-color: var(--primary-background);
 }
 
 .div-search {
@@ -60,7 +59,7 @@
 .div-search input {
   width: 50px;
   height: 50px;
-  background: #f3f5f7;
+  background: var(--secondary-white);
   border: none;
   font-size: 11pt;
   float: left;
@@ -68,7 +67,7 @@
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  color: #000;
+  color: var(--primary-letter);
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   padding-left: 50px;
@@ -81,21 +80,21 @@
 }
 
 .div-search input::-webkit-input-placeholder {
-  color: #65737e;
+  color: var(--secondary-letter);
 }
 
 .div-search input:-moz-placeholder {
   /* Firefox 18- */
-  color: #65737e;
+  color: var(--secondary-letter);
 }
 
 .div-search input::-moz-placeholder {
   /* Firefox 19+ */
-  color: #65737e;
+  color: var(--secondary-letter);
 }
 
 .div-search input:-ms-input-placeholder {
-  color: #65737e;
+  color: var(--secondary-letter);
 }
 
 .div-search i {
@@ -104,7 +103,7 @@
   top: 30%;
   transform: translateX(-35px);
   z-index: 1;
-  color: #4f5b66;
+  color: var(--secondary-letter);
 }
 
 .div-search input:focus,
@@ -119,24 +118,5 @@
 }
 
 .div-search:hover i {
-  color: #93a2ad;
-}
-
-.float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 40px;
-  background-color: #46b2f0;
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  box-shadow: 2px 2px 3px #999;
-}
-
-.my-float {
-  margin-top: 13px;
-  margin-left: 5px;
-  font-size: 35px;
+  color: var(--primary-letter);
 }

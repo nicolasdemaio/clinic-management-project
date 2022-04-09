@@ -50,23 +50,26 @@ const PatientsScreen = () => {
     <>
       {showBackdrop ? <BackdropLoading /> : undefined}
 
-      <div className='screen-header'>
-        <div className='screen-header-icon-container'>
-          <PersonIcon fontSize='large' style={{ color: '#3E43AB' }} />
+      <div className="screen-header">
+        <div className="screen-header-icon-container">
+          <PersonIcon
+            fontSize="large"
+            style={{ color: 'var(--primary-color)' }}
+          />
         </div>
-        <div className='screen-header-descriptions'>
-          <p className='screen-header-title'>Pacientes</p>
-          <p className='screen-header-subtitle'>
+        <div className="screen-header-descriptions">
+          <p className="screen-header-title">Pacientes</p>
+          <p className="screen-header-subtitle">
             Personas registrados en la clínica
           </p>
         </div>
       </div>
 
-      <div className='screen-content-container'>
-        <div className='screen-content'>
+      <div className="screen-content-container">
+        <div className="screen-content">
           <button onClick={() => navigate('create')}>Registrar paciente</button>
 
-          <div className='temporalData'>
+          <div className="temporalData">
             <table>
               <tr>
                 <th>Index</th>

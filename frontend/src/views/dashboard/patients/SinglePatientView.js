@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import patientsApi from "../../../api/patientsApi";
-import PersonIcon from "@mui/icons-material/Person";
-import { TextField } from "@mui/material";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import patientsApi from '../../../api/patientsApi';
+import PersonIcon from '@mui/icons-material/Person';
+import { TextField } from '@mui/material';
 
 const SinglePatientView = () => {
   const { patientId } = useParams();
@@ -24,7 +24,10 @@ const SinglePatientView = () => {
     <>
       <div className="screen-header">
         <div className="screen-header-icon-container">
-          <PersonIcon fontSize="large" style={{ color: "#3E43AB" }} />
+          <PersonIcon
+            fontSize="large"
+            style={{ color: 'var(--primary-color)' }}
+          />
         </div>
         <div className="screen-header-descriptions">
           <p className="screen-header-title">Paciente</p>
@@ -36,7 +39,7 @@ const SinglePatientView = () => {
 
       <div className="screen-content-container">
         <div className="screen-content">
-            <h3>Información personal</h3>
+          <h3>Información personal</h3>
           <TextField
             id="outlined-read-only-input"
             value={patient && patient.fullname}
@@ -47,7 +50,7 @@ const SinglePatientView = () => {
             }}
           />
 
-<TextField
+          <TextField
             id="outlined-read-only-input"
             value={patient && patient.phonenumber}
             defaultValue={'Loading ...'}
@@ -57,7 +60,7 @@ const SinglePatientView = () => {
             }}
           />
 
-<TextField
+          <TextField
             id="outlined-read-only-input"
             value={patient && patient.address}
             defaultValue={'Loading ...'}
@@ -67,7 +70,7 @@ const SinglePatientView = () => {
             }}
           />
 
-<TextField
+          <TextField
             id="outlined-read-only-input"
             value={patient && patient.email}
             defaultValue={'Loading ...'}
@@ -77,7 +80,7 @@ const SinglePatientView = () => {
             }}
           />
 
-<TextField
+          <TextField
             id="outlined-read-only-input"
             value={patient && patient.birthdate}
             defaultValue={'Loading ...'}
@@ -87,7 +90,7 @@ const SinglePatientView = () => {
             }}
           />
 
-<TextField
+          <TextField
             id="outlined-read-only-input"
             value={patient && patient.document.document_type}
             defaultValue={'Loading ...'}
@@ -97,7 +100,7 @@ const SinglePatientView = () => {
             }}
           />
 
-<TextField
+          <TextField
             id="outlined-read-only-input"
             value={patient && patient.document.number}
             defaultValue={'Loading ...'}

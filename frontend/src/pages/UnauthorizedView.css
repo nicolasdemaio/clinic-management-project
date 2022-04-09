@@ -7,28 +7,28 @@
 }
 
 .unauthorized-title {
-    color: #0D192A;
+    color: var(--primary-letter);
 }
 
 .unauthorized-label {
-    color: #78828F;
+    color: var(--secondary-letter);
     margin-bottom: 0.3rem;
 }
 
 .unauthorized-button {
     margin: 1rem;
     border: none;
-    background-color: #006AF5;
+    background-color: var(--secondary-color);
     height: 2.5rem;
     width: 8rem;
     border-radius: 8px;
-    color: white;
+    color: var(--primary-white);
     font-weight: bold;
     font-size: 1.1rem;
     transition-duration: 0.3s;
 }
 
 .unauthorized-button:hover {
-    background-color: #0239f0;
+    background-color: var(--primary-color);
     transition-duration: 0.3s;
 }

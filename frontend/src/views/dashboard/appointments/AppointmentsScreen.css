@@ -8,15 +8,15 @@
     flex-direction: row;
     height: 10vh;
     padding: 3rem;
-    background-color: #FFFFFF;
+    background-color: var(--primary-white);
 }
 
 .screen-header-icon-container {
     border-radius: 8px;
     width: 4rem;
     height: 4rem;
-    background-color: #FFFFFF;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    background-color: var(--primary-white);
+    box-shadow: var(--primary-transparent-color) 0px 3px 3px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,10 +37,10 @@
 }
 
 .screen-content {
-    background-color: #FFFFFF;
+    background-color: var(--primary-white);
     width: 100%;
     border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    box-shadow: var(--primary-transparent-color) 0px 3px 3px 0px;
     padding: 1.5rem;
 }
 

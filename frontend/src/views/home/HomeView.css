@@ -12,7 +12,7 @@ header {
 nav {
     width: 100vw;
     height: 160px;
-    background: #46b2f0;
+    background: var(--primary-color);
     display: grid;
     grid-template-columns: 1fr 1fr;
     position: fixed;
@@ -20,7 +20,7 @@ nav {
     transition: all 0.3s;
 }
 nav.navShadow {
-    box-shadow: 0 4px 30px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 25px 30px -5px var(--primary-transparent-color);
     height: 100px;
 }
 nav.navShadow #word-mark {
@@ -39,7 +39,7 @@ nav.navShadow #word-mark {
     cursor: pointer;
 }
 #word-mark {
-    color: #fff;
+    color: var(--primary-white);
     margin-left: 20px;
     opacity: 1;
     transition: all 0.3s;
@@ -54,7 +54,7 @@ li {
     margin-left: 25px;
 }
 li a {
-    color:#fff;
+    color:var(--primary-white);
     text-decoration:none;
     padding-right: 20px;
     cursor:pointer;
@@ -68,7 +68,7 @@ li a {
 #menu-toggle {
     width: 55px;
     height: 55px;
-    background: #2ea8ee;
+    background: var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +93,7 @@ li a {
 }
 
 .logger {
-    color:#fff;
+    color:var(--primary-white);
     font-weight: 500;
     line-height: 2;
 }
@@ -104,14 +104,14 @@ li a {
 
 .logger ul {
     cursor: pointer;
-    border: 10px solid #46b2f0;
+    border: 10px solid var(--primary-color);
     border-radius: 10px;
 }
 
 #menu ul ul {
     display:none;
     position: absolute;
-    background:#46b2f0;
+    background:var(--primary-color);
     padding-top: 10px;
     right: 13px;
 }
@@ -134,7 +134,7 @@ li a {
 .bar {
     width: 25px;
     height: 2px;
-    background: #fff;
+    background: var(--primary-white);
     transition: 0.3s ease-in-out;
 }
 .bar:nth-child(2) {
@@ -156,7 +156,7 @@ li a {
 #head-line {
     width: 520px;
     height: 30px;
-    background: #fff;
+    background: var(--primary-white);
     border-radius: 90px;
     position: relative;
 }
@@ -167,7 +167,7 @@ li a {
 }
 #head-line:before {
     width: 360px;
-    background: #fff;
+    background: var(--primary-white);
     position: absolute;
     top: -60px;
     left: 50%;
@@ -175,7 +175,7 @@ li a {
 }
 #head-line:after {
     width: 200px;
-    background: #fff;
+    background: var(--primary-white);
     position: absolute;
     left: 50%;
     bottom: -60px;
@@ -197,7 +197,7 @@ section:nth-child(even) {
 #heading {
     width: 120px;
     height: 20px;
-    background: #fff;
+    background: var(--primary-white);
     border-radius: 90px;
     margin-top: 40px;
 }
@@ -210,12 +210,12 @@ section:nth-child(even) {
         display: inline-block;
         width: 100vw;
         height: 0;
-        background: #6dd4e2;
+        background: var(--secondary-color);
         position: absolute;
         top: 160px;
         right: 0;
         transform: translate();
-        box-shadow: 0 5px 30px -4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 40px 40px -10px var(--primary-transparent-color);
         transition: all 0.3s;
    }
     #menu ul.showMenu {
