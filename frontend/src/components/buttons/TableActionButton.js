@@ -40,10 +40,13 @@ export default function TableActionButton() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}><EditIcon fontSize='small'/> Modificar</MenuItem>
-        <MenuItem onClick={handleClose}><ClearIcon fontSize='small' /> Eliminar</MenuItem>
+        <MenuItem onClick={handleClose}>
+          <EditIcon fontSize="small" /> Modificar
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ClearIcon fontSize="small" /> Eliminar
+        </MenuItem>
       </Menu>
     </div>
   );
 }
-

@@ -1,15 +1,10 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import Header from '../../../components/Header';
 import { useNavigate } from 'react-router-dom';
-import { FaSearch } from 'react-icons/fa';
-import Button from '@mui/material/Button';
 import appointmentsApi from '../../../api/appointmentsApi';
-import EventNoteIcon from '@mui/icons-material/EventNote';
 import '../appointments/AppointmentsScreen.css';
-import AddIcon from '@mui/icons-material/Add';
 import BackdropLoading from '../../../components/BackdropLoading';
-import TableActionButton from '../../../components/buttons/TableActionButton';
 import PersonIcon from '@mui/icons-material/Person';
-import patientsApi from '../../../api/patientsApi';
 
 const PatientsScreen = () => {
   const [showBackdrop, setShowBackDrop] = useState(false);
@@ -21,18 +16,6 @@ const PatientsScreen = () => {
   const navigate = useNavigate();
 
   const [temporalData, setTemporalData] = useState([]);
-
-  const formattedTimeWithoutSeconds = (aTime) => {
-    return aTime.substring(0, 5);
-  };
-
-  const formattedDate = (aDate) => {
-    return new Date(aDate).toLocaleDateString('es-es', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  };
 
   useEffect(() => {
     appointmentsApi
@@ -50,20 +33,11 @@ const PatientsScreen = () => {
     <>
       {showBackdrop ? <BackdropLoading /> : undefined}
 
-      <div className="screen-header">
-        <div className="screen-header-icon-container">
-          <PersonIcon
-            fontSize="large"
-            style={{ color: 'var(--primary-color)' }}
-          />
-        </div>
-        <div className="screen-header-descriptions">
-          <p className="screen-header-title">Pacientes</p>
-          <p className="screen-header-subtitle">
-            Personas registrados en la clínica
-          </p>
-        </div>
-      </div>
+      <Header
+        title="Pacientes"
+        description="Personas registrados en la clínica"
+        icon={<PersonIcon />}
+      />
 
       <div className="screen-content-container">
         <div className="screen-content">

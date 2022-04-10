@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Header from '../../../components/Header';
 import { useParams } from 'react-router-dom';
 import patientsApi from '../../../api/patientsApi';
 import PersonIcon from '@mui/icons-material/Person';
@@ -22,20 +23,11 @@ const SinglePatientView = () => {
 
   return (
     <>
-      <div className="screen-header">
-        <div className="screen-header-icon-container">
-          <PersonIcon
-            fontSize="large"
-            style={{ color: 'var(--primary-color)' }}
-          />
-        </div>
-        <div className="screen-header-descriptions">
-          <p className="screen-header-title">Paciente</p>
-          <p className="screen-header-subtitle">
-            Persona registrada en la clínica
-          </p>
-        </div>
-      </div>
+      <Header
+        title="Paciente"
+        description="Persona registrada en la clínica"
+        icon={<PersonIcon />}
+      />
 
       <div className="screen-content-container">
         <div className="screen-content">

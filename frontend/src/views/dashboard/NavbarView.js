@@ -15,10 +15,12 @@ const NavbarView = () => {
   const navigate = useNavigate();
 
   const changeActiveButton = (event, a_direction) => {
-    document.getElementsByClassName("active-dashbutton")[0].classList.remove("active-dashbutton");
-    event.target.classList.add("active-dashbutton");
-    navigate(a_direction)
-  }
+    document
+      .getElementsByClassName('active-dashbutton')[0]
+      .classList.remove('active-dashbutton');
+    event.target.classList.add('active-dashbutton');
+    navigate(a_direction);
+  };
 
   const handleCloseSession = (event) => {
     event.preventDefault();
@@ -34,55 +36,55 @@ const NavbarView = () => {
 
   return (
     <>
-      <div className='dashboard-container'>
-        <div className='dashboard-vertical-bar'>
+      <div className="dashboard-container">
+        <div className="dashboard-vertical-bar">
           <img
-            className='dashboard-vertical-logo'
+            className="dashboard-vertical-logo"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            alt='logo'
+            alt="logo"
             src={Logo}
           />
           <button
-            className='dashboard-vertical-button active-dashbutton'
+            className="dashboard-vertical-button active-dashbutton"
             onClick={(e) => changeActiveButton(e, '/dashboard/home')}
           >
-            <HomeIcon style={{'pointer-events': 'none'}} /> Inicio
+            <HomeIcon style={{ pointerEvents: 'none' }} /> Inicio
           </button>
           <button
-            className='dashboard-vertical-button'
+            className="dashboard-vertical-button"
             onClick={(e) => changeActiveButton(e, '/dashboard/appointments')}
           >
-            <FaRegCalendarAlt style={{'pointer-events': 'none'}} /> Turnos
+            <FaRegCalendarAlt style={{ pointerEvents: 'none' }} /> Turnos
           </button>
           <button
-            className='dashboard-vertical-button'
+            className="dashboard-vertical-button"
             onClick={(e) => changeActiveButton(e, '/dashboard/patients')}
           >
-            <FaHospitalUser style={{'pointer-events': 'none'}} /> Pacientes
+            <FaHospitalUser style={{ pointerEvents: 'none' }} /> Pacientes
           </button>
           <button
-            className='dashboard-vertical-button'
+            className="dashboard-vertical-button"
             onClick={(e) => changeActiveButton(e, '/dashboard/doctors')}
           >
-            <FaBriefcaseMedical style={{'pointer-events': 'none'}} /> Doctores
+            <FaBriefcaseMedical style={{ pointerEvents: 'none' }} /> Doctores
           </button>
           {userLogged.includes('ADMIN') ? (
             <button
-              className='dashboard-vertical-button'
+              className="dashboard-vertical-button"
               onClick={(e) => changeActiveButton(e, '/dashboard/accounts')}
             >
-              <FaUserAlt style={{'pointer-events': 'none'}} /> Cuentas
+              <FaUserAlt style={{ pointerEvents: 'none' }} /> Cuentas
             </button>
           ) : undefined}
           <button
-            className='dashboard-vertical-button'
+            className="dashboard-vertical-button"
             onClick={handleCloseSession}
           >
             <LogoutIcon /> Cerrar sesión
           </button>
         </div>
 
-        <div className='dashboard-content-container'>
+        <div className="dashboard-content-container">
           <Outlet />
         </div>
       </div>

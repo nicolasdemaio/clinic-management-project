@@ -1,4 +1,5 @@
 import PersonIcon from '@mui/icons-material/Person';
+import Header from '../../../components/Header';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
@@ -23,20 +24,11 @@ const PatientCreationView = () => {
   };
   return (
     <>
-      <div className="screen-header">
-        <div className="screen-header-icon-container">
-          <PersonIcon
-            fontSize="large"
-            style={{ color: 'var(--primary-color)' }}
-          />
-        </div>
-        <div className="screen-header-descriptions">
-          <p className="screen-header-title">Registrar paciente</p>
-          <p className="screen-header-subtitle">
-            Registro de nuevos pacientes en la clínica
-          </p>
-        </div>
-      </div>
+      <Header
+        title="Registrar paciente"
+        description="Registro de nuevos pacientes en la clínica"
+        icon={<PersonIcon />}
+      />
 
       <div className="screen-content-container">
         <div className="screen-content" id="patient-creation-content">
