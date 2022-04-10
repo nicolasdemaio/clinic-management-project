@@ -1,4 +1,5 @@
 import appointmentsApi from '../../../api/appointmentsApi';
+import ProductTable from '../../../components/table/ProductTable';
 import Header from '../../../components/Header';
 import StorageIcon from '@mui/icons-material/Storage';
 import { TextField } from '@mui/material';
@@ -10,18 +11,43 @@ import Select from '@mui/material/Select';
 
 const DashboardScreen = () => {
   const [temporalData, setTemporalData] = useState([]);
+  const [typeDocumentSelected, setTypeDocumentSelected] = useState('');
 
   const searchByDocument = (event) => {
-    appointmentsApi
-      .getAppointments()
-      .then((response) => {
-        console.log(response);
-        console.log(event.target.value);
-        setTemporalData(response);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    if (event.target.value.length >= 6) {
+      appointmentsApi
+        .getAppointments()
+        .then((response) => {
+          formatResponse(response, event);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
+  };
+
+  const formatResponse = (list_of_appoints, event) => {
+    for (let i = 0; list_of_appoints.length > i; i++) {
+      const doctor = list_of_appoints[i].doctor.fullname;
+      const patient = list_of_appoints[i].patient.fullname;
+      const typeDocument = list_of_appoints[i].patient.document.document_type;
+      const document = list_of_appoints[i].patient.document.number;
+
+      if (
+        document.toString() === event.target.value &&
+        typeDocument === typeDocumentSelected
+      ) {
+        list_of_appoints = [
+          {
+            Doctor: doctor,
+            Paciente: patient,
+            Documento: document,
+          },
+        ];
+        setTemporalData(list_of_appoints);
+        break;
+      }
+    }
   };
 
   return (
@@ -44,10 +70,13 @@ const DashboardScreen = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Tipo documento"
+              onChange={(e) => {
+                setTypeDocumentSelected(e.target.value);
+              }}
             >
-              <MenuItem value="dni">D.N.I.</MenuItem>
-              <MenuItem value="li">L.I.</MenuItem>
-              <MenuItem value="th">Thirty</MenuItem>
+              <MenuItem value="DNI">D.N.I.</MenuItem>
+              <MenuItem value="LI">L.I.</MenuItem>
+              <MenuItem value="TH">Thirty</MenuItem>
             </Select>
           </FormControl>
           <TextField
@@ -59,6 +88,7 @@ const DashboardScreen = () => {
               searchByDocument(e);
             }}
           />
+          <ProductTable data={temporalData} />
         </div>
       </div>
     </div>
