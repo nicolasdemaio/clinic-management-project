@@ -14,23 +14,22 @@ export const ProductTable = (props) => {
     }
     return sortConfig.key === name ? sortConfig.direction : undefined;
   };
-  return (
+
+  return list_data.length ? (
     <table id="table">
       <thead>
         <tr>
-          {!items[0]
-            ? items.push({ 'Cargando...': '' })
-            : Object.keys(items[0]).map((item) => (
-                <th>
-                  <button
-                    type="button"
-                    onClick={() => requestSort(item)}
-                    className={getClassNamesFor(item)}
-                  >
-                    {item}
-                  </button>
-                </th>
-              ))}
+          {Object.keys(items[0]).map((item) => (
+            <th>
+              <button
+                type="button"
+                onClick={() => requestSort(item)}
+                className={getClassNamesFor(item)}
+              >
+                {item}
+              </button>
+            </th>
+          ))}
           {props.actions ? (
             <th>
               <button>Acciones</button>
@@ -57,6 +56,8 @@ export const ProductTable = (props) => {
         ))}
       </tbody>
     </table>
+  ) : (
+    ''
   );
 };
 
