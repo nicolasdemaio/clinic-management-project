@@ -6,50 +6,45 @@ import appointmentsApi from '../../../api/appointmentsApi';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import AddIcon from '@mui/icons-material/Add';
 import BackdropLoading from '../../../components/BackdropLoading';
-import ProductTable from '../../../components/ProductTable';
+import ProductTable from '../../../components/table/ProductTable';
+import SearchTable from '../../../components/table/SearchTable';
+import FormatDate from '../../../context/FormatDate';
 import './AppointmentsScreen.css';
 
 const AppointmentsScreen = () => {
   const [showBackdrop, setShowBackDrop] = useState(false);
+  const [temporalData, setTemporalData] = useState([]);
+
   useEffect(() => {
     setShowBackDrop(true);
     setTimeout(() => setShowBackDrop(false), 1200);
   }, []);
 
-  const [temporalData, setTemporalData] = useState([]);
-
   useEffect(() => {
     appointmentsApi
       .getAppointments()
       .then((response) => {
-        console.log(response);
-        setTemporalData(response);
+        formatResponse(response);
       })
       .catch((e) => {
         console.log(e);
       });
   }, []);
 
-  //------------- BUSCADOR DE LA TABLA --------------------------------
-  const searchTable = (event, table) => {
-    let detecta = document.getElementsByName(table);
-    let state;
+  const formatResponse = (list_of_appoints) => {
+    for (let i = 0; list_of_appoints.length > i; i++) {
+      const doctor = list_of_appoints[i].doctor.fullname;
+      const patient = list_of_appoints[i].patient.fullname;
+      const time_interval = FormatDate(list_of_appoints[i].time_interval);
 
-    if (event.target.value) {
-      state = 'none';
-    } else {
-      state = '';
+      list_of_appoints[i] = {
+        Doctor: doctor,
+        Paciente: patient,
+        Horario: time_interval,
+      };
     }
-    for (let entry of detecta) {
-      entry.style.display = state;
 
-      if (
-        state === 'none' &&
-        entry.outerHTML.indexOf(event.target.value.toLowerCase()) > -1
-      ) {
-        entry.style.display = '';
-      }
-    }
+    setTemporalData(list_of_appoints);
   };
 
   return (
@@ -68,7 +63,9 @@ const AppointmentsScreen = () => {
             <div className="div-search">
               <input
                 type="text"
-                onChange={(e) => searchTable(e, 'producttable')}
+                onChange={(e) => {
+                  SearchTable(e.target.value, 'producttable');
+                }}
                 placeholder="Nombre del paciente..."
               />
               <i className="icon">
@@ -85,7 +82,11 @@ const AppointmentsScreen = () => {
               <AddIcon /> Agendar una cita
             </Button>
           </div>
-          <ProductTable data={temporalData} />
+          <ProductTable
+            data={temporalData}
+            searchParameter="Paciente"
+            actions
+          />
         </div>
       </div>
     </div>
