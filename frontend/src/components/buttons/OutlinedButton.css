@@ -1,0 +1,27 @@
+.outlined-button-container button{
+    height: 50px;
+    display: inline-flex;
+    position: relative;
+    box-sizing: border-box;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    min-width: 64px;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+.outlined-button-container button:hover {
+    background-color: var(--primary-background);
+    border: 1px solid var(--primary-color);
+}
