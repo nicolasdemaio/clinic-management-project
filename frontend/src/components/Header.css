@@ -1,0 +1,32 @@
+.screen-header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 10vh;
+    padding: 3rem;
+    background-color: var(--primary-white);
+}
+
+.screen-header-icon-container {
+    border-radius: 8px;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--primary-white);
+    box-shadow: var(--primary-transparent-color) 0px 3px 3px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen-header-icon-container svg{
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+.screen-header-title {
+    font-weight: bold;
+}
+
+.screen-header-descriptions {
+    margin-left: 1.5rem;
+}
