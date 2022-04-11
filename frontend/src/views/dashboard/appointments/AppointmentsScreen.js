@@ -10,7 +10,9 @@ import SearchTable from '../../../components/table/SearchTable';
 import FormatDate from '../../../context/FormatDate';
 import OutlinedButton from '../../../components/buttons/OutlinedButton';
 import './AppointmentsScreen.css';
-import AddAppointment from '../../../components/modals/AddAppointment';
+import Modals from '../../../components/modals/Modals';
+import AddAppointment from './AddAppointment';
+import PersonIcon from '@mui/icons-material/Person';
 
 const AppointmentsScreen = () => {
   const [showBackdrop, setShowBackDrop] = useState(false);
@@ -81,7 +83,15 @@ const AppointmentsScreen = () => {
             >
               <AddIcon /> Agendar una cita
             </OutlinedButton>
-            <AddAppointment open={open} onClose={(e) => setOpen(false)} />
+            <Modals
+              open={open}
+              onClose={(e) => setOpen(false)}
+              title="Turnos"
+              description="Citas médicas agendadas"
+              icon={<PersonIcon />}
+            >
+              <AddAppointment />
+            </Modals>
           </div>
           <ProductTable
             data={temporalData}
