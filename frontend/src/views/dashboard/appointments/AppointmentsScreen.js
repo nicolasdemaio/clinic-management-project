@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../../components/Header';
+import Header from '../../../components/basics/Header';
 import { FaSearch } from 'react-icons/fa';
-import Button from '@mui/material/Button';
 import appointmentsApi from '../../../api/appointmentsApi';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import AddIcon from '@mui/icons-material/Add';
@@ -9,10 +8,13 @@ import BackdropLoading from '../../../components/BackdropLoading';
 import ProductTable from '../../../components/table/ProductTable';
 import SearchTable from '../../../components/table/SearchTable';
 import FormatDate from '../../../context/FormatDate';
+import OutlinedButton from '../../../components/buttons/OutlinedButton';
 import './AppointmentsScreen.css';
+import AddAppointment from '../../../components/modals/AddAppointment';
 
 const AppointmentsScreen = () => {
   const [showBackdrop, setShowBackDrop] = useState(false);
+  const [open, setOpen] = useState(false);
   const [temporalData, setTemporalData] = useState([]);
 
   useEffect(() => {
@@ -72,15 +74,14 @@ const AppointmentsScreen = () => {
                 <FaSearch />
               </i>
             </div>
-            <Button
-              variant="outlined"
-              style={{
-                color: 'var(--primary-color)',
-                borderColor: 'var(--primary-color)',
+            <OutlinedButton
+              onClick={(e) => {
+                setOpen(true);
               }}
             >
               <AddIcon /> Agendar una cita
-            </Button>
+            </OutlinedButton>
+            <AddAppointment open={open} onClose={(e) => setOpen(false)} />
           </div>
           <ProductTable
             data={temporalData}
