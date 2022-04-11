@@ -5,6 +5,9 @@ import appointmentsApi from '../../../api/appointmentsApi';
 import '../appointments/AppointmentsScreen.css';
 import BackdropLoading from '../../../components/BackdropLoading';
 import PersonIcon from '@mui/icons-material/Person';
+import OutlinedButton from '../../../components/buttons/OutlinedButton';
+import AddIcon from '@mui/icons-material/Add';
+import SolidButton from '../../../components/buttons/SolidButton';
 
 const PatientsScreen = () => {
   const [showBackdrop, setShowBackDrop] = useState(false);
@@ -41,7 +44,9 @@ const PatientsScreen = () => {
 
       <div className="screen-content-container">
         <div className="screen-content">
-          <button onClick={() => navigate('create')}>Registrar paciente</button>
+          <OutlinedButton onClick={(e) => navigate('create')}>
+            <AddIcon /> Registrar paciente
+          </OutlinedButton>
 
           <div className="temporalData">
             <table>
@@ -58,9 +63,12 @@ const PatientsScreen = () => {
                       <td>Patient ID: {book.patient.id}</td>
                       <td>{book.doctor.fullname}</td>
                       <td>{book.patient.fullname}</td>
-                      <button onClick={() => navigate(`${book.patient.id}`)}>
+                      <SolidButton
+                        onClick={() => navigate(`${book.patient.id}`)}
+                      >
                         Get patient on console
-                      </button>
+                      </SolidButton>
+                      <br />
                     </tr>
                   );
                 })}

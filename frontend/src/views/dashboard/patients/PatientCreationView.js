@@ -10,6 +10,8 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Button from '@mui/material/Button';
 import './PatientCreationView.css';
+import SolidButton from '../../../components/buttons/SolidButton';
+import OutlinedButton from '../../../components/buttons/OutlinedButton';
 
 const PatientCreationView = () => {
   const [value, setValue] = React.useState(new Date());
@@ -52,10 +54,8 @@ const PatientCreationView = () => {
             <TextField variant="outlined" type="date" />
           </div>
           <div className="right-pane">
-            <Button variant="contained">Registrar</Button>
-            <Button variant="contained" color="grey">
-              Cancelar
-            </Button>
+            <SolidButton>Registrar</SolidButton>
+            <OutlinedButton>Cancelar</OutlinedButton>
           </div>
         </div>
       </div>
