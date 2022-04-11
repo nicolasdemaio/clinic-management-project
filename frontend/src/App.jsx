@@ -3,7 +3,7 @@ import LoginView from './views/login/LoginView';
 import HomeView from './views/home/HomeView';
 import UnauthorizedView from './pages/UnauthorizedView';
 import { Routes, Route } from 'react-router-dom';
-import RequireAuth from './components/RequireAuth';
+import RequireAuth from './context/RequireAuth';
 import AppointmentsScreen from './views/dashboard/appointments/AppointmentsScreen';
 import DoctorsScreen from './views/dashboard/doctors/DoctorsScreen';
 import PatientsScreen from './views/dashboard/patients/PatientsScreen';
@@ -15,11 +15,11 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/'>
+        <Route path="/">
           {/* Public routes */}
-          <Route path='/' element={<HomeView />} />
-          <Route path='unauthorized' element={<UnauthorizedView />} />
-          <Route path='login' element={<LoginView />} />
+          <Route path="/" element={<HomeView />} />
+          <Route path="unauthorized" element={<UnauthorizedView />} />
+          <Route path="login" element={<LoginView />} />
 
           {/* Private routes */}
           <Route
@@ -27,17 +27,17 @@ function App() {
               <RequireAuth allowedRoles={['RECEPTIONIST', 'ADMIN', 'DOCTOR']} />
             }
           >
-            <Route path='dashboard' element={<NavbarView />}>
-              <Route path='home' element={<DashboardScreen />} />
-              <Route path='appointments' element={<AppointmentsScreen />} />
-              <Route path='patients' element={<PatientsScreen />} />
-              <Route path='patients/create' element={<PatientCreationView />} />
+            <Route path="dashboard" element={<NavbarView />}>
+              <Route path="home" element={<DashboardScreen />} />
+              <Route path="appointments" element={<AppointmentsScreen />} />
+              <Route path="patients" element={<PatientsScreen />} />
+              <Route path="patients/create" element={<PatientCreationView />} />
               <Route
-                path='patients/:patientId'
+                path="patients/:patientId"
                 element={<SinglePatientView />}
               />
-              <Route path='doctors' element={<DoctorsScreen />} />
-              <Route path='accounts' element={<DoctorsScreen />} />
+              <Route path="doctors" element={<DoctorsScreen />} />
+              <Route path="accounts" element={<DoctorsScreen />} />
             </Route>
           </Route>
         </Route>

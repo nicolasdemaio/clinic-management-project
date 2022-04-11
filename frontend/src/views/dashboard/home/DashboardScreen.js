@@ -1,6 +1,6 @@
 import appointmentsApi from '../../../api/appointmentsApi';
 import ProductTable from '../../../components/table/ProductTable';
-import Header from '../../../components/Header';
+import Header from '../../../components/basics/Header';
 import StorageIcon from '@mui/icons-material/Storage';
 import { TextField } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';

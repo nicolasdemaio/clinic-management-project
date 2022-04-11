@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Header from '../../../components/Header';
+import Header from '../../../components/basics/Header';
 import { useParams } from 'react-router-dom';
 import patientsApi from '../../../api/patientsApi';
 import PersonIcon from '@mui/icons-material/Person';

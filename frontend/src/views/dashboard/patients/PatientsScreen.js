@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../../components/Header';
+import Header from '../../../components/basics/Header';
 import { useNavigate } from 'react-router-dom';
 import appointmentsApi from '../../../api/appointmentsApi';
 import '../appointments/AppointmentsScreen.css';

@@ -1,5 +1,5 @@
 import PersonIcon from '@mui/icons-material/Person';
-import Header from '../../../components/Header';
+import Header from '../../../components/basics/Header';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
