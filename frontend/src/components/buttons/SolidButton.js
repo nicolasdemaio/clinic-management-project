@@ -2,7 +2,7 @@ import './SolidButton.css';
 
 export const SolidButton = (props) => {
   return (
-    <div class="solid-button-container">
+    <div className="solid-button-container">
       <button onClick={props.onClick}>{props.children}</button>
     </div>
   );
