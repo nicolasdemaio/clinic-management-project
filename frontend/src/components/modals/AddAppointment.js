@@ -18,7 +18,7 @@ const style = {
   overflow: 'hidden',
   transform: 'translate(-50%, -50%)',
   bgcolor: 'var(--primary-background)',
-  border: '1px solid var(--primary-color)',
+  border: '0px',
   borderRadius: '15px',
   boxShadow: '10px 10px 60px rgb(0 0 0 / 40%)',
 };
