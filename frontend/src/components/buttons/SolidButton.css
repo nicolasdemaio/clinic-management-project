@@ -14,8 +14,9 @@
     line-height: 1.75;
     letter-spacing: 0.02857em;
     text-transform: uppercase;
-    min-width: 64px;
-    padding: 5px 15px;
+    min-width: 150px;
+    padding: 0px 10px;
+    margin: 7px 0px;
     border-radius: 4px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     border-width: 0;

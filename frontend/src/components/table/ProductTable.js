@@ -47,7 +47,9 @@ export const ProductTable = (props) => {
             {Object.keys(items[item]).map((key) => (
               <td>{items[item][key]}</td>
             ))}
-            {props.actions ? (
+            {props.actions === 'custom' ? (
+              props.children
+            ) : props.actions ? (
               <td>
                 <TableActionButton />
               </td>

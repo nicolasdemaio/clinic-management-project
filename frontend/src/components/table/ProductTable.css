@@ -1,3 +1,54 @@
-#table tbody td{
+table {
+    font-weight: 500;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    text-align: center;
+    background-color: var(--primary-background);
+    color: var(--primary-color);
+  }
+  
+  thead button {
+    background-color: var(--primary-background);
+    color: var(--primary-color);
+    transform: translateX(-25px);
+    width: auto;
+    border: 0;
+    border-radius: none;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: inherit;
+    padding: 0.5em;
+    margin-bottom: 0px;
+  }
+  
+  thead button.ascending::after {
+    content: '➔';
+    transform: rotate(90deg);
+    color: gray;
+    display: inline-block;
+    margin-left: 1em;
+  }
+  
+  thead button.descending::after {
+    content: '➔';
+    transform: rotate(-90deg);
+    color: grey;
+    display: inline-block;
+    margin-left: 1em;
+  }
+  
+  tbody td {
+    padding: 0.5em;
+    border-bottom: 1px solid var(--secondary-white);
+  }
+  
+  tbody tr:hover {
+    background-color: var(--secondary-white);
+  }
+  
+  #table tbody td{
     white-space: pre-wrap;
 }

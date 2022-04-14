@@ -10,7 +10,7 @@ const style = {
   width: '80%',
   height: '80%',
   p: '30px',
-  overflow: 'hidden',
+  overflow: 'scroll',
   transform: 'translate(-50%, -50%)',
   bgcolor: 'var(--primary-background)',
   border: '0px',

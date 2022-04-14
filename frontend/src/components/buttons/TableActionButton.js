@@ -20,6 +20,7 @@ export default function TableActionButton() {
     <div>
       <Button
         id="basic-button"
+        sx={{ color: 'var(--primary-color)' }}
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
@@ -36,10 +37,16 @@ export default function TableActionButton() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem
+          onClick={handleClose}
+          sx={{ fontFamily: 'Poppins, sans-serif' }}
+        >
           <EditIcon fontSize="small" /> Modificar
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem
+          onClick={handleClose}
+          sx={{ fontFamily: 'Poppins, sans-serif' }}
+        >
           <ClearIcon fontSize="small" /> Eliminar
         </MenuItem>
       </Menu>
