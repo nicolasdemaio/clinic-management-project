@@ -8,9 +8,14 @@ import PersonIcon from '@mui/icons-material/Person';
 import OutlinedButton from '../../../components/buttons/OutlinedButton';
 import AddIcon from '@mui/icons-material/Add';
 import SolidButton from '../../../components/buttons/SolidButton';
+import ProductTable from '../../../components/table/ProductTable';
+import Modals from '../../../components/modals/Modals';
+import AddPatient from './AddPatient';
 
 const PatientsScreen = () => {
   const [showBackdrop, setShowBackDrop] = useState(false);
+  const [open, setOpen] = useState(false);
+
   useEffect(() => {
     setShowBackDrop(true);
     setTimeout(() => setShowBackDrop(false), 1200);
@@ -24,13 +29,28 @@ const PatientsScreen = () => {
     appointmentsApi
       .getAppointments()
       .then((response) => {
-        console.log(response);
-        setTemporalData(response);
+        formatResponse(response);
       })
       .catch((e) => {
         console.log(e);
       });
   }, []);
+
+  const formatResponse = (list_of_appoints) => {
+    for (let i = 0; list_of_appoints.length > i; i++) {
+      const index = list_of_appoints[i].patient.id;
+      const doctor = list_of_appoints[i].doctor.fullname;
+      const patient = list_of_appoints[i].patient.fullname;
+
+      list_of_appoints[i] = {
+        Index: index,
+        Doctor: doctor,
+        Patient: patient,
+      };
+    }
+
+    setTemporalData(list_of_appoints);
+  };
 
   return (
     <>
@@ -44,11 +64,44 @@ const PatientsScreen = () => {
 
       <div className="screen-content-container">
         <div className="screen-content">
-          <OutlinedButton onClick={(e) => navigate('create')}>
+          {/* <OutlinedButton onClick={(e) => navigate('create')}>
+            <AddIcon /> Registrar paciente
+          </OutlinedButton> */}
+
+          <OutlinedButton
+            onClick={(e) => {
+              setOpen(true);
+            }}
+          >
             <AddIcon /> Registrar paciente
           </OutlinedButton>
+          <Modals
+            open={open}
+            onClose={(e) => setOpen(false)}
+            title="Registro"
+            description="Registrar paciente"
+            icon={<PersonIcon />}
+          >
+            <AddPatient onClose={(e) => setOpen(false)} />
+          </Modals>
 
-          <div className="temporalData">
+          <ProductTable
+            data={temporalData}
+            searchParameter="Paciente"
+            actions="custom"
+          >
+            <SolidButton
+              onClick={(e) =>
+                navigate(
+                  e.nativeEvent.path[2].innerText.split(' ')[0].split('\t')[0]
+                )
+              }
+            >
+              Get patient on console
+            </SolidButton>
+          </ProductTable>
+
+          {/* <div className="temporalData">
             <table>
               <tr>
                 <th>Index</th>
@@ -73,7 +126,7 @@ const PatientsScreen = () => {
                   );
                 })}
             </table>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

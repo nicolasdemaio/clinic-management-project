@@ -1,7 +1,5 @@
 const DoctorsScreen = () => {
-    return (
-        <h1>Doctores Screen</h1>
-    )
-}
+  return <h1>Doctores Screen or Accounts</h1>;
+};
 
-export default DoctorsScreen
+export default DoctorsScreen;

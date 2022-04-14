@@ -90,7 +90,7 @@ const AppointmentsScreen = () => {
               description="Citas médicas agendadas"
               icon={<PersonIcon />}
             >
-              <AddAppointment />
+              <AddAppointment onClose={(e) => setOpen(false)} />
             </Modals>
           </div>
           <ProductTable

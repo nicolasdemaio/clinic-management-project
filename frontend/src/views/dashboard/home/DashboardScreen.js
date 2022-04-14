@@ -2,12 +2,25 @@ import appointmentsApi from '../../../api/appointmentsApi';
 import ProductTable from '../../../components/table/ProductTable';
 import Header from '../../../components/basics/Header';
 import StorageIcon from '@mui/icons-material/Storage';
-import { TextField } from '@mui/material';
+import { Autocomplete, TextField } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import { useState } from 'react';
 import Select from '@mui/material/Select';
+
+const styledBorder = {
+  '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline, .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
+    {
+      borderColor: 'var(--primary-color)',
+    },
+  '.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused': {
+    color: 'var(--primary-color)',
+  },
+  width: '25%',
+  margin: '10px',
+  display: 'inline-block',
+};
 
 const DashboardScreen = () => {
   const [temporalData, setTemporalData] = useState([]);
@@ -62,28 +75,24 @@ const DashboardScreen = () => {
         <div className="screen-content">
           <h1>Dashboard</h1>
           <h2>Buscar paciente</h2>
-          <FormControl margin="normal" style={{ width: '20%' }}>
-            <InputLabel id="demo-simple-select-label">
-              Tipo documento
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              label="Tipo documento"
-              onChange={(e) => {
-                setTypeDocumentSelected(e.target.value);
-              }}
-            >
-              <MenuItem value="DNI">D.N.I.</MenuItem>
-              <MenuItem value="LI">L.I.</MenuItem>
-              <MenuItem value="TH">Thirty</MenuItem>
-            </Select>
-          </FormControl>
+          <Autocomplete
+            disablePortal
+            id="combo-box-demo"
+            sx={styledBorder}
+            isOptionEqualToValue={(option, value) =>
+              option.label === value.label
+            }
+            options={[{ label: 'DNI' }, { label: 'LI' }, { label: 'TH' }]}
+            renderInput={(params) => <TextField {...params} label="Tipo" />}
+            onChange={(e) => {
+              setTypeDocumentSelected(e.target.innerText);
+            }}
+          />
           <TextField
             id="outlined-basic"
             label="Identificación"
             variant="outlined"
-            style={{ margin: '15px' }}
+            sx={styledBorder}
             onChange={(e) => {
               searchByDocument(e);
             }}

@@ -22,3 +22,31 @@
     justify-content: space-between;
     padding-bottom: 1%;
 }
+
+.panel-grid {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 15px;
+}
+
+.left-pane {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+  }
+  
+  .left-pane .MuiTextField-root {
+    padding-bottom: 10px;
+  }
+  
+  .right-pane {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+  }
+  
+  .right-pane .MuiTextField-root {
+    padding-bottom: 10px;
+  }
