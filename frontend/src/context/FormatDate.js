@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const FormatDate = (time_interval) => {
   const date_interval = formattedDate(time_interval.from_date.split(' ')[0]);
   const from_interval = formattedTimeWithoutSeconds(

@@ -100,7 +100,7 @@
 .div-search i {
   position: absolute;
   font-size: 20px;
-  top: 30%;
+  top: 20%;
   transform: translateX(-35px);
   z-index: 1;
   color: var(--secondary-letter);

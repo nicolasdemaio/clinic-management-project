@@ -3,9 +3,12 @@ import TableActionButton from '../buttons/TableActionButton';
 import './ProductTable.css';
 
 export const ProductTable = (props) => {
-  const list_data = props.data;
+  const searchParameter = Array.isArray(props.searchParameter)
+    ? props.searchParameter
+    : [props.searchParameter || 'id'];
   const tableId = props.tableId || 'producttable';
-  const searchParameter = props.searchParameter || 'id';
+  const index = props.index || 'index';
+  const list_data = props.data;
 
   const { items, requestSort, sortConfig } = useSortableData(list_data);
   const getClassNamesFor = (name) => {
@@ -19,17 +22,19 @@ export const ProductTable = (props) => {
     <table id="table">
       <thead>
         <tr>
-          {Object.keys(items[0]).map((item) => (
-            <th>
-              <button
-                type="button"
-                onClick={() => requestSort(item)}
-                className={getClassNamesFor(item)}
-              >
-                {item}
-              </button>
-            </th>
-          ))}
+          {Object.keys(items[0]).map((item) =>
+            item !== 'index' ? (
+              <th>
+                <button
+                  type="button"
+                  onClick={() => requestSort(item)}
+                  className={getClassNamesFor(item)}
+                >
+                  {item}
+                </button>
+              </th>
+            ) : undefined
+          )}
           {props.actions ? (
             <th>
               <button>Acciones</button>
@@ -41,12 +46,15 @@ export const ProductTable = (props) => {
         {Object.keys(items).map((item) => (
           <tr
             key={item}
-            id={items[item][searchParameter]?.toLowerCase()}
+            id={searchParameter.map((param) =>
+              items[item][param]?.toLowerCase()
+            )}
             name={tableId}
+            index={items[item][index]}
           >
-            {Object.keys(items[item]).map((key) => (
-              <td>{items[item][key]}</td>
-            ))}
+            {Object.keys(items[item]).map((key) =>
+              key !== 'index' ? <td>{items[item][key]}</td> : undefined
+            )}
             {props.actions === 'custom' ? (
               props.children
             ) : props.actions ? (

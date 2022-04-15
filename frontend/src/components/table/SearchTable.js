@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const SearchTable = (input, tableId) => {
   let detecta = document.getElementsByName(tableId);
   let state;

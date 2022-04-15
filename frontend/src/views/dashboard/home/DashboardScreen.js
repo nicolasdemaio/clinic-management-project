@@ -3,11 +3,7 @@ import ProductTable from '../../../components/table/ProductTable';
 import Header from '../../../components/basics/Header';
 import StorageIcon from '@mui/icons-material/Storage';
 import { Autocomplete, TextField } from '@mui/material';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import { useState } from 'react';
-import Select from '@mui/material/Select';
 
 const styledBorder = {
   '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline, .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
