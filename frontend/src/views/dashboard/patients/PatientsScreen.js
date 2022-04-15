@@ -5,12 +5,14 @@ import appointmentsApi from '../../../api/appointmentsApi';
 import '../appointments/AppointmentsScreen.css';
 import BackdropLoading from '../../../components/BackdropLoading';
 import PersonIcon from '@mui/icons-material/Person';
-import OutlinedButton from '../../../components/buttons/OutlinedButton';
 import AddIcon from '@mui/icons-material/Add';
+import { FaSearch } from 'react-icons/fa';
+import OutlinedButton from '../../../components/buttons/OutlinedButton';
 import SolidButton from '../../../components/buttons/SolidButton';
 import ProductTable from '../../../components/table/ProductTable';
 import Modals from '../../../components/modals/Modals';
 import AddPatient from './AddPatient';
+import SearchTable from '../../../components/table/SearchTable';
 
 const PatientsScreen = () => {
   const [showBackdrop, setShowBackDrop] = useState(false);
@@ -38,14 +40,15 @@ const PatientsScreen = () => {
 
   const formatResponse = (list_of_appoints) => {
     for (let i = 0; list_of_appoints.length > i; i++) {
-      const index = list_of_appoints[i].patient.id;
+      const id = list_of_appoints[i].patient.id;
       const doctor = list_of_appoints[i].doctor.fullname;
       const patient = list_of_appoints[i].patient.fullname;
 
       list_of_appoints[i] = {
-        Index: index,
+        index: id,
+        ID: id,
         Doctor: doctor,
-        Patient: patient,
+        Paciente: patient,
       };
     }
 
@@ -64,27 +67,36 @@ const PatientsScreen = () => {
 
       <div className="screen-content-container">
         <div className="screen-content">
-          {/* <OutlinedButton onClick={(e) => navigate('create')}>
-            <AddIcon /> Registrar paciente
-          </OutlinedButton> */}
-
-          <OutlinedButton
-            onClick={(e) => {
-              setOpen(true);
-            }}
-          >
-            <AddIcon /> Registrar paciente
-          </OutlinedButton>
-          <Modals
-            open={open}
-            onClose={(e) => setOpen(false)}
-            title="Registro"
-            description="Registrar paciente"
-            icon={<PersonIcon />}
-          >
-            <AddPatient onClose={(e) => setOpen(false)} />
-          </Modals>
-
+          <div className="appointments-out-table">
+            <div className="div-search">
+              <input
+                type="text"
+                onChange={(e) => {
+                  SearchTable(e.target.value, 'producttable');
+                }}
+                placeholder="Nombre del paciente..."
+              />
+              <i className="icon">
+                <FaSearch />
+              </i>
+            </div>
+            <OutlinedButton
+              onClick={(e) => {
+                setOpen(true);
+              }}
+            >
+              <AddIcon /> Registrar paciente
+            </OutlinedButton>
+            <Modals
+              open={open}
+              onClose={(e) => setOpen(false)}
+              title="Registro"
+              description="Registrar paciente"
+              icon={<PersonIcon />}
+            >
+              <AddPatient onClose={(e) => setOpen(false)} />
+            </Modals>
+          </div>
           <ProductTable
             data={temporalData}
             searchParameter="Paciente"
@@ -92,41 +104,12 @@ const PatientsScreen = () => {
           >
             <SolidButton
               onClick={(e) =>
-                navigate(
-                  e.nativeEvent.path[2].innerText.split(' ')[0].split('\t')[0]
-                )
+                navigate(e.nativeEvent.path[2].attributes.index.value)
               }
             >
               Get patient on console
             </SolidButton>
           </ProductTable>
-
-          {/* <div className="temporalData">
-            <table>
-              <tr>
-                <th>Index</th>
-                <th>Doctor</th>
-                <th>Patient</th>
-              </tr>
-              {temporalData &&
-                temporalData.map((book, index) => {
-                  return (
-                    <tr key={index}>
-                      <td>Book {index + 1}</td>
-                      <td>Patient ID: {book.patient.id}</td>
-                      <td>{book.doctor.fullname}</td>
-                      <td>{book.patient.fullname}</td>
-                      <SolidButton
-                        onClick={() => navigate(`${book.patient.id}`)}
-                      >
-                        Get patient on console
-                      </SolidButton>
-                      <br />
-                    </tr>
-                  );
-                })}
-            </table>
-          </div> */}
         </div>
       </div>
     </>
