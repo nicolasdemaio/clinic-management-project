@@ -3,10 +3,6 @@ import React, { useRef, useState, useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import axios from '../../api/axios';
-import { Button } from '@mui/material';
-import BackDropLoading from '../../components/BackdropLoading';
-import TextField from '@mui/material/TextField';
-import Stack from '@mui/material/Stack';
 
 const LOGIN_URL = 'api/login';
 
@@ -14,7 +10,7 @@ const LoginView = () => {
   const [showBackdrop, setShowBackdrop] = useState(false);
   const handleBackdrop = () => {
     setShowBackdrop(true);
-    setTimeout(() => setShowBackdrop(false), 1000);
+    setTimeout(() => setShowBackdrop(false), 2500);
   };
 
   const { setAuth } = useAuth();
@@ -79,35 +75,35 @@ const LoginView = () => {
 
   return (
     // className={this.state.animationClass}
-    <div className='login-containerx'>
-      <div className='login-box-container'>
-        <p className='login-titlex'>CMS</p>
-        <p className='login-subtitlex'>Inicia sesión para continuar</p>
-
-        <form onSubmit={handleLogin} className='login-formx'>
-          <label className='login-labelx'>Usuario:</label>
+    <div className="login-containerx">
+      <div className="login-box-container">
+        <p className="login-titlex">CMS</p>
+        <p className="login-subtitlex">Inicia sesión para continuar</p>
+        <form onSubmit={handleLogin} className="login-formx">
+          <label className="login-labelx">Usuario:</label>
           <input
-            type='text'
+            type="text"
             value={username}
             onChange={handleChange(setUsername)}
-            className='login-inputx'
+            className="login-inputx"
           />
-          <label className='login-labelx'>Contraseña:</label>
+          <label className="login-labelx">Contraseña:</label>
           <input
-            type='password'
+            type="password"
             value={password}
             onChange={handleChange(setPassword)}
-            className='login-inputx'
+            className="login-inputx"
           />
 
+          {showBackdrop ? errMsg : <br />}
           <input
-            type='submit'
-            value='Iniciar sesión'
-            className='login-buttonx'
+            type="submit"
+            value="Iniciar sesión"
+            className="login-buttonx"
           />
         </form>
 
-        <button className='login-link-button' onClick={gotoHome}>
+        <button className="login-link-button" onClick={gotoHome}>
           Volver al inicio
         </button>
       </div>
