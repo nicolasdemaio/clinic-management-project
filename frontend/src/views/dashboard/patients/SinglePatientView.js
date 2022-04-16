@@ -54,7 +54,7 @@ const SinglePatientView = () => {
                   defaultValue="Loading ..."
                   InputProps={{
                     readOnly: true,
-                    shrink: true,
+                    shrink: 'true',
                   }}
                 />
                 <TextField
@@ -64,7 +64,7 @@ const SinglePatientView = () => {
                   defaultValue="Loading ..."
                   InputProps={{
                     readOnly: true,
-                    shrink: true,
+                    shrink: 'true',
                   }}
                 />
                 <TextField
@@ -74,7 +74,7 @@ const SinglePatientView = () => {
                   defaultValue="Loading ..."
                   InputProps={{
                     readOnly: true,
-                    shrink: true,
+                    shrink: 'true',
                   }}
                 />
                 <TextField
@@ -84,7 +84,7 @@ const SinglePatientView = () => {
                   defaultValue="Loading ..."
                   InputProps={{
                     readOnly: true,
-                    shrink: true,
+                    shrink: 'true',
                   }}
                 />
               </Stack>
@@ -99,7 +99,7 @@ const SinglePatientView = () => {
                   defaultValue="Loading ..."
                   InputProps={{
                     readOnly: true,
-                    shrink: true,
+                    shrink: 'true',
                   }}
                 />
                 <TextField
@@ -109,7 +109,7 @@ const SinglePatientView = () => {
                   defaultValue="Loading ..."
                   InputProps={{
                     readOnly: true,
-                    shrink: true,
+                    shrink: 'true',
                   }}
                 />
                 <TextField
@@ -119,7 +119,7 @@ const SinglePatientView = () => {
                   defaultValue="Loading ..."
                   InputProps={{
                     readOnly: true,
-                    shrink: true,
+                    shrink: 'true',
                   }}
                 />
               </Stack>

@@ -36,7 +36,7 @@ export const AddPatient = (props) => {
               label="Nacimiento"
               type="date"
               InputLabelProps={{
-                shrink: true,
+                shrink: 'true',
               }}
             />
             <br />
@@ -46,7 +46,7 @@ export const AddPatient = (props) => {
               type="datetime-local"
               sx={{ width: 250 }}
               InputLabelProps={{
-                shrink: true,
+                shrink: 'true',
               }}
             />
           </Stack>
