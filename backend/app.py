@@ -7,6 +7,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 api = Api(app)
+app.url_map.strict_slashes = False
 
 CORS(app, expose_headers='Authorization', allow_headers=["Content-Type", "Authorization", \
     "Access-Control-Allow-Credentials"], supports_credentials=True)
