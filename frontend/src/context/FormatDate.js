@@ -11,7 +11,7 @@ export const FormatDate = (time_interval) => {
 };
 
 const formattedTimeWithoutSeconds = (aTime) => {
-  return aTime.substring(0, 5);
+  return aTime?.substring(0, 5);
 };
 
 const formattedDate = (aDate) => {

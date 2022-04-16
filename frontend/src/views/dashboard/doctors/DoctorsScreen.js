@@ -9,6 +9,7 @@ import { FaSearch } from 'react-icons/fa';
 import SolidButton from '../../../components/buttons/SolidButton';
 import ProductTable from '../../../components/table/ProductTable';
 import SearchTable from '../../../components/table/SearchTable';
+import FormatDate from '../../../context/FormatDate';
 
 const DoctorsScreen = () => {
   const [showBackdrop, setShowBackDrop] = useState(false);
@@ -39,12 +40,12 @@ const DoctorsScreen = () => {
     for (let i = 0; list_of_appoints.length > i; i++) {
       const id = list_of_appoints[i].id;
       const doctor = list_of_appoints[i].fullname;
-      const time_interval = list_of_appoints[i].time_interval_off;
+      const time_interval = FormatDate(list_of_appoints[i].time_interval_off);
 
       list_of_appoints[i] = {
         index: id,
         Doctor: doctor,
-        // Actividad: time_interval,
+        Actividad: time_interval,
       };
     }
     setTemporalData(list_of_appoints);
