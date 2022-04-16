@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../../components/basics/Header';
 import { useNavigate } from 'react-router-dom';
-import appointmentsApi from '../../../api/appointmentsApi';
+import patientsApi from '../../../api/patientsApi';
 import '../appointments/AppointmentsScreen.css';
 import BackdropLoading from '../../../components/BackdropLoading';
 import PersonIcon from '@mui/icons-material/Person';
@@ -28,10 +28,10 @@ const PatientsScreen = () => {
   const [temporalData, setTemporalData] = useState([]);
 
   useEffect(() => {
-    appointmentsApi
-      .getAppointments()
+    patientsApi
+      .getPatientById()
       .then((response) => {
-        formatResponse(response);
+        formatResponse(response.data);
       })
       .catch((e) => {
         console.log(e);
