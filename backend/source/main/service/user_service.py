@@ -1,6 +1,5 @@
 from source.main.model.user import User
 from source.main.repository.dao import UserDAO
-from werkzeug.security import safe_str_cmp
 
 class UserService:
 
