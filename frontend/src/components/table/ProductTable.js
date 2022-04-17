@@ -22,9 +22,9 @@ export const ProductTable = (props) => {
     <table id="table">
       <thead>
         <tr>
-          {Object.keys(items[0]).map((item) =>
+          {Object.keys(items[0]).map((item, index) =>
             item !== 'index' ? (
-              <th>
+              <th key={index}>
                 <button
                   type="button"
                   onClick={() => requestSort(item)}
@@ -36,7 +36,7 @@ export const ProductTable = (props) => {
             ) : undefined
           )}
           {props.actions ? (
-            <th>
+            <th key='0'>
               <button>Acciones</button>
             </th>
           ) : undefined}
@@ -52,8 +52,8 @@ export const ProductTable = (props) => {
             name={tableId}
             index={items[item][index]}
           >
-            {Object.keys(items[item]).map((key) =>
-              key !== 'index' ? <td>{items[item][key]}</td> : undefined
+            {Object.keys(items[item]).map((key, index) =>
+              key !== 'index' ? <td key={index}>{items[item][key]}</td> : undefined
             )}
             {props.actions === 'custom' ? (
               props.children

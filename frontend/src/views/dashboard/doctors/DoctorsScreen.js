@@ -28,7 +28,6 @@ const DoctorsScreen = () => {
     doctorsApi
       .getDoctorById()
       .then((response) => {
-        console.log(response)
         formatResponse(response.data);
       })
       .catch((e) => {
@@ -84,7 +83,7 @@ const DoctorsScreen = () => {
           >
             <SolidButton
               onClick={(e) =>
-                navigate(e.nativeEvent.path[2].attributes.index.value)
+                navigate(e.nativeEvent.path[1].attributes.index.value)
               }
             >
               Más Información
