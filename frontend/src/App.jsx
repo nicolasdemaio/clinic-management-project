@@ -10,6 +10,7 @@ import PatientsScreen from './views/dashboard/patients/PatientsScreen';
 import DashboardScreen from './views/dashboard/home/DashboardScreen';
 import SinglePatientView from './views/dashboard/patients/SinglePatientView';
 import SingleDoctorView from './views/dashboard/doctors/SingleDoctorView';
+import AccountsScreen from './views/dashboard/accounts/AccountsScreen';
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
                 path="doctors/:doctorId"
                 element={<SingleDoctorView />}
               />
-              <Route path="accounts" element={<DoctorsScreen />} />
+              <Route path="accounts" element={<AccountsScreen />} />
             </Route>
           </Route>
         </Route>
