@@ -103,7 +103,7 @@ const PatientsScreen = () => {
           >
             <SolidButton
               onClick={(e) =>
-                navigate(e.nativeEvent.path[2].attributes.index.value)
+                navigate(e.nativeEvent.path[1].attributes.index.value)
               }
             >
               Get patient on console
