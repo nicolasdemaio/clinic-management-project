@@ -40,15 +40,14 @@ const PatientsScreen = () => {
 
   const formatResponse = (list_of_appoints) => {
     for (let i = 0; list_of_appoints.length > i; i++) {
-      const id = list_of_appoints[i].patient.id;
-      const doctor = list_of_appoints[i].doctor.fullname;
-      const patient = list_of_appoints[i].patient.fullname;
+      const id = list_of_appoints[i].id;
+      const patient = list_of_appoints[i].fullname;
+      const dni = list_of_appoints[i].document.number;
 
       list_of_appoints[i] = {
         index: id,
-        ID: id,
-        Doctor: doctor,
         Paciente: patient,
+        Documento: dni
       };
     }
 
