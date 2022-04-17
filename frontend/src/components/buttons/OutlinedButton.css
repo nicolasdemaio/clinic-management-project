@@ -16,7 +16,7 @@
     text-transform: uppercase;
     min-width: 150px;
     padding: 0px 10px;
-    margin: 7px 0px;
+    margin: 7px 5px;
     border-radius: 4px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     border: 1px solid var(--primary-color);
