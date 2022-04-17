@@ -14,6 +14,7 @@ const styledBorder = {
     color: 'var(--primary-color)',
   },
   width: '25%',
+  minWidth: '250px',
   margin: '10px',
   display: 'inline-block',
 };

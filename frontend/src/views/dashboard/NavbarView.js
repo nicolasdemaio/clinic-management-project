@@ -79,7 +79,7 @@ const NavbarView = () => {
             className="dashboard-vertical-button"
             onClick={handleCloseSession}
           >
-            <LogoutIcon /> Cerrar sesión
+            <LogoutIcon style={{ pointerEvents: 'none' }} /> Cerrar sesión
           </button>
         </div>
 

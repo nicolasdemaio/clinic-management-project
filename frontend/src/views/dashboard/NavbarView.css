@@ -9,11 +9,12 @@
   width: 60px;
   height: 60px;
   cursor: pointer;
+  margin-bottom: 35px;
 }
 
 .dashboard-vertical-bar {
   min-width: 9vh;
-  width: 12vh;
+  width: 12.1vh;
   height: auto;
   background-color: var(--primary-color);
   display: flex;
@@ -33,6 +34,10 @@
   border: none;
   font-weight: 400;
   font-size: 15px;
+}
+
+.dashboard-vertical-button svg {
+  font-size: 20px;
 }
 
 .dashboard-vertical-button:hover,
