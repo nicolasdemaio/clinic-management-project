@@ -44,7 +44,7 @@ const DoctorsScreen = () => {
       list_of_appoints[i] = {
         index: id,
         Doctor: doctor,
-        Actividad: time_interval,
+        Inactividad: time_interval,
       };
     }
     setTemporalData(list_of_appoints);
@@ -55,8 +55,8 @@ const DoctorsScreen = () => {
       {showBackdrop ? <BackdropLoading /> : undefined}
 
       <Header
-        title="Pacientes"
-        description="Personas registrados en la clínica"
+        title="Doctores"
+        description="Doctores registrados en la clínica"
         icon={<PersonIcon />}
       />
 
@@ -69,7 +69,7 @@ const DoctorsScreen = () => {
                 onChange={(e) => {
                   SearchTable(e.target.value, 'producttable');
                 }}
-                placeholder="Nombre del paciente..."
+                placeholder="Nombre del doctor..."
               />
               <i className="icon">
                 <FaSearch />

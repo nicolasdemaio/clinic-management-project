@@ -38,20 +38,20 @@ const PatientsScreen = () => {
       });
   }, []);
 
-  const formatResponse = (list_of_appoints) => {
-    for (let i = 0; list_of_appoints.length > i; i++) {
-      const id = list_of_appoints[i].id;
-      const patient = list_of_appoints[i].fullname;
-      const dni = list_of_appoints[i].document.number;
+  const formatResponse = (list_of_patients) => {
+    for (let i = 0; list_of_patients.length > i; i++) {
+      const id = list_of_patients[i].id;
+      const patient = list_of_patients[i].fullname;
+      const dni = list_of_patients[i].document.number;
 
-      list_of_appoints[i] = {
+      list_of_patients[i] = {
         index: id,
         Paciente: patient,
         Documento: dni
       };
     }
 
-    setTemporalData(list_of_appoints);
+    setTemporalData(list_of_patients);
   };
 
   return (

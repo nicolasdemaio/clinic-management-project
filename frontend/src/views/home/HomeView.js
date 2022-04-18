@@ -96,18 +96,17 @@ const HomeView = () => {
                 <a href='#section03'>Contacto</a>
               </li>
               <li className='logger' onClick={buttonLogged}>
-                {' '}
                 {isLogged ? (
                   <>
-                    {userLogged}{' '}
+                    {userLogged}
                     <ul>
-                      <li onClick={PrivateAction}> Dashboard</li>{' '}
+                      <li onClick={PrivateAction}> Dashboard</li>
                       <li onClick={closeSession}> Logout</li>
                     </ul>
                   </>
                 ) : (
                   'Login'
-                )}{' '}
+                )}
               </li>
             </ul>
           </div>

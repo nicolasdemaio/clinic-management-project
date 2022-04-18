@@ -36,25 +36,25 @@ const DashboardScreen = () => {
     }
   };
 
-  const formatResponse = (list_of_appoints, event) => {
-    for (let i = 0; list_of_appoints.length > i; i++) {
-      const doctor = list_of_appoints[i].doctor.fullname;
-      const patient = list_of_appoints[i].patient.fullname;
-      const typeDocument = list_of_appoints[i].patient.document.document_type;
-      const document = list_of_appoints[i].patient.document.number;
+  const formatResponse = (list_of_patients, event) => {
+    for (let i = 0; list_of_patients.length > i; i++) {
+      const doctor = list_of_patients[i].doctor.fullname;
+      const patient = list_of_patients[i].patient.fullname;
+      const typeDocument = list_of_patients[i].patient.document.document_type;
+      const document = list_of_patients[i].patient.document.number;
 
       if (
         document.toString() === event.target.value &&
         typeDocument === typeDocumentSelected
       ) {
-        list_of_appoints = [
+        list_of_patients = [
           {
             Doctor: doctor,
             Paciente: patient,
             Documento: document,
           },
         ];
-        setTemporalData(list_of_appoints);
+        setTemporalData(list_of_patients);
         break;
       }
     }
