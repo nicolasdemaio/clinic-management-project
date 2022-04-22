@@ -3,30 +3,34 @@
     align-items: center;
     flex-direction: row;
     height: 10vh;
-    padding: 3rem;
+    min-width: max-content;
+    width: 125%;
+    padding: 5.3vh;
     background-color: var(--primary-white);
 }
 
 .screen-header-icon-container {
-    border-radius: 8px;
-    width: 4rem;
-    height: 4rem;
+    border-radius: 1vh;
+    width: 7vh;
+    height: 7vh;
     background-color: var(--primary-white);
-    box-shadow: var(--primary-transparent-color) 0px 3px 3px 0px;
+    box-shadow: var(--primary-transparent-color) 0px 0.6vh 0.6vh 0px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.screen-header-icon-container svg{
-    font-size: 30px;
+.screen-header-icon-container svg {
+    font-size: 3vh;
     color: var(--primary-color);
 }
 
-.screen-header-title {
-    font-weight: bold;
+.screen-header-descriptions {
+    font-size: 1.7vh;
+    margin-left: 3vh;
 }
 
-.screen-header-descriptions {
-    margin-left: 1.5rem;
+.screen-header-title {
+    font-size: 2vh;
+    font-weight: bold;
 }

@@ -13,6 +13,7 @@
 
   --primary-white: #FFFFFF;
   --secondary-white: #F3F5F7;
+  background-color: var(--primary-background);
 }
 
 ::selection {
@@ -30,17 +31,17 @@
 /* ScrollBar */
 *::-webkit-scrollbar {
   background-color: transparent;
-  width: 6px;
-  height: 6px;
+  width: 0.8vh;
+  height: 0.8vh;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #babac0;
-  border-radius: 16px;
+  border-radius: 1vh;
 }
 
 *::-webkit-scrollbar-corner {
-  border-radius: 10px;
+  border-radius: 1vh;
   background-color: #babac0;
 }
 

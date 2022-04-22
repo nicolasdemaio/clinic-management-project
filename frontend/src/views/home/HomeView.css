@@ -1,17 +1,17 @@
 .mainstart {
-    font-size: 24px;
+    font-size: 2.5vh;
 }
 
 header {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: #5661f2;
     display: flex;
 }
 
 nav {
-    width: 100vw;
-    height: 160px;
+    width: 100%;
+    height: 16vh;
     background: var(--primary-color);
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -19,55 +19,66 @@ nav {
     z-index: 10;
     transition: all 0.3s;
 }
+
 nav.navShadow {
-    box-shadow: 0 25px 30px -5px var(--primary-transparent-color);
-    height: 100px;
+    box-shadow: 0 6vh 4vh 0vh var(--primary-transparent-color);
+    height: 12vh;
 }
+
 nav.navShadow #word-mark {
     opacity: 0;
 }
-#brand, #menu, ul {
+
+#brand,
+#menu,
+ul {
     display: flex;
     align-items: center;
 }
+
 #brand {
-    padding-left: 40px;
+    padding-left: 4vh;
 }
+
 #logo {
-    width: 80px;
-    height: 80px;
+    width: 9vh;
+    height: 9vh;
     cursor: pointer;
 }
+
 #word-mark {
     color: var(--primary-white);
-    margin-left: 20px;
+    margin-left: 2vh;
+    font-size: 2.6vh;
     opacity: 1;
     transition: all 0.3s;
 }
 
 #menu {
     justify-content: flex-end;
-    padding-right: 50px;
+    padding-right: 5vh;
 }
+
 li {
     list-style-type: none;
-    margin-left: 25px;
+    margin-left: 2.7vh;
 }
+
 li a {
-    color:var(--primary-white);
-    text-decoration:none;
-    padding-right: 20px;
-    cursor:pointer;
+    color: var(--primary-white);
+    text-decoration: none;
+    padding-right: 2.2vh;
+    cursor: pointer;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
     font-weight: 500;
     line-height: 1.2;
-    width: 100px;
 }
+
 #menu-toggle {
-    width: 55px;
-    height: 55px;
+    width: 5vh;
+    height: 5vh;
     background: var(--primary-color);
     display: flex;
     justify-content: center;
@@ -76,30 +87,36 @@ li a {
     cursor: pointer;
     display: none;
 }
+
 #menu-toggle:hover .bar {
     width: 25px;
 }
+
 #menu-toggle.closeMenu .bar {
-    width: 25px;
+    width: 5vh;
 }
+
 #menu-toggle.closeMenu .bar:first-child {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(1.2vh) rotate(45deg);
 }
+
 #menu-toggle.closeMenu .bar:nth-child(2) {
     transform: scale(0);
 }
+
 #menu-toggle.closeMenu .bar:last-child {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-1.2vh) rotate(-45deg);
 }
 
 .logger {
-    color:var(--primary-white);
+    color: var(--primary-white);
     font-weight: 500;
     line-height: 2;
 }
 
-.logger:hover {
+.logger:hover :not(li) {
     cursor: pointer;
+    color: #d1d1d1;
 }
 
 .logger ul {
@@ -109,50 +126,53 @@ li a {
 }
 
 #menu ul ul {
-    display:none;
+    display: none;
     position: absolute;
-    background:var(--primary-color);
+    background: var(--primary-color);
     padding-top: 10px;
-    right: 13px;
 }
-   
+
 #menu ul ul li {
-    float:none;
-    width:150px;
+    float: none;
+    width: 150px;
 }
-   
+
 #menu ul ul a {
-    line-height:120%;
-    padding:10px 15px;
+    line-height: 120%;
+    padding: 10px 15px;
 }
-   
-   
-#menu ul li:hover > ul {
-    display:block;
+
+
+#menu ul li:hover>ul {
+    display: block;
+    right: -10px;
 }
 
 .bar {
-    width: 25px;
-    height: 2px;
+    width: 5vh;
+    height: 0.30vh;
     background: var(--primary-white);
     transition: 0.3s ease-in-out;
 }
+
 .bar:nth-child(2) {
-    width: 20px;
-    margin: 5px 0;
+    width: 3.5vh;
+    margin: 0.9vh 0;
 }
+
 .bar:last-child {
-    width: 15px;
+    width: 2vh;
 }
 
 #hero-section {
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - 160px);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 160px;
 }
+
 #head-line {
     width: 520px;
     height: 30px;
@@ -160,11 +180,14 @@ li a {
     border-radius: 90px;
     position: relative;
 }
-#head-line:before, #head-line:after {
+
+#head-line:before,
+#head-line:after {
     content: "";
     height: 30px;
     border-radius: 90px;
 }
+
 #head-line:before {
     width: 360px;
     background: var(--primary-white);
@@ -173,6 +196,7 @@ li a {
     left: 50%;
     transform: translate(-50%, 0);
 }
+
 #head-line:after {
     width: 200px;
     background: var(--primary-white);
@@ -183,17 +207,20 @@ li a {
 }
 
 section {
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
 }
+
 section:nth-child(odd) {
     background: #fa6c98;
 }
+
 section:nth-child(even) {
     background: #79edfc;
 }
+
 #heading {
     width: 120px;
     height: 20px;
@@ -205,53 +232,60 @@ section:nth-child(even) {
 @media screen and (max-width: 767px) {
     #menu-toggle {
         display: flex;
-   }
+    }
+
     #menu ul {
         display: inline-block;
-        width: 100vw;
+        width: 100%;
         height: 0;
         background: var(--secondary-color);
         position: absolute;
-        top: 160px;
-        right: 0;
-        transform: translate();
+        top: 12vh;
         box-shadow: 0px 40px 40px -10px var(--primary-transparent-color);
         transition: all 0.3s;
-   }
+    }
+
     #menu ul.showMenu {
-        height: 400px;
+        height: 65vh;
         right: 0;
-        padding-left: 20%;
-   }
+        padding-left: 10%;
+    }
+
     #menu ul.showMenu li {
-        height: 80px;
         opacity: 1;
         visibility: visible;
-   }
+    }
+
     #menu li {
         width: 50%;
-        height: 80px;
+        height: 11vh;
         float: left;
-        padding-left: 40px;
         opacity: 0;
         visibility: hidden;
         margin-left: 0;
-        transition: all 0.3s 0.1s;
-   }
-    #menu li:first-child, #menu li:nth-child(2) {
-        margin-top: 50px;
-   }
+        transition: all 0.2s;
+    }
 
-    #menu .logger ul{
+    #menu li:first-child,
+    #menu li:nth-child(2) {
+        margin-top: 10vh;
+    }
+
+    #menu .logger ul {
         visibility: hidden;
-   }
+    }
 
-    #menu .logger ul li{
-        display:inline;
-        margin-left: 15%;
-        line-height: 300px;
-   }
+    #menu .logger ul li {
+        position: absolute;
+        top: 18vh;
+        left: 2%;
+    }
+
+    #menu .logger ul li:nth-child(2) {
+        top: 23vh;
+    }
+
     #head-line {
         transform: scale(0.8);
-   }
+    }
 }

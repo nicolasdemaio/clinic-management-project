@@ -6,25 +6,28 @@
 }
 
 .dashboard-vertical-logo {
-  width: 60px;
-  height: 60px;
+  width: 6.5vh;
+  height: 6.5vh;
   cursor: pointer;
-  margin-bottom: 35px;
+  margin: 2vh 0px;
 }
 
 .dashboard-vertical-bar {
   min-width: 9vh;
   width: 12.1vh;
-  height: auto;
+  height: -webkit-fill-available;
   background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
 }
 
 .dashboard-vertical-button {
-  height: 100px;
-  padding: 1rem 0;
+  height: 10.7vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,11 +36,11 @@
   color: var(--primary-white);
   border: none;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.7vh;
 }
 
 .dashboard-vertical-button svg {
-  font-size: 20px;
+  font-size: 2.5vh;
 }
 
 .dashboard-vertical-button:hover,
@@ -45,11 +48,12 @@
   background-color: var(--secondary-color);
   width: 100%;
   cursor: pointer;
-  border-left: 1px solid var(--secondary-white);
+  border-left: 0.2vh solid var(--secondary-white);
 }
 
 .dashboard-content-container {
-  height: 100vh;
+  margin-left: 12.1vh;
+  min-height: 100vh;
   width: 100%;
   background-color: var(--primary-background);
 }

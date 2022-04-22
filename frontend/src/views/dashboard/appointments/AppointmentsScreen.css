@@ -1,52 +1,47 @@
-.screen-container {
-    height: 100vh;
-}
-
 .screen-content-container {
-    padding: 3rem;
-    width: auto;
-    height: 90vh;
+  padding: 3rem;
+  min-width: fit-content;
 }
 
 .screen-content {
-    background-color: var(--primary-white);
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: var(--primary-transparent-color) 0px 3px 3px 0px;
-    padding: 1.5rem;
+  background-color: var(--primary-white);
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: var(--primary-transparent-color) 0px 3px 3px 0px;
+  padding: 1.5rem;
 }
 
 .appointments-out-table {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1%;
 }
 
 .panel-grid {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 15px;
 }
 
 .left-pane {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding: 10px;
-  }
-  
-  .left-pane .MuiTextField-root {
-    padding-bottom: 10px;
-  }
-  
-  .right-pane {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding: 10px;
-  }
-  
-  .right-pane .MuiTextField-root {
-    padding-bottom: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 10px;
+}
+
+.left-pane .MuiTextField-root {
+  padding-bottom: 10px;
+}
+
+.right-pane {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 10px;
+}
+
+.right-pane .MuiTextField-root {
+  padding-bottom: 10px;
+}
